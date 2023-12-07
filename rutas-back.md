@@ -77,4 +77,3 @@ Necesita token en la cabecera de autorización
 DELETE api/users/:userId
 Borra un usuario
 Necesita token en la cabecera de autorización
-
