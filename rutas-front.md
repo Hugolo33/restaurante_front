@@ -11,4 +11,7 @@ main.routes.ts
 ### Dashboard
 /dashboard => DashboardComponent
 dashboard.routes.ts
-/dashboard/reservations => DashboardReservationsComponent
+/dashboard/reservations => DBReservationsComponent
+/dashboard/menu => DBMenuComponent
+/dashboard/review => DBReviewComponent
+/dashboard/shifts => DBShiftsComponent
