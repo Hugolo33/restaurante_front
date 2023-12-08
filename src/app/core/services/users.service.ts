@@ -3,6 +3,9 @@ import { Injectable, inject } from '@angular/core';
 import { User } from '../interfaces/user.interface';
 import { first, firstValueFrom } from 'rxjs';
 
+
+type LoginResponse = { success: string, token: string, error: string };
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,8 +19,15 @@ export class UsersService {
   }
 
   create(newUser: User): Promise<User> {
-    return firstValueFrom(this.httpClient.post<User>(this.baseUrl, newUser))
+    return firstValueFrom(this.httpClient.post<User>(this.baseUrl + '/register', newUser))
   }
+
+  postLogin(body: { email: string, password: string }) {
+
+    return firstValueFrom(
+      this.httpClient.post<LoginResponse>(this.baseUrl + "/login", body))
+  }
+
 
   update(updatedUser: User): Promise<User> {
     return firstValueFrom(this.httpClient.put<User>(`${this.baseUrl}/${updatedUser.id}`, updatedUser))
