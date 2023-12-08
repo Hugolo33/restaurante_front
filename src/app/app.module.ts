@@ -6,8 +6,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './modules/Main/main/main.component';
-
-
 import { RegisterComponent } from './modules/Main/register/register.component';
 import { LoginComponent } from './modules/Main/login/login.component';
 
@@ -19,8 +17,6 @@ import { LoginComponent } from './modules/Main/login/login.component';
     AppComponent,
     MainComponent,
     LoginComponent,
-    RegisterComponent,
-
     RegisterComponent,
   ],
   imports: [
