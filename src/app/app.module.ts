@@ -6,8 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './modules/Main/main/main.component';
-import { UserComponent } from './modules/User/user/user.component';
-import { DashboardComponent } from './modules/Dashboard/dashboard/dashboard.component';
+
 
 
 
@@ -16,8 +15,6 @@ import { DashboardComponent } from './modules/Dashboard/dashboard/dashboard.comp
   declarations: [
     AppComponent,
     MainComponent,
-    UserComponent,
-    DashboardComponent,
   ],
   imports: [
     BrowserModule,
