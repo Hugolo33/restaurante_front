@@ -5,9 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { MainComponent } from './modules/Main/main/main.component';
-import { RegisterComponent } from './modules/Main/register/register.component';
-import { LoginComponent } from './modules/Main/login/login.component';
+import { MainComponent } from './modules/Main/components/main/main.component';
+import { RegisterComponent } from './modules/Main/components/register/register.component';
+import { LoginComponent } from './modules/Main/components/login/login.component';
 import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 import { UserComponent } from './modules/User/components/user/user.component';
 
@@ -17,9 +17,6 @@ import { UserComponent } from './modules/User/components/user/user.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent,
-    LoginComponent,
-    RegisterComponent,
     NavBarComponent,
 
   ],
