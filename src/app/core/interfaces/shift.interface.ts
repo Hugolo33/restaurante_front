@@ -1,5 +1,5 @@
 export interface Shift {
     id: number,
-    time: Date,
+    time: string,
     daytime: string
 }
