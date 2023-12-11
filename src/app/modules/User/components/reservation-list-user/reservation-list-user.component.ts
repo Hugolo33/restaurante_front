@@ -15,13 +15,14 @@ export class ReservationListUserComponent {
   arrUserRes!: Reservation[]
   jwtservices = inject(JwtServicesService);
   token: string = "";
-  loggedUser!: User
+  loggedUser!: any
 
-  ngOnInit() {
+  async ngOnInit() {
 
-    this.token = localStorage.getItem('token')!;
-    this.loggedUser = JSON.parse(this.jwtservices.DecodeToken(this.token))
+    this.token = await localStorage.getItem('token')!;
+    this.loggedUser = await this.jwtservices.DecodeToken(this.token)
+    this.arrUserRes = await this.reservationsService.getByUserId(this.loggedUser.user_id)
+    console.log(this.arrUserRes);
 
-    // this.arrUserRes = this.reservationsService.getByUserId()
   }
 }
