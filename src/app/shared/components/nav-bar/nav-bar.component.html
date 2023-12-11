@@ -1,1 +1,17 @@
-<p>nav-bar works!</p>
+<header class="menu">
+    <nav>
+        <ul class="navigate">
+            <li [routerLink]="['/']">Home</li>
+            <li [routerLink]="['/menu']">Menu</li>
+            <li [routerLink]="['/']">Contact</li>
+            <li (click)="onClickReservation()">Reservation</li>
+        </ul>
+        <div class="logo">
+            <img [routerLink]="['/']">
+        </div>
+        <ul class="users">
+            <li [routerLink]="['/register']">Register</li>
+            <li [routerLink]="['/login']">Sign in</li>
+        </ul>
+    </nav>
+</header>
