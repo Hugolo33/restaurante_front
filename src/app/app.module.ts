@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 
 
@@ -14,6 +15,7 @@ import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
   declarations: [
     AppComponent,
     NavBarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
