@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Inter:wght@200;300;400;500&family=Syne:wght@400;500;600;700&display=swap');
+
+
+/* 
+font-family: 'Baskervville', serif;
+font-family: 'Inter', sans-serif;
+font-family: 'Syne', sans-serif;
+ */
+
+:root {
+    /* Colors */
+    --main-color: #713636;
+    --secondary-color: #3E5048;
+    --bg-color: #F5F5F4;
+
+    --light-grey: #E8E8E8;
+    --dark-grey: #969696;
+    --black: #1A1A1A;
+
+    /* Spaces */
+    --main-padding: 1.25rem;
+    --double-padding: calc(var(--main-padding) * 2);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+
+}
