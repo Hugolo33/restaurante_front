@@ -7,6 +7,7 @@ import { DbReservationsComponent } from "./components/db-reservations/db-reserva
 import { DbReviewComponent } from "./components/db-review/db-review.component";
 import { DbShiftsComponent } from "./components/db-shifts/db-shifts.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
+import { ReactiveFormsModule } from "@angular/forms";
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { DashboardComponent } from "./components/dashboard/dashboard.component";
     ],
     imports: [
         CommonModule,
-        DashboardRoutes        
+        DashboardRoutes,
+        ReactiveFormsModule        
     ]
 })
 
