@@ -14,6 +14,7 @@ export class ReviewsListComponent {
 
   async ngOnInit() {
     this.arrReviews = await this.reviewsService.getAll()
+    //Comprobado, funciona
   }
 
 }
