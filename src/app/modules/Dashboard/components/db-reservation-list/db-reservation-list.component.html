@@ -1,0 +1,11 @@
+
+
+<section>
+    <h3>LISTA DE RESERVAS</h3>
+
+    <article *ngFor="let reservation of arrReservations">
+        <p>{{reservation.r_date | date}}</p>
+        <p>{{reservation.diners}}</p>
+        <p>{{reservation.notes}}</p>
+    </article>
+</section>
