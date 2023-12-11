@@ -4,6 +4,7 @@ import { JwtServicesService } from '../services/jwt-services.service';
 import { DecodedToken } from '../interfaces/token.interface';
 
 
+
 export const authGuardAdmin: CanActivateChildFn = (childRoute, state) => {
 
     const jwtservices = inject(JwtServicesService);
@@ -13,10 +14,13 @@ export const authGuardAdmin: CanActivateChildFn = (childRoute, state) => {
 
 
     if (token) {
-        // const user: DecodedToken = jwtservices.DecodeToken(token);
-        // console.log(user.role);
+        const user: DecodedToken = jwtservices.DecodeToken(token);
+        console.log(user.user_role);
 
-        return true
+        if (user.user_role === 'admin') {
+
+            return true
+        }
     }
 
     router.navigate(['/auth', 'login']);
