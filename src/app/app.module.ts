@@ -19,7 +19,8 @@ import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
