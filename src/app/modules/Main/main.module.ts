@@ -8,6 +8,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './components/main/main.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
+import { HeroComponent } from './components/hero/hero.component';
+import { MenuViewComponent } from './components/menu-view/menu-view.component';
+import { ReviewsListComponent } from './components/reviews-list/reviews-list.component';
 
 
 
@@ -15,7 +19,11 @@ import { LoginComponent } from './components/login/login.component';
     declarations: [
         MainComponent,
         RegisterComponent,
-        LoginComponent
+        LoginComponent,
+        HomeComponent,
+        HeroComponent,
+        MenuViewComponent,
+        ReviewsListComponent
     ],
     imports: [
         CommonModule,
