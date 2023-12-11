@@ -5,9 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { MainComponent } from './modules/Main/main/main.component';
 import { RegisterComponent } from './modules/Main/register/register.component';
 import { LoginComponent } from './modules/Main/login/login.component';
+import { HomeComponent } from './modules/Main/home/home.component';
+import { HeroComponent } from './modules/Main/hero/hero.component';
+import { MenuViewComponent } from './modules/Main/menu-view/menu-view.component';
+import { ReviewsListComponent } from './modules/Main/reviews-list/reviews-list.component';
 
 
 
@@ -15,9 +18,12 @@ import { LoginComponent } from './modules/Main/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent,
     LoginComponent,
     RegisterComponent,
+    HomeComponent,
+    HeroComponent,
+    MenuViewComponent,
+    ReviewsListComponent,
   ],
   imports: [
     BrowserModule,
