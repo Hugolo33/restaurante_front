@@ -19,8 +19,6 @@ export class RegisterComponent {
       email: new FormControl(),
       password: new FormControl(),
       phone_number: new FormControl(),
-      role: new FormControl()
-
     })
   }
 

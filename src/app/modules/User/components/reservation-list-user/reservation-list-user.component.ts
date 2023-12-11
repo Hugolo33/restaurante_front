@@ -22,7 +22,7 @@ export class ReservationListUserComponent {
     this.token = await localStorage.getItem('token')!;
     this.loggedUser = await this.jwtservices.DecodeToken(this.token)
     this.arrUserRes = await this.reservationsService.getByUserId(this.loggedUser.user_id)
-    console.log(this.arrUserRes);
+    console.log(this.arrUserRes); // esto hay que comprobarlo
 
   }
 }

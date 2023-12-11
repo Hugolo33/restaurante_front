@@ -1,6 +1,6 @@
 export interface Menu {
     id: number;
-    date: Date;
+    date: string;
     first_course: string;
     main_course: string;
 }
