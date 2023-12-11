@@ -1,1 +1,9 @@
-<p>reviews-list works!</p>
+<div class="flex">
+    <article *ngFor="let review of arrReviews">
+
+        <h3> {{review.content}}</h3>
+        <p> {{review.rating}}</p>
+        <p>{{review.date_added}}</p>
+
+    </article>
+</div>
