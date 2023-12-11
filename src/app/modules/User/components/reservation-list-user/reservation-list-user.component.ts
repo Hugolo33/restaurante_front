@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Reservation } from 'src/app/core/interfaces/reservation.interface';
+import { DecodedToken } from 'src/app/core/interfaces/token.interface';
 import { User } from 'src/app/core/interfaces/user.interface';
 import { JwtServicesService } from 'src/app/core/services/jwt-services.service';
 import { ReservationsService } from 'src/app/core/services/reservations.service';
@@ -15,7 +16,7 @@ export class ReservationListUserComponent {
   arrUserRes!: Reservation[]
   jwtservices = inject(JwtServicesService);
   token: string = "";
-  loggedUser!: any
+  loggedUser!: DecodedToken
 
   async ngOnInit() {
 

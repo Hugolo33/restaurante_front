@@ -1,6 +1,6 @@
 export interface DecodedToken {
-    id: string,
-    role: string,
+    user_id: number,
+    user_role: string,
     exp: Number,
     iat: Number
 }
