@@ -29,6 +29,33 @@ font-family: 'Syne', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
     font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    padding: var(--main-padding);
+}
+
+
+/* Clases Globales */
+
+.buttonCustom {
+    padding: 0.75rem 1.875rem;
+    border-radius: 1.6875rem;
+    border: 1px solid var(--main-color);
+}
+
+.logo {
+    color: var(--main-color);
+    text-align: center;
+    font-family: 'Baskervville', serif;
+    font-size: 2.625rem;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.0525rem;
+
+    margin: 0 60px;
 
 }
