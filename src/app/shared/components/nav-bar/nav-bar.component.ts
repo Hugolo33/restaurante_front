@@ -11,6 +11,7 @@ export class NavBarComponent {
 
   private router = inject(Router);
 
+
   onClickReservation() {
     Swal.fire(
       "Please login to make a reservation"

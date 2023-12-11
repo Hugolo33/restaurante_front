@@ -2,12 +2,12 @@
     <nav>
         <ul class="navigate">
             <li [routerLink]="['/']">Home</li>
-            <li [routerLink]="['/menu']">Menu</li>
-            <li [routerLink]="['/']">Contact</li>
+            <li [routerLink]="['/']" fragment="navmenu">Menu</li>
+            <li [routerLink]="['/']" fragment="footernav">Contact</li>
             <li (click)="onClickReservation()">Reservation</li>
         </ul>
         <div class="logo">
-            <img [routerLink]="['/']">
+            <p [routerLink]="['/']">casa Miranda</p>
         </div>
         <ul class="users">
             <li [routerLink]="['/register']">Register</li>
