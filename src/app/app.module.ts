@@ -6,10 +6,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
-import { HomeComponent } from './modules/Main/home/home.component';
-import { HeroComponent } from './modules/Main/hero/hero.component';
-import { MenuViewComponent } from './modules/Main/menu-view/menu-view.component';
-import { ReviewsListComponent } from './modules/Main/reviews-list/reviews-list.component';
 
 
 
@@ -18,10 +14,6 @@ import { ReviewsListComponent } from './modules/Main/reviews-list/reviews-list.c
   declarations: [
     AppComponent,
     NavBarComponent,
-    HomeComponent,
-    HeroComponent,
-    MenuViewComponent,
-    ReviewsListComponent,
   ],
   imports: [
     BrowserModule,
