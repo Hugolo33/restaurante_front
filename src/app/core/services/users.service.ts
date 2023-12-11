@@ -36,4 +36,10 @@ export class UsersService {
   remove(userId: number): Promise<User> {
     return firstValueFrom(this.httpClient.delete<User>(`${this.baseUrl}/${userId}`))
   }
+
+  isLogged(): boolean {
+    if (localStorage.getItem('token')) return true;
+    else return false;
+  }
+
 }

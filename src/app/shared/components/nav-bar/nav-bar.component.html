@@ -10,8 +10,9 @@
             <p [routerLink]="['/']">casa Miranda</p>
         </div>
         <ul class="users">
-            <li [routerLink]="['/register']">Register</li>
-            <li [routerLink]="['/login']">Sign in</li>
+            <li [routerLink]="['/register']" *ngIf="!usersService.isLogged()">Register</li>
+            <li [routerLink]="['/login']" *ngIf="!usersService.isLogged()">Sign in</li>
+            <li (click)="onClickLogout()" *ngIf="usersService.isLogged()">Logout</li>
         </ul>
     </nav>
 </header>
