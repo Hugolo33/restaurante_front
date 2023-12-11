@@ -10,6 +10,10 @@ import { RegisterComponent } from './modules/Main/components/register/register.c
 import { LoginComponent } from './modules/Main/components/login/login.component';
 import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 import { UserComponent } from './modules/User/components/user/user.component';
+import { HomeComponent } from './modules/Main/home/home.component';
+import { HeroComponent } from './modules/Main/hero/hero.component';
+import { MenuViewComponent } from './modules/Main/menu-view/menu-view.component';
+import { ReviewsListComponent } from './modules/Main/reviews-list/reviews-list.component';
 
 
 
@@ -18,7 +22,12 @@ import { UserComponent } from './modules/User/components/user/user.component';
   declarations: [
     AppComponent,
     NavBarComponent,
-
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent,
+    HeroComponent,
+    MenuViewComponent,
+    ReviewsListComponent,
   ],
   imports: [
     BrowserModule,
