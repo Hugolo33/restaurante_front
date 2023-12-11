@@ -1,0 +1,30 @@
+nav {
+    display: flex;
+    align-items: inherit;
+
+    padding-bottom: var(--main-padding);
+    font-weight: 300;
+    line-height: normal;
+    color: var(--main-color);
+    gap: 1.875rem;
+    border-bottom: 1px solid var(--main-color);
+
+
+    & ul {
+        list-style: none;
+        display: flex;
+        align-items: end;
+        padding-left: 0rem;
+        gap: 1.875rem;
+    }
+
+    & li,
+    p {
+        transition: 0.5s;
+        margin-bottom: 0rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
