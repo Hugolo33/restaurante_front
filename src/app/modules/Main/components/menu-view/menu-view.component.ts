@@ -15,6 +15,6 @@ export class MenuViewComponent {
   async ngOnInit() {
     this.latestMenu = await this.menuService.getLatest()
     console.log(this.latestMenu);
-    //TODO: Comprobar
+    //Comprobado, funciona
   }
 }
