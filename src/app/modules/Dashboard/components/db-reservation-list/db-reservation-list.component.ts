@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Reservation } from 'src/app/core/interfaces/reservation.interface';
+import { ReservationsService } from 'src/app/core/services/reservations.service';
 
 @Component({
   selector: 'app-db-reservation-list',
@@ -9,6 +10,8 @@ import { Reservation } from 'src/app/core/interfaces/reservation.interface';
 export class DbReservationListComponent {
 
 arrReservations: Reservation[];
+
+reservationsService = inject(ReservationsService)
 
 constructor() {
   this.arrReservations = [
@@ -51,6 +54,16 @@ constructor() {
   ]
 }
 
+async ngOnInit() {
+  try {
+    const response = await this.reservationsService.getAll()
+    this.arrReservations = response
+
+  } catch (error) {
+    console.log(error);
+    
+  }
+}
 
 
 }

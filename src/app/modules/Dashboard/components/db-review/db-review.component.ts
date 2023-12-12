@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Review } from 'src/app/core/interfaces/review.interface';
+import { ReviewsService } from 'src/app/core/services/reviews.service';
 
 @Component({
   selector: 'app-db-review',
@@ -6,5 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./db-review.component.css']
 })
 export class DbReviewComponent {
+
+  reviews: Review[] = []
+
+  reviewsService = inject(ReviewsService)
+
+  async ngOnInit() {
+    try {
+      const response = await this.reviewsService.getAll()
+      this.reviews = response
+      
+    } catch (error) {
+      console.log(error);
+    }    
+  }
+
 
 }
