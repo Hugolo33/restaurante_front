@@ -1,6 +1,6 @@
 export interface Reservation {
     id?: number,
-    r_date: string,
+    r_date: Date,
     diners: number,
     notes?: string,
     user_id?: number,
