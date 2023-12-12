@@ -65,7 +65,21 @@ body {
     font-style: normal;
     line-height: normal;
     letter-spacing: -0.0525rem;
+}
 
-    margin: 0 3.75rem;
+html,
+body {
+    height: 100%;
+}
 
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.line {
+    background-color: var(--main-color);
+    height: 1px;
+    width: 100%;
+    margin: 0 auto;
 }
