@@ -3,12 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserComponent } from './components/user/user.component';
 import { ReservationFormComponent } from './components/reservation-form/reservation-form.component';
 import { ReviewFormComponent } from './components/review-form/review-form.component';
+import { ReservationListUserComponent } from './components/reservation-list-user/reservation-list-user.component';
 
 const routes: Routes = [
     { path: '', component: UserComponent },
-    { path: 'reservation', component: ReservationFormComponent },
-    { path: 'new-review', component: ReviewFormComponent }
-
+    { path: 'new-reservation', component: ReservationFormComponent },
+    { path: 'my-reservations', component: ReservationListUserComponent },
+    { path: 'new-review', component: ReviewFormComponent },
 ];
 
 @NgModule({
