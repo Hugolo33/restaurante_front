@@ -15,10 +15,14 @@ export class NavBarComponent {
 
 
   onClickReservation() {
-    Swal.fire(
-      "Please login to make a reservation"
-    )
-    this.router.navigate(['/login']);
+    if (this.usersService.isLogged()) {
+      this.router.navigate(['/user'])
+    } else {
+      Swal.fire(
+        "Please login to make a reservation"
+      )
+      this.router.navigate(['/login']);
+    }
   }
 
   onClickLogout() {

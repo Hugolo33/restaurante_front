@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Reservation } from 'src/app/core/interfaces/reservation.interface';
 import { DecodedToken } from 'src/app/core/interfaces/token.interface';
-import { User } from 'src/app/core/interfaces/user.interface';
 import { JwtServicesService } from 'src/app/core/services/jwt-services.service';
 import { ReservationsService } from 'src/app/core/services/reservations.service';
 
@@ -19,11 +18,13 @@ export class ReservationListUserComponent {
   loggedUser!: DecodedToken
 
   async ngOnInit() {
-
-    this.token = await localStorage.getItem('token')!;
-    this.loggedUser = await this.jwtservices.DecodeToken(this.token)
-    this.arrUserRes = await this.reservationsService.getByUserId(this.loggedUser.user_id)
-    console.log(this.arrUserRes); // esto hay que comprobarlo
-
+    this.token = localStorage.getItem('token')!;
+    this.loggedUser = this.jwtservices.DecodeToken(this.token)
+    try {
+      this.arrUserRes = await this.reservationsService.getByUserId(this.loggedUser.user_id)
+      console.log(this.arrUserRes);// esto hay que comprobarlo
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
