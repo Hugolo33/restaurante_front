@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UsersService } from 'src/app/core/services/users.service';
 
 @Component({
@@ -11,6 +12,7 @@ export class RegisterComponent {
   formulario: FormGroup;
 
   users = inject(UsersService)
+  router = inject(Router)
 
   constructor() {
     //name, email, password, phone_number,role
@@ -23,7 +25,13 @@ export class RegisterComponent {
   }
 
   async onSubmit() {
-    const result = await this.users.create(this.formulario.value)
-    console.log(result);
+    try {
+      const result = await this.users.create(this.formulario.value)
+      console.log(result);
+      this.router.navigate(['/login'])
+    } catch (error) {
+      console.log(error);
+    }
+
   }
 }

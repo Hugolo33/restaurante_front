@@ -5,5 +5,6 @@ export interface Reservation {
     notes?: string,
     user_id?: number,
     spot_id?: number,
-    shift_id?: number
+    shift_id?: number,
+    review_id?: number
 }

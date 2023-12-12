@@ -6,6 +6,8 @@ nav {
     gap: 1.875rem;
     display: flex;
     align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
     & ul {
         list-style: none;
@@ -22,13 +24,16 @@ nav {
     }
 }
 
-.line {
-    background-color: var(--main-color);
-    height: 1px;
-    width: 100%;
-    margin: 0 auto;
+nav .logo {
+    width: 30%;
 }
 
-.logo {
-    flex: 2;
+nav .navigate {
+    width: 30%
+}
+
+nav .users {
+    display: flex;
+    width: 30%;
+    justify-content: flex-end;
 }

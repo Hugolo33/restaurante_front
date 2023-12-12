@@ -1,1 +1,20 @@
-<p>db-new-reservation works!</p>
+<section>
+
+    <h3>Introduce una nueva reserva</h3>
+
+    <form [formGroup]="reserva" (ngSubmit)="onSubmit()">
+
+        <label>Selecciona una fecha</label>
+        <input type="date" formControlName="r_date">
+
+        <label>Número de comensales</label>
+        <input type="number" formControlName="diners">
+
+        <label>¿Alguña preferencia?</label>
+        <input type="text" formControlName="notes">
+
+        <input type="submit" value="Crear">
+
+    </form>
+
+</section>
