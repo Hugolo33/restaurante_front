@@ -1,4 +1,4 @@
-<header class="container">
+<header class="container-fluid">
     <nav>
         <ul class="navigate">
             <li [routerLink]="['/']">Home</li>
@@ -10,9 +10,9 @@
             <p [routerLink]="['/']">casa Miranda</p>
         </div>
         <ul class="users">
-            <li [routerLink]="['/register']" *ngIf="!usersService.isLogged()">Register</li>
-            <li [routerLink]="['/login']" *ngIf="!usersService.isLogged()">Sign in</li>
-            <li (click)="onClickLogout()" *ngIf="usersService.isLogged()">Logout</li>
+            <li class="buttonCustom" [routerLink]="['/register']" *ngIf="!usersService.isLogged()">Register</li>
+            <li class="buttonCustom" [routerLink]="['/login']" *ngIf="!usersService.isLogged()">Sign in</li>
+            <li class="buttonCustom" (click)="onClickLogout()" *ngIf="usersService.isLogged()">Logout</li>
         </ul>
     </nav>
     <div class="line"></div>

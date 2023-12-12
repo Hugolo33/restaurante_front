@@ -1,26 +1,28 @@
+header {
+    position: fixed;
+    width: 100vw;
+    top: 0;
+}
+
 nav {
     background-color: var(--bg-color);
     font-weight: 300;
     line-height: normal;
     color: var(--main-color);
-    gap: 1.875rem;
     display: flex;
-    align-items: baseline;
+    align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
 
     & ul {
-        list-style: none;
         display: flex;
-        padding-left: 0rem;
-        gap: 1.875rem;
+        margin: 0rem;
     }
 
     & li,
     p {
-        margin-bottom: 0rem;
         cursor: pointer;
-        padding: var(--main-padding) 0
+        margin: var(--main-padding) 0;
     }
 }
 

@@ -10,6 +10,7 @@ font-family: 'Syne', sans-serif;
  */
 
 :root {
+
     /* Colors */
     --main-color: #713636;
     --secondary-color: #3E5048;
@@ -17,6 +18,7 @@ font-family: 'Syne', sans-serif;
 
     --bg-color: #F5F5F4;
 
+    --white: #ffffff;
     --light-grey: #E8E8E8;
     --dark-grey: #969696;
     --black: #1A1A1A;
@@ -49,32 +51,20 @@ body {
 }
 
 
+
+
 /* Clases Globales */
 
-.buttonCustom {
-    padding: 0.75rem 1.875rem;
-    border-radius: 1.6875rem;
-    border: 1px solid var(--main-color);
-}
 
 .logo {
     color: var(--main-color);
     text-align: center;
     font-family: 'Baskervville', serif;
-    font-size: 2.625rem;
+    font-size: 2.2rem;
     font-style: normal;
     line-height: normal;
     letter-spacing: -0.0525rem;
-}
-
-html,
-body {
-    height: 100%;
-}
-
-body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    transform: translateY(-3px);
 }
 
 .line {
@@ -82,4 +72,108 @@ body {
     height: 1px;
     width: 100%;
     margin: 0 auto;
+}
+
+.form-box-users {
+    width: 40vw;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem 4rem;
+    border-radius: var(--main-B-Radius);
+    background-color: var(--secondary-color);
+}
+
+.buttonCustom {
+    padding: 0.5rem 1.875rem;
+    margin: var(--main-padding) 0;
+    border-radius: 1.6875rem;
+    border: 1px solid var(--main-color);
+    transition: 0.4s;
+
+    &:hover {
+        background-color: var(--main-color);
+        color: var(--light-grey);
+    }
+}
+
+.form-button {
+    padding: 0.5rem 1.875rem;
+    margin: var(--main-padding) 0;
+    border-radius: 1.6875rem;
+    border: 1px solid var(--white);
+    transition: 0.4s;
+    background-color: var(--secondary-color);
+    color: var(--white);
+
+    &:hover {
+        background-color: var(--white);
+        color: var(--secondary-color);
+    }
+
+}
+
+.form-title {
+    color: white;
+    font-family: Baskervville;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding-bottom: 2.5rem;
+    text-align: center;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    color: var(--secondary-color);
+    font-weight: 300;
+}
+
+
+.section-title {}
+
+.menu-title {}
+
+.menu-elem {}
+
+
+
+
+/* Clases Bootstrap Editadas */
+
+.container-fluid {
+    --bs-gutter-x: var(--main-padding);
+    padding-right: var(--main-padding);
+    padding-left: var(--main-padding);
+}
+
+.form-control {
+    border-radius: 20rem;
+    padding: .6rem .75rem;
+    margin-top: 0.6rem;
+}
+
+.mb-3 {
+    margin-bottom: 0rem !important;
+}
+
+
+
+
+/* Etiquetas Globales */
+
+ul {
+    list-style: none;
+    padding-left: 0rem;
+    gap: var(--main-padding);
+}
+
+p {
+    margin-bottom: 0rem;
+}
+
+label {
+    display: block;
 }
