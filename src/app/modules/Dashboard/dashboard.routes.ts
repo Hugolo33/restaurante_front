@@ -8,6 +8,7 @@ import { DbShiftsComponent } from "./components/db-shifts/db-shifts.component";
 import { DbReviewComponent } from "./components/db-review/db-review.component";
 import { DbNewReservationComponent } from "./components/db-new-reservation/db-new-reservation.component";
 import { DbReservationListComponent } from "./components/db-reservation-list/db-reservation-list.component";
+import { DbSpotsComponent } from "./components/db-spots/db-spots.component";
 
 const routes: Routes = [
     { path: "", component: DashboardComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
     { path: "reservationlist", component: DbReservationListComponent },
     { path: "menu", component: DbMenuComponent },
     { path: "review", component: DbReviewComponent },
+    { path: "spots", component: DbSpotsComponent },
     { path: "shifts", component: DbShiftsComponent }
 ]
 
