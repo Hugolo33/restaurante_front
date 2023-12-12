@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Menu } from 'src/app/core/interfaces/menu.interface';
 import { MenuService } from 'src/app/core/services/menu.service';
 
 
@@ -13,6 +14,9 @@ export class DbMenuComponent {
   formulario: FormGroup;
 
   menuService = inject(MenuService)
+
+  menus: Menu[] = []
+
 
   constructor() {
     this.formulario = new FormGroup({
@@ -34,6 +38,18 @@ export class DbMenuComponent {
       
     }
     
+  }
+
+  async ngOnInit() {
+    try {
+      const response = await this.menuService.getAll()
+      console.log(response);
+      this.menus = response
+      
+    } catch (error) {
+      console.log(error);
+      
+    }
   }
 
 }
