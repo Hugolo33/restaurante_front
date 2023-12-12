@@ -1,5 +1,7 @@
-<div class="container">
+<div class="container form-box-users">
     <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <p class="form-title">Register</p>
+
         <div class="mb-3">
             <label class="form-label">Name</label>
             <input type="text" class="form-control" formControlName="name">
@@ -22,5 +24,7 @@
             <label class="form-label">Phone number</label>
             <input type="text" class="form-control" formControlName="phone_number">
         </div>
-        <input type="submit" value="Enviar" class="btn btn-secondary" [disabled]="!formulario.valid">
+        <input type="submit" value="Enviar" class="form-button" [disabled]="!formulario.valid">
     </form>
+</div>
+>>>>>>> featured_styles

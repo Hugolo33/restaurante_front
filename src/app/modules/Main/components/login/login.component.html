@@ -1,18 +1,23 @@
-<div class="container">
+<div class="container form-box-users">
     <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <p class="form-title">Login</p>
 
         <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input type="text" class="form-control" formControlName="email">
+            <label class="form-label"></label>
+            <input type="text" class="form-control" placeholder="User" formControlName="email">
             <p class="error" *ngIf="checkError('email', 'pattern')">
                 Email incorrecto
             </p>
         </div>
         <div class="mb-3">
-            <label class="form-label">Password</label>
-            <input type="text" class="form-control" formControlName="password">
+            <label class="form-label"></label>
+            <input type="text" class="form-control" placeholder="Password" formControlName="password">
         </div>
 
 
-        <input type="submit" value="Enviar" class="btn btn-secondary">
+        <input type="submit" value="Enviar" class="form-button">
     </form>
+</div>
+<div class="form-footer">
+    <p>Regístrate aquí!</p>
+</div>
