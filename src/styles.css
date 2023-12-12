@@ -13,6 +13,8 @@ font-family: 'Syne', sans-serif;
     /* Colors */
     --main-color: #713636;
     --secondary-color: #3E5048;
+    --third-color: rgb(255, 142, 93);
+
     --bg-color: #F5F5F4;
 
     --light-grey: #E8E8E8;
@@ -23,12 +25,21 @@ font-family: 'Syne', sans-serif;
     --main-padding: 1.25rem;
     --double-padding: calc(var(--main-padding) * 2);
 
+    /* Contents */
+    --main-B-Radius: 1.25rem;
+
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 body {

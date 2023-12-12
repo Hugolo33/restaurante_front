@@ -1,7 +1,8 @@
 nav {
+
     display: flex;
     align-items: inherit;
-
+    background-color: var(--bg-color);
     padding-bottom: var(--main-padding);
     font-weight: 300;
     line-height: normal;
