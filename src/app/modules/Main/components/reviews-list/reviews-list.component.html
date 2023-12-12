@@ -1,1 +1,9 @@
-<p>reviews-list works!</p>
+<div class="container">
+    <div>
+        <article *ngFor="let item of arrReviews">
+            <p>Rating: {{item.rating}}</p>
+            <p>Content: {{item.content}}</p>
+            <p>Date: {{item.date_added}}</p>
+        </article>
+    </div>
+</div>
