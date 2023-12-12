@@ -1,12 +1,8 @@
 <aside>
     <nav>
         <ul>
-            <li>New reservation</li>
-            <li>My reservations</li>
-        </ul>
-        <ul>
-            <li>Create review</li>
-            <li>My reviews</li>
+            <li [routerLink]="['/user', 'new-reservation']">New reservation</li>
+            <li [routerLink]="['/user', 'my-reservations']">My reservations</li>
         </ul>
     </nav>
 </aside>
