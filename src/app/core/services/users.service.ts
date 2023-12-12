@@ -24,8 +24,10 @@ export class UsersService {
 
   postLogin(body: { email: string, password: string }) {
 
+
     return firstValueFrom(
       this.httpClient.post<LoginResponse>(this.baseUrl + "/login", body))
+
   }
 
 

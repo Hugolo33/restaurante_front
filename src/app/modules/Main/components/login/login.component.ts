@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/core/services/users.service';
 
@@ -18,7 +18,9 @@ export class LoginComponent {
 
     this.formulario = new FormGroup({
 
-      email: new FormControl(),
+      email: new FormControl(null, [
+        Validators.pattern(/^[\w.-]+@[\w.-]+.[\w.-]+$/)
+      ]),
       password: new FormControl()
 
     })
@@ -35,9 +37,10 @@ export class LoginComponent {
     } catch (error) {
       console.log(error)
     }
+  }
 
-
-
-
+  checkError(controlName: string, erroName: string) {
+    return this.formulario.get(controlName)?.hasError(erroName) &&
+      this.formulario.get(controlName)?.touched
   }
 }

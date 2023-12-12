@@ -1,0 +1,17 @@
+
+<section>
+    <h3>CREA UN NUEVO SHIFT</h3>
+    
+    <form [formGroup]="shift" (ngSubmit)="onSubmit()">
+
+        <label>Time</label>
+        <input type="text" formControlName="time">
+
+        <label>daytime</label>
+        <input type="text" formControlName="daytime">
+
+        <input type="submit">
+
+    </form>
+
+</section>
