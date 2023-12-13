@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { SpotsService } from 'src/app/core/services/spots.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-db-spots-new-spot',
@@ -12,6 +13,8 @@ export class DbSpotsNewSpotComponent {
   spot: FormGroup;
 
   spotService = inject(SpotsService)
+
+  router = inject(Router)
 
   constructor() {
     this.spot = new FormGroup({
@@ -27,6 +30,8 @@ export class DbSpotsNewSpotComponent {
     try {
       const response = await this.spotService.create(this.spot.value)
       console.log(response);
+      
+      const response2 = await this.spotService.getAll()
       
 
     } catch (error) {

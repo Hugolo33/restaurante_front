@@ -17,6 +17,7 @@ import { DbSpotsNewSpotComponent } from './components/db-spots-new-spot/db-spots
 import { DbSpotsSpotListComponent } from './components/db-spots-spot-list/db-spots-spot-list.component';
 
 
+
 @NgModule({
     declarations: [
         DashboardComponent,
@@ -35,7 +36,7 @@ import { DbSpotsSpotListComponent } from './components/db-spots-spot-list/db-spo
     imports: [
         CommonModule,
         DashboardRoutes,
-        ReactiveFormsModule        
+        ReactiveFormsModule      
     ]
 })
 
