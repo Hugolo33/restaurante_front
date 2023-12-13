@@ -1,0 +1,12 @@
+
+<section>
+    <h3>LISTA DE SPOTS</h3>
+
+    <article *ngFor="let spot of spots">
+        <p>Mesa: {{spot.title}}</p>
+        <p>Comensales: {{spot.max_seating}}</p>
+        <p>Detalle: {{spot.details}}</p>
+        <button (click)="edit(spot)">EDITAR</button>
+        <button (click)="erase(spot)">BORRAR</button>
+    </article>
+</section>

@@ -23,5 +23,19 @@ export class DbReviewComponent {
     }    
   }
 
+  async remove(review: Review) {
+    try {
+      const response = await this.reviewsService.remove(review.id);
+      console.log(response);
+
+      const response2 = await this.reviewsService.getAll()
+      this.reviews = response2      
+
+    } catch (error) {
+      console.log(error);
+      
+    }
+  }
+
 
 }
