@@ -25,12 +25,14 @@ export class ReviewFormComponent {
   loggedUser!: DecodedToken
   reservationId!: number
   currentReservation!: Reservation
+  rating: number
 
   constructor() {
     this.formReview = new FormGroup({
       rating: new FormControl(),
       content: new FormControl()
     })
+    this.rating = 5
   }
 
   async ngOnInit() {
@@ -54,6 +56,9 @@ export class ReviewFormComponent {
     this.router.navigate(['/user/my-reservations'])
   }
 
+  onChangeRating($event: any) {
+    this.rating = $event.target.value
+  }
 
 
 }

@@ -1,0 +1,21 @@
+form {
+    color: white
+}
+
+textarea {
+    border-radius: 10px;
+}
+
+.form-box-users {
+    background-color: var(--main-color);
+}
+
+.form-button {
+    background-color: var(--main-color);
+
+
+
+    &:hover {
+        color: var(--main-color);
+    }
+}
