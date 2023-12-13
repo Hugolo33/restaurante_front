@@ -84,9 +84,6 @@ h5 {
 }
 
 
-
-
-
 /* Clases Globales */
 
 
@@ -111,7 +108,15 @@ h5 {
 .menu-box {
     display: flex;
     justify-content: center;
-    padding: 6rem;
+    padding: 16rem;
+}
+
+.review-box {
+    max-width: 500px;
+    padding: 2rem;
+    border-radius: var(--main-B-Radius);
+    border: 1px solid var(--main-color);
+
 }
 
 .form-box-users {
@@ -182,7 +187,7 @@ h5 {
 .section-title {
     color: var(--main-color);
     font-family: var(--main-font);
-    font-size: 3rem;
+    font-size: 2.25rem;
     font-style: normal;
     font-weight: 200;
 }
@@ -225,15 +230,20 @@ h5 {
 
 
 .menu-right {
-    padding: 0 2rem;
+    padding-top: var(--main-padding);
+    padding: var(--main-padding) 2rem 0 2rem;
     border-left: 1px solid var(--main-color);
-    width: 30vw;
+    width: 35vw;
+
+    & div {
+        margin-bottom: var(--main-padding);
+    }
 }
 
 .menu-left {
     padding: 0 2rem;
 
-    width: 30vw;
+    width: 35vw;
     text-align: right;
 }
 
@@ -295,6 +305,7 @@ ul {
 
 p {
     margin-bottom: 0rem;
+    font-weight: 300;
 }
 
 label {
