@@ -15,6 +15,7 @@ import { DbShiftsShiftListComponent } from './components/db-shifts-shift-list/db
 import { DbSpotsComponent } from './components/db-spots/db-spots.component';
 import { DbSpotsNewSpotComponent } from './components/db-spots-new-spot/db-spots-new-spot.component';
 import { DbSpotsSpotListComponent } from './components/db-spots-spot-list/db-spots-spot-list.component';
+import { DbAsideComponent } from './components/db-aside/db-aside.component';
 
 
 
@@ -31,7 +32,8 @@ import { DbSpotsSpotListComponent } from './components/db-spots-spot-list/db-spo
         DbShiftsShiftListComponent,
         DbSpotsComponent,
         DbSpotsNewSpotComponent,
-        DbSpotsSpotListComponent
+        DbSpotsSpotListComponent,
+        DbAsideComponent
     ],
     imports: [
         CommonModule,

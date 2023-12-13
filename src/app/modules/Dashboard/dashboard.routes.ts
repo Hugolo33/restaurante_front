@@ -11,13 +11,15 @@ import { DbReservationListComponent } from "./components/db-reservation-list/db-
 import { DbSpotsComponent } from "./components/db-spots/db-spots.component";
 
 const routes: Routes = [
-    { path: "", component: DashboardComponent },
-    { path: "newreservation", component:DbNewReservationComponent },
-    { path: "reservationlist", component: DbReservationListComponent },
-    { path: "menu", component: DbMenuComponent },
-    { path: "review", component: DbReviewComponent },
-    { path: "spots", component: DbSpotsComponent },
-    { path: "shifts", component: DbShiftsComponent }
+    { path: "", component: DashboardComponent, children:[
+        { path: "newreservation", component:DbNewReservationComponent },
+        { path: "reservationlist", component: DbReservationListComponent },
+        { path: "menu", component: DbMenuComponent },
+        { path: "review", component: DbReviewComponent },
+        { path: "spots", component: DbSpotsComponent },
+        { path: "shifts", component: DbShiftsComponent }
+    ] },
+    
 ]
 
 @NgModule({
