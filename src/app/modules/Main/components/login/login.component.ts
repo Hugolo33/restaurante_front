@@ -1,7 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { JwtServicesService } from 'src/app/core/services/jwt-services.service';
 import { UsersService } from 'src/app/core/services/users.service';
+
+
 
 @Component({
   selector: 'app-login',
@@ -13,6 +16,7 @@ export class LoginComponent {
 
   users = inject(UsersService)
   router = inject(Router)
+  jwtService = inject(JwtServicesService)
 
   constructor() {
 
@@ -33,7 +37,12 @@ export class LoginComponent {
       if (!response.error) {
         localStorage.setItem('token', response.token);
       }
-      this.router.navigate(['/user'])
+      const loggedUser = this.jwtService.DecodeToken(response.token)
+      if (loggedUser.user_role === 'admin') {
+        this.router.navigate(['/dashboard'])
+      } else if (loggedUser.user_role === 'client') {
+        this.router.navigate(['/user'])
+      }
     } catch (error) {
       console.log(error)
     }
