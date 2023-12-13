@@ -9,69 +9,25 @@ import { ReservationsService } from 'src/app/core/services/reservations.service'
 })
 export class DbReservationListComponent {
 
+  reservationsService = inject(ReservationsService)
   arrReservations: Reservation[];
 
-<<<<<<< HEAD
-reservationsService = inject(ReservationsService)
-
-constructor() {
-  this.arrReservations = [
-    {
-      r_date : new Date,
-      diners : 3,
-      notes : "Hola",
-      user_id : 5
-    },
-    {
-      r_date : new Date,
-      diners : 3,
-      notes : "Hello",
-      user_id : 5
-    },
-    {
-      r_date : new Date,
-      diners : 3,
-      notes : "Que tal",
-      user_id : 5
-    },
-    {
-      r_date : new Date,
-      diners : 3,
-      notes : "Hola",
-      user_id : 5
-    },
-    {
-      r_date : new Date,
-      diners : 3,
-      notes : "Hello",
-      user_id : 5
-    },
-    {
-      r_date : new Date,
-      diners : 3,
-      notes : "Que tal",
-      user_id : 5
-    },
-  ]
-}
-=======
   constructor() {
     this.arrReservations = [
 
     ]
   }
->>>>>>> feature-reservation-list
 
-async ngOnInit() {
-  try {
-    const response = await this.reservationsService.getAll()
-    this.arrReservations = response
+  async ngOnInit() {
+    try {
+      const response = await this.reservationsService.getAll()
+      this.arrReservations = response
 
-  } catch (error) {
-    console.log(error);
-    
+    } catch (error) {
+      console.log(error);
+
+    }
   }
-}
 
 
 }

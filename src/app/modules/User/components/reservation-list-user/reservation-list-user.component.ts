@@ -66,7 +66,7 @@ export class ReservationListUserComponent {
           console.log(error);
         }
         swalWithBootstrapButtons.fire({
-          title: "Reservation canceled",
+          title: "Reservation cancelled",
           icon: "success"
         });
       }
