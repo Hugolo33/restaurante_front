@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Shift } from 'src/app/core/interfaces/shift.interface';
 import { ShiftsService } from 'src/app/core/services/shifts.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-db-shifts-shift-list',
@@ -12,6 +13,8 @@ export class DbShiftsShiftListComponent {
   shifts: Shift[] = []
 
   shiftsService = inject(ShiftsService)
+
+  router = inject(Router)
 
   async ngOnInit() {
     try {
@@ -37,15 +40,18 @@ export class DbShiftsShiftListComponent {
     }
   }
 
-  async edit(shift:any) {
-    try {
-      const response = await this.shiftsService.update(shift)
-      console.log(response);
+  edit(shift:any) {
+    const id = shift.id.toString()
+    this.router.navigate(["dashboard/shifts/edit",id])
+
+    // try {
+    //   const response = await this.shiftsService.update(shift)
+    //   console.log(response);
       
-    } catch(error) {
-      console.log(error);
+    // } catch(error) {
+    //   console.log(error);
       
-    }
+    // }
   }
 
 }
