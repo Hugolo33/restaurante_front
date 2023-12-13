@@ -4,12 +4,19 @@
 
 
 /* 
-font-family: 'Baskervville', serif;
 font-family: 'Inter', sans-serif;
+font-family: 'Baskervville', serif;
 font-family: 'Syne', sans-serif;
  */
 
 :root {
+
+
+    /* Typography */
+    --main-font: 'Inter', sans-serif;
+    --secondary-font: 'Baskervville', serif;
+    --joker-font: 'Syne', sans-serif;
+
 
     /* Colors */
     --main-color: #713636;
@@ -46,9 +53,35 @@ img {
 
 body {
     background-color: var(--bg-color);
-    font-family: 'Inter', sans-serif;
+    font-family: var(--main-font);
     font-size: 1rem;
 }
+
+h1 {}
+
+h2 {}
+
+
+h3 {
+    color: var(--main-color);
+    font-family: Syne;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+h4 {}
+
+h5 {
+    color: var(--main-color);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
 
 
 
@@ -59,7 +92,7 @@ body {
 .logo {
     color: var(--main-color);
     text-align: center;
-    font-family: 'Baskervville', serif;
+    font-family: var(--secondary-font);
     font-size: 2.2rem;
     font-style: normal;
     line-height: normal;
@@ -72,6 +105,12 @@ body {
     height: 1px;
     width: 100%;
     margin: 0 auto;
+}
+
+.menu-box {
+    display: flex;
+    justify-content: center;
+    padding: 6rem;
 }
 
 .form-box-users {
@@ -132,13 +171,87 @@ body {
 }
 
 
-.section-title {}
 
-.menu-title {}
+.section-title {
+    color: var(--main-color);
+    font-family: var(--main-font);
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 200;
+}
 
-.menu-elem {}
+.menu-title {
+    color: var(--main-color);
+    font-family: var(--secondary-font);
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: 400;
+    padding-right: 2rem;
+}
+
+.user-title {
+    color: var(--main-color);
+    font-family: var(--secondary-font);
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: 400;
+    padding-right: 2rem;
+}
+
+.admin-title {
+    color: var(--main-color);
+    font-family: var(--main-font);
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: 400;
+    padding-right: 2rem;
+}
+
+.footer-title {
+    color: var(--main-color);
+    font-family: var(--secondary-font);
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: 400;
+    padding-right: 2rem;
+}
 
 
+.menu-right {
+    padding: 0 2rem;
+    border-left: 1px solid var(--main-color);
+    width: 30vw;
+}
+
+.menu-left {
+    padding: 0 2rem;
+
+    width: 30vw;
+    text-align: right;
+}
+
+
+
+.menu-price {}
+
+
+
+.hero-text {
+    color: var(--third-color);
+    font-family: var(--main-font);
+    font-size: 4.125rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 108%;
+    /* 4.455rem */
+    max-width: 50vw;
+    margin: 10rem 0;
+}
+
+.footer-nav {
+    padding: 3rem 0;
+    font-weight: 300;
+}
 
 
 /* Clases Bootstrap Editadas */
