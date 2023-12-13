@@ -1,6 +1,16 @@
-<form action="">
-    <div class="mb-3">
-        <label class="form-label">Nombre</label>
-        <input type="text" class="form-control">
-    </div>
-</form>
+<div class="mb-3">
+    <label class="form-label">Fecha de la Reserva</label>
+    <input type="date" [(ngModel)]="date" />
+</div>
+
+
+<div class="mb-3">
+    <label class="form-label">Turnos disponibles</label>
+    <select name="" id="" [(ngModel)]="time">
+        <option>Seleccione una </option>
+        <option *ngFor="let shift of arrShifts">{{shift.time}}</option>
+    </select>
+
+</div>
+
+<input type="button" name="Mostrar Mesas" value="Mostrar Mesas" (click)="onSubmitDayAndTime()">
