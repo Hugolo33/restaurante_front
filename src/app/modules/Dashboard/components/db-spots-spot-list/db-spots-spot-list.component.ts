@@ -43,8 +43,22 @@ export class DbSpotsSpotListComponent {
     }
   }
 
-  async edit(spot:any) {
+  async add(spot:any) {
     try {
+      
+      spot.max_seating++
+      const response = await this.spotsService.update(spot)
+      console.log(response);
+      
+    } catch(error) {
+      console.log(error);
+      
+    }
+  }
+
+  async subtract(spot:any) {
+    try {
+      spot.max_seating--
       const response = await this.spotsService.update(spot)
       console.log(response);
       
