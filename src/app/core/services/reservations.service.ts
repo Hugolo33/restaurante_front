@@ -15,8 +15,32 @@ export class ReservationsService {
     return firstValueFrom(this.httpClient.get<Reservation[]>(this.baseUrl))
   }
 
+  getAllOrderByShifts(): Promise<Reservation[]> {
+    return firstValueFrom(this.httpClient.get<Reservation[]>(`${this.baseUrl}/byshifts`))
+  }
+
+  getBeforeToday(): Promise<Reservation[]> {
+    return firstValueFrom(this.httpClient.get<Reservation[]>(`${this.baseUrl}/before`))
+  }
+
+  getByUserBeforeToday(userId: number): Promise<Reservation[]> {
+    return firstValueFrom(this.httpClient.get<Reservation[]>(`${this.baseUrl}/before/${userId}`))
+  }
+
+  getByUserAfterToday(userId: number): Promise<Reservation[]> {
+    return firstValueFrom(this.httpClient.get<Reservation[]>(`${this.baseUrl}/after/${userId}`))
+  }
+
+  getAfterToday(): Promise<Reservation[]> {
+    return firstValueFrom(this.httpClient.get<Reservation[]>(`${this.baseUrl}/after`))
+  }
+
   getByUserId(userId: number): Promise<Reservation[]> {
-    return firstValueFrom(this.httpClient.get<Reservation[]>(`${this.baseUrl}/${userId}`))
+    return firstValueFrom(this.httpClient.get<Reservation[]>(`${this.baseUrl}/user/${userId}`))
+  }
+
+  getById(reservationId: number): Promise<Reservation> {
+    return firstValueFrom(this.httpClient.get<Reservation>(`${this.baseUrl}/${reservationId}`))
   }
 
   create(newReservation: Reservation): Promise<Reservation> {
@@ -30,4 +54,11 @@ export class ReservationsService {
   remove(reservationId: number): Promise<Reservation> {
     return firstValueFrom(this.httpClient.delete<Reservation>(`${this.baseUrl}/${reservationId}`))
   }
+
+  async checkReview(reservationId: number): Promise<boolean> {
+    const result: Reservation = await this.getById(reservationId)
+    if (result.review_id) return true
+    else return false
+  }
+
 }

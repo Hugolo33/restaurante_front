@@ -9,6 +9,7 @@ import { ReservationFormComponent } from './components/reservation-form/reservat
 import { UserAsideNavComponent } from './components/user-aside-nav/user-aside-nav.component';
 import { UserReservationsComponent } from './components/user-reservations/user-reservations.component';
 import { ReservationListUserComponent } from './components/reservation-list-user/reservation-list-user.component';
+import { OneReviewComponent } from './components/one-review/one-review.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ReservationListUserComponent } from './components/reservation-list-user
         ReservationFormComponent,
         UserAsideNavComponent,
         UserReservationsComponent,
-        ReservationListUserComponent
+        ReservationListUserComponent,
+        OneReviewComponent
     ],
     imports: [
         CommonModule,

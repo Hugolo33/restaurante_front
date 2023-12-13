@@ -15,19 +15,26 @@ export class ReservationListUserComponent {
 
   router = inject(Router)
   reservationsService = inject(ReservationsService)
-  arrUserRes!: Reservation[]
-  //TODO ESTE ARRAY REALMENTE DEBEN SER DOS DISTINTOS, uno de reservas futuras y otro de reservas pasadas
+  arrReservationsBeforeToday!: Reservation[]
+  arrReservationsAfterToday!: Reservation[]
   jwtservices = inject(JwtServicesService);
   token: string = "";
   loggedUser!: DecodedToken
+
 
 
   async ngOnInit() {
     this.token = localStorage.getItem('token')!;
     this.loggedUser = this.jwtservices.DecodeToken(this.token)
     try {
-      this.arrUserRes = await this.reservationsService.getByUserId(this.loggedUser.user_id)
-      console.log(this.arrUserRes);// esto hay que comprobarlo
+      this.arrReservationsBeforeToday = await this.reservationsService.getByUserBeforeToday(this.loggedUser.user_id)
+      console.log(this.arrReservationsBeforeToday);
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      this.arrReservationsAfterToday = await this.reservationsService.getByUserAfterToday(this.loggedUser.user_id)
+      console.log(this.arrReservationsAfterToday);
     } catch (error) {
       console.log(error);
     }
@@ -35,11 +42,6 @@ export class ReservationListUserComponent {
 
   onClickReview(reservationId: number) {
     this.router.navigate([`/user/new-review/${reservationId}`])
-  }
-
-  async onClickUpdate(reservationId: number) {
-    // const response = await this.reservationsService.update(reservationId)
-    // TODO definir cómo vamos a hacer este método
   }
 
   onClickRemove(reservationId: number) {
@@ -51,11 +53,11 @@ export class ReservationListUserComponent {
       buttonsStyling: false
     });
     swalWithBootstrapButtons.fire({
-      title: "Do you want to cancel this reservation?",
+      title: "¿Quieres cancelar esta reserva?",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonText: "Yes, cancel my reservation",
-      cancelButtonText: "I don't want to cancel my reservation",
+      confirmButtonText: "Sí, cancela mi reserva",
+      cancelButtonText: "No quiero cancelar mi reserva",
       reverseButtons: true
     }).then(async (result) => {
       if (result.isConfirmed) {
@@ -71,7 +73,5 @@ export class ReservationListUserComponent {
         });
       }
     });
-
-
   }
 }

@@ -15,6 +15,10 @@ export class ReviewsService {
     return firstValueFrom(this.httpClient.get<Review[]>(this.baseUrl))
   }
 
+  getById(reviewId: number): Promise<Review> {
+    return firstValueFrom(this.httpClient.get<Review>(`${this.baseUrl}/${reviewId}`))
+  }
+
   create(newReview: Review): Promise<Review> {
     return firstValueFrom(this.httpClient.post<Review>(this.baseUrl, newReview))
   }

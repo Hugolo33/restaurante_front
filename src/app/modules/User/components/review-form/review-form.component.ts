@@ -1,8 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Reservation } from 'src/app/core/interfaces/reservation.interface';
 import { DecodedToken } from 'src/app/core/interfaces/token.interface';
 import { JwtServicesService } from 'src/app/core/services/jwt-services.service';
+import { ReservationsService } from 'src/app/core/services/reservations.service';
 import { ReviewsService } from 'src/app/core/services/reviews.service';
 import Swal from 'sweetalert2';
 
@@ -16,11 +18,13 @@ export class ReviewFormComponent {
   private activatedRoute = inject(ActivatedRoute)
   private router = inject(Router)
   reviewsService = inject(ReviewsService)
+  reservationsService = inject(ReservationsService)
   jwt = inject(JwtServicesService)
   formReview: FormGroup
   token: string = "";
   loggedUser!: DecodedToken
   reservationId!: number
+  currentReservation!: Reservation
 
   constructor() {
     this.formReview = new FormGroup({
@@ -29,21 +33,25 @@ export class ReviewFormComponent {
     })
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.token = localStorage.getItem('token')!;
     this.loggedUser = this.jwt.DecodeToken(this.token)
-    this.activatedRoute.params.subscribe(params => {
-      this.reservationId = Number(params)
+    await this.activatedRoute.params.subscribe(params => {
+      this.reservationId = Number(params['reservationId'])
     });
+    this.currentReservation = await this.reservationsService.getById(this.reservationId)
   }
 
   async onSubmit() {
-    this.formReview.value.user_id = await this.loggedUser.user_id
-    this.formReview.value.reservation_id = await this.reservationId
-    this.reviewsService.create(this.formReview.value)
-    Swal.fire("Thank you for your review!");
+    this.formReview.value.user_id = this.loggedUser.user_id
+    this.formReview.value.reservation_id = this.reservationId
+    const newReview = await this.reviewsService.create(this.formReview.value)
+    this.currentReservation.review_id = newReview.id
+    this.currentReservation.r_date = this.currentReservation.r_date.slice(0, 10)
+    const result = await this.reservationsService.update(this.currentReservation)
+    console.log(result);
+    Swal.fire("¡Gracias por tu reseña!");
     this.router.navigate(['/user/my-reservations'])
-    // TODO pendiente de probar que funciona
   }
 
 
