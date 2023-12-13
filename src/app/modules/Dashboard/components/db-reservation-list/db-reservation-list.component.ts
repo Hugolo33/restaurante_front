@@ -8,48 +8,13 @@ import { Reservation } from 'src/app/core/interfaces/reservation.interface';
 })
 export class DbReservationListComponent {
 
-arrReservations: Reservation[];
+  arrReservations: Reservation[];
 
-constructor() {
-  this.arrReservations = [
-    {
-      r_date : new Date,
-      diners : 3,
-      notes : "Hola",
-      user_id : 5
-    },
-    {
-      r_date : new Date,
-      diners : 3,
-      notes : "Hello",
-      user_id : 5
-    },
-    {
-      r_date : new Date,
-      diners : 3,
-      notes : "Que tal",
-      user_id : 5
-    },
-    {
-      r_date : new Date,
-      diners : 3,
-      notes : "Hola",
-      user_id : 5
-    },
-    {
-      r_date : new Date,
-      diners : 3,
-      notes : "Hello",
-      user_id : 5
-    },
-    {
-      r_date : new Date,
-      diners : 3,
-      notes : "Que tal",
-      user_id : 5
-    },
-  ]
-}
+  constructor() {
+    this.arrReservations = [
+
+    ]
+  }
 
 
 
