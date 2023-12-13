@@ -123,6 +123,11 @@ h5 {
     background-color: var(--secondary-color);
 }
 
+
+.error {
+    color: red;
+}
+
 .buttonCustom {
     padding: 0.5rem 1.875rem;
     margin: var(--main-padding) 0;
@@ -144,6 +149,7 @@ h5 {
     transition: 0.4s;
     background-color: var(--secondary-color);
     color: var(--white);
+
 
     &:hover {
         background-color: var(--white);
@@ -273,7 +279,10 @@ h5 {
     margin-bottom: 0rem !important;
 }
 
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
 
+}
 
 
 /* Etiquetas Globales */

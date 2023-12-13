@@ -3,28 +3,32 @@
         <p class="form-title">Register</p>
 
         <div class="mb-3">
-            <label class="form-label">Name</label>
-            <input type="text" class="form-control" formControlName="name">
+            <label class="form-label"></label>
+            <input type="text" class="form-control" placeholder="Name" formControlName="name">
             <p class="error" *ngIf="checkError('nombre', 'required')">
                 Nombre incorrecto
             </p>
         </div>
         <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input type="text" class="form-control" formControlName="email">
+            <label class="form-label"></label>
+            <input type="text" class="form-control" placeholder="Email" formControlName="email">
             <p class="error" *ngIf="checkError('email', 'pattern')">
                 Email incorrecto
             </p>
         </div>
         <div class="mb-3">
-            <label class="form-label">Password</label>
-            <input type="text" class="form-control" formControlName="password">
+            <label class="form-label"></label>
+            <input type="text" class="form-control" placeholder="Password" formControlName="password">
         </div>
         <div class="mb-3">
-            <label class="form-label">Phone number</label>
-            <input type="text" class="form-control" formControlName="phone_number">
+            <label class="form-label"></label>
+            <input type="text" class="form-control" placeholder="Phone Number" formControlName="phone_number">
         </div>
+
         <input type="submit" value="Enviar" class="form-button" [disabled]="!formulario.valid">
+
     </form>
 </div>
->>>>>>> featured_styles
+<div class="form-footer">
+    <p [routerLink]="['/login']">¿Estas registrado ya?</p>
+</div>
