@@ -18,7 +18,7 @@ export class SpotsService {
 
   create(newSpot: Spot): Promise<Spot> {
     return firstValueFrom(this.httpClient.post<Spot>(this.baseUrl, newSpot))
-  } 
+  }
 
   update(updatedSpot: Spot): Promise<Spot> {
     return firstValueFrom(this.httpClient.put<Spot>(`${this.baseUrl}/${updatedSpot.id}`, updatedSpot))
@@ -27,6 +27,11 @@ export class SpotsService {
   remove(spotId: number): Promise<Spot> {
     return firstValueFrom(this.httpClient.delete<Spot>(`${this.baseUrl}/${spotId}`))
   }
+
+  postAllBut(body: any): Promise<Spot[]> {
+    return firstValueFrom(this.httpClient.post<Spot[]>(this.baseUrl + "/but", body))
+  }
+
 
 
 }
