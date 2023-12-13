@@ -5,6 +5,9 @@ GET api/menu
 Trae todos los menús. 
 Necesita token del admin en la cabecera de autorización
 
+GET api/latest
+Trae el menú más reciente de la base de datos.
+
 GET api/menu/:menuId
 Trae un menú por Id. 
 
@@ -17,8 +20,32 @@ GET api/reservations
 Trae todas las reservas
 Necesita token del admin en la cabecera de autorización
 
-GET api/reservations/:userId
+GET api/reservations/byshifts
+Trae todas las reservas ordenadas por turno.
+Necesita token del admin en la cabecera de autorización
+
+GET api/reservations/before
+Trae todas las reservas hasta hoy
+Necesita token del admin en la cabecera de autorización
+
+GET api/reservations/after
+Trae todas las reservas a partir de hoy
+Necesita token del admin en la cabecera de autorización
+
+GET api/reservations/user/:userId
 Trae las reservas de un usuario en concreto. 
+Necesita token en la cabecera de autorización
+
+GET api/reservations/before/:userId
+Trae las reservas de un usuario en concreto antes de hoy.
+Necesita token en la cabecera de autorización
+
+GET api/reservations/after/:userId
+Trae las reservas de un usuario en concreto después de hoy. 
+Necesita token en la cabecera de autorización
+
+GET api/reservations/:reservationId
+Trae una reserva en concreto por id
 Necesita token en la cabecera de autorización
 
 POST api/reservations
