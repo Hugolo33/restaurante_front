@@ -9,7 +9,7 @@ const routes: Routes = [
     { path: '', component: UserComponent },
     { path: 'new-reservation', component: ReservationFormComponent },
     { path: 'my-reservations', component: ReservationListUserComponent },
-    { path: 'new-review', component: ReviewFormComponent },
+    { path: 'new-review/:reservationId', component: ReviewFormComponent },
 ];
 
 @NgModule({
