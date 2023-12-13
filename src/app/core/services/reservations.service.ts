@@ -43,6 +43,12 @@ export class ReservationsService {
     return firstValueFrom(this.httpClient.get<Reservation>(`${this.baseUrl}/${reservationId}`))
   }
 
+
+  postByShiftandDay(body: any): Promise<Reservation[]> {
+    return firstValueFrom(this.httpClient.post<Reservation[]>(`${this.baseUrl}/byshifts`, body));
+
+  }
+
   create(newReservation: Reservation): Promise<Reservation> {
     return firstValueFrom(this.httpClient.post<Reservation>(this.baseUrl, newReservation))
   }
