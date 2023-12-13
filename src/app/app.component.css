@@ -2,7 +2,7 @@ html {
     scroll-behavior: smooth;
 }
 
-.routerOutletContainer {
-    margin-top: 13rem;
+.container {
+    margin-top: 10rem;
     margin-bottom: 6rem;
 }
