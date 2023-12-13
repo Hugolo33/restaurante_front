@@ -1,21 +1,9 @@
-
-section {
-    display: flex;
-    flex-wrap: wrap;
+div {
     gap: 15px;
-    margin: 0 auto;
-    background-color: antiquewhite;
-    padding: 10px;
-}
 
-h3 {
-    width: 100%;
-    text-align: center;
 }
 
 article {
-    width: 32%;
-    border-radius: 10px;
-    border: 2px solid black;
-    padding: 15px;
+    width: calc(33% - 15px);
+
 }

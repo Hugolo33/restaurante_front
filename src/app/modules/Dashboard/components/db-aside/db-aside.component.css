@@ -1,4 +1,4 @@
-nav {
+/* nav {
     background-color: red;
     height: 10vh;
     display: flex;
@@ -21,4 +21,13 @@ li {
     text-align: center;
     font-size: 20px;
     font-weight: bold;
+} */
+
+li {
+    transition: 1s;
+
+    &:hover {
+        text-decoration-line: underline;
+
+    }
 }

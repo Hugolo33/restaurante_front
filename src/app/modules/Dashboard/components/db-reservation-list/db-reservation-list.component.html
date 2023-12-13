@@ -1,11 +1,13 @@
-
-
 <section>
-    <h3>LISTA DE RESERVAS</h3>
+    <h3 class="section-title">LISTA DE RESERVAS</h3>
 
-    <article *ngFor="let reservation of arrReservations">
-        <p>{{reservation.r_date | date}}</p>
-        <p>{{reservation.diners}}</p>
-        <p>{{reservation.notes}}</p>
-    </article>
+    <div class="d-flex flex-wrap">
+        <article *ngFor="let reservation of arrReservations">
+            <div class="review-box">
+                <p>{{reservation.r_date | date}}</p>
+                <p>{{reservation.diners}}</p>
+                <p>{{reservation.notes}}</p>
+            </div>
+        </article>
+    </div>
 </section>

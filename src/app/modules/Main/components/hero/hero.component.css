@@ -13,3 +13,7 @@ img {
     border-radius: var(--main-B-Radius);
 
 }
+
+h2 {
+    margin-top: 3em;
+}
