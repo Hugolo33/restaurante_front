@@ -24,12 +24,12 @@ export class DbSpotsSpotListComponent {
     }
   }
 
-  async erase(shift:any) {
+  async erase(spot:any) {
     try {
-      console.log("esto es shift.id");           
-      console.log(shift.id);      
+      console.log("esto es spot.id");           
+      console.log(spot.id);      
 
-      const response = await this.spotsService.remove(shift.id)
+      const response = await this.spotsService.remove(spot.id)
       console.log(response);
       
     } catch (error) {
@@ -37,9 +37,9 @@ export class DbSpotsSpotListComponent {
     }
   }
 
-  async edit(shift:any) {
+  async edit(spot:any) {
     try {
-      const response = await this.spotsService.update(shift)
+      const response = await this.spotsService.update(spot)
       console.log(response);
       
     } catch(error) {
