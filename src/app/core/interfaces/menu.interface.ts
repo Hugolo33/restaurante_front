@@ -3,4 +3,6 @@ export interface Menu {
     m_date: string;
     first_course: string;
     main_course: string;
+    dessert: string;
+    price: Number;
 }
