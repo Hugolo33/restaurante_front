@@ -13,6 +13,8 @@ import { DbReservationListComponent } from './components/db-reservation-list/db-
 import { DbShiftsNewShiftComponent } from './components/db-shifts-new-shift/db-shifts-new-shift.component';
 import { DbShiftsShiftListComponent } from './components/db-shifts-shift-list/db-shifts-shift-list.component';
 import { DbSpotsComponent } from './components/db-spots/db-spots.component';
+import { DbSpotsNewSpotComponent } from './components/db-spots-new-spot/db-spots-new-spot.component';
+import { DbSpotsSpotListComponent } from './components/db-spots-spot-list/db-spots-spot-list.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { DbSpotsComponent } from './components/db-spots/db-spots.component';
         DbReservationListComponent,
         DbShiftsNewShiftComponent,
         DbShiftsShiftListComponent,
-        DbSpotsComponent
+        DbSpotsComponent,
+        DbSpotsNewSpotComponent,
+        DbSpotsSpotListComponent
     ],
     imports: [
         CommonModule,

@@ -1,0 +1,12 @@
+
+<section>
+    <h3>LISTA DE SHIFTS</h3>
+
+    <article *ngFor="let spot of spots">
+        <p>{{spot.title}}</p>
+        <p>{{spot.max_seating}}</p>
+        <p>{{spot.details}}</p>
+        <button (click)="edit(spot)">EDITAR</button>
+        <button (click)="erase(spot)">BORRAR</button>
+    </article>
+</section>

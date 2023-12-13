@@ -1,0 +1,20 @@
+
+<section>
+    <h3>CREA UN NUEVO SPOT</h3>
+    
+    <form [formGroup]="spot" (ngSubmit)="onSubmit()">
+
+        <label>Titulo</label>
+        <input type="text" formControlName="title">
+
+        <label>Comensales Max</label>
+        <input type="text" formControlName="max_seating">
+
+        <label>Detalles</label>
+        <input type="text" formControlName="details">
+
+        <input type="submit">
+
+    </form>
+    
+</section>
