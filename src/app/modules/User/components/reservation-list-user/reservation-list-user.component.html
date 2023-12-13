@@ -1,1 +1,18 @@
-<p>reservation-list-user works!</p>
+<!--este es el de las reservas futuras-->
+<article *ngFor="let r of arrUserRes">
+    <p>{{r.r_date}}</p>
+    <p><!--aquí hay que meter la hora del shift--></p>
+    <p>diners: {{r.diners}}</p>
+    <p>notes: {{r.notes}}</p>
+    <div><i class="fa-regular fa-pen-to-square" style="color: #713636;" (click)="onClickUpdate(r.id!)"></i></div>
+    <div><i class="fa-solid fa-ban" style="color: #713636;" (click)="onClickRemove(r.id!)"></i></div>
+</article>
+
+<!--este es el de las reservas pasadas-->
+<article *ngFor="let r of arrUserRes">
+    <p>{{r.r_date}}</p>
+    <p><!--aquí hay que meter la hora del shift--></p>
+    <p>diners: {{r.diners}}</p>
+    <p>notes: {{r.notes}}</p>
+    <div class="buttonCustom" (click)="onClickReview(r.id!)">Add review</div>
+</article>

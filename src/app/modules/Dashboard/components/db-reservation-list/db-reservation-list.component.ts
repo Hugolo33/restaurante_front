@@ -9,8 +9,9 @@ import { ReservationsService } from 'src/app/core/services/reservations.service'
 })
 export class DbReservationListComponent {
 
-arrReservations: Reservation[];
+  arrReservations: Reservation[];
 
+<<<<<<< HEAD
 reservationsService = inject(ReservationsService)
 
 constructor() {
@@ -53,6 +54,13 @@ constructor() {
     },
   ]
 }
+=======
+  constructor() {
+    this.arrReservations = [
+
+    ]
+  }
+>>>>>>> feature-reservation-list
 
 async ngOnInit() {
   try {
