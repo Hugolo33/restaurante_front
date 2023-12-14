@@ -1,6 +1,5 @@
 h3 {
     margin-bottom: 3rem;
-
 }
 
 .map {
@@ -9,4 +8,10 @@ h3 {
     -ms-filter: grayscale(100%);
     -o-filter: grayscale(100%);
     filter: grayscale(100%);
+    border-radius: var(--main-B-Radius);
+}
+
+.map-box {
+    text-align: right;
+    width: calc(50vw - var(--main-padding));
 }

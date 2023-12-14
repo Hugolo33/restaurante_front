@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Inter:wght@200;300;400;500&family=Syne:wght@400;500;600;700&display=swap');
-@import url('https: //cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+
+
 
 /* 
 font-family: 'Inter', sans-serif;
@@ -318,7 +320,6 @@ h5 {
     display: inline-block;
     position: relative;
     transition: 0.5s;
-
 }
 
 .hover-underline-animation::after {
@@ -332,14 +333,11 @@ h5 {
     background-color: var(--main-color);
     transform-origin: bottom left;
     transition: transform 0.33s cubic-bezier(.65, .05, .36, 1);
-
 }
 
 .hover-underline-animation:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
-
-
 }
 
 
@@ -390,8 +388,6 @@ ul {
     gap: var(--main-padding);
     cursor: pointer;
     transition: 0.5s;
-
-
 }
 
 p {
