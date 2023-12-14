@@ -1,0 +1,17 @@
+.review-box {
+    color: var(--bg-color);
+    background-color: var(--secondary-color);
+    border: 0px;
+    flex: 1;
+}
+
+small {
+    font-size: 0.625rem;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+}
