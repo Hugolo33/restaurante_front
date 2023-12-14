@@ -1,21 +1,34 @@
 <h2 class="section-title">Mis reservas</h2>
 
-<h4>Próximas</h4>
+<h4 class="pb-3">Próximas</h4>
 <article *ngFor="let r of arrReservationsAfterToday">
-    <p>{{r.r_date | date: 'dd/MM/yyyy'}} {{r.time!.slice(0,5)}}</p>
-    <p>comensales: {{r.diners}}</p>
-    <p>comentarios: {{r.notes}}</p>
-    <div><i class="fa-solid fa-ban" style="color: #713636;" (click)="onClickRemove(r.id!)"></i></div>
+    <div class="flex">
+        <p><strong>{{r.r_date | date: 'dd/MM/yyyy'}} {{r.time!.slice(0,5)}}</strong></p>
+        <p>comensales: {{r.diners}}</p>
+        <p>comentarios: {{r.notes}}</p>
+        <div class="right" (click)="onClickRemove(r.id!)">
+            <span class="material-symbols-outlined">
+                cancel
+            </span>
+        </div>
+    </div>
+    <div class="line mt-1 mb-2"></div>
 </article>
 
-<h4>Pasadas</h4>
+<h4 class="pt-3">Pasadas</h4>
 <article *ngFor="let r of arrReservationsBeforeToday">
-    <p>{{r.r_date | date: 'dd/MM/yyyy'}} {{r.time!.slice(0,5)}}</p>
-    <p>comensales: {{r.diners}}</p>
-    <p>comentarios: {{r.notes}}</p>
-    <div class="buttonCustom" (click)="onClickReview(r.id!)" *ngIf="!r.review_id">Add
-        review</div>
-    <div *ngIf="r.review_id">Mi reseña:
+    <div class="flex">
+        <p><strong>{{r.r_date | date: 'dd/MM/yyyy'}} {{r.time!.slice(0,5)}}</strong></p>
+        <p>comensales: {{r.diners}}</p>
+        <p>comentarios: {{r.notes}}</p>
+        <div class="right">
+            <button class="buttonCustom" (click)="onClickReview(r.id!)" *ngIf="!r.review_id">Añadir reseña</button>
+        </div>
+
+    </div>
+    <div *ngIf="r.review_id" class="pt-2 pb-2 flex">Mi reseña:
         <one-review [reviewId]="r.review_id"></one-review>
     </div>
+    <div class="line"></div>
+
 </article>

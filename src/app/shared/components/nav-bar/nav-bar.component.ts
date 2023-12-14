@@ -16,7 +16,7 @@ export class NavBarComponent {
 
   onClickReservation() {
     if (this.usersService.isLogged()) {
-      this.router.navigate(['/user'])
+      this.router.navigate(['user/my-reservations/my-reservations'])
     } else {
       Swal.fire(
         "Please login to make a reservation"

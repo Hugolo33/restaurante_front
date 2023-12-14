@@ -1,2 +1,14 @@
-<user-aside-nav></user-aside-nav>
-<user-reservations></user-reservations>
+<div>
+    <div class="aside-nav">
+        <div>
+            <p>Usuario</p>
+            <h3 class="user-title">{{userName}}</h3>
+        </div>
+
+        <user-aside-nav></user-aside-nav>
+    </div>
+    <div class="container-reduction">
+        <router-outlet></router-outlet>
+    </div>
+
+</div>
