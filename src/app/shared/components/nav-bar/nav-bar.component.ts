@@ -51,7 +51,9 @@ export class NavBarComponent {
         Swal.fire({
           text: "Succesfully logged out",
           icon: "success",
-          confirmButtonColor: "var(--secondary-color)"
+          confirmButtonColor: "var(--secondary-color)",
+          color: "var(--main-color)",
+          background: "var(--bg-color)"
         });
       }
     });
