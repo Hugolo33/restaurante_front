@@ -63,7 +63,7 @@ export class DbMenuComponent {
 
   send(menu:any) {
     console.log(menu);
-    const id = menu.id
+    const id = menu.id.toString()
     this.router.navigate(["/dashboard/menureload",id])
   }
 

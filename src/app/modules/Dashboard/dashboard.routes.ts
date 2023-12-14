@@ -17,6 +17,7 @@ const routes: Routes = [
         path: "", component: DashboardComponent, children: [
             { path: "newreservation", component: DbNewReservationComponent },
             { path: "reservationlist", component: DbReservationListComponent },
+            { path: "menureload/:menuId", component:DbMenuReloadComponent },
             { path: "menu", component: DbMenuComponent },
             { path: "review", component: DbReviewComponent },
             { path: "spots", component: DbSpotsComponent },

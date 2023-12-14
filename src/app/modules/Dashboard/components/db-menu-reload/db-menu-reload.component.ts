@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Menu } from 'src/app/core/interfaces/menu.interface';
 import { MenuService } from 'src/app/core/services/menu.service';
 
@@ -22,6 +22,8 @@ export class DbMenuReloadComponent {
 
   newDate!:string;
 
+  router = inject(Router)
+
   async ngOnInit() {
     try {
       this.activatedRoute.params.subscribe((params) => {
@@ -38,7 +40,8 @@ export class DbMenuReloadComponent {
 
   async send() {
     this.newMenu.m_date = this.newDate
-    const response = await this.menuService.create(this.newMenu) 
+    const response = await this.menuService.create(this.newMenu)
+    this.router.navigate(["/dashboard/menu"])
   }
 
 }
