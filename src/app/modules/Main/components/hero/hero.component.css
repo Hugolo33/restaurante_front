@@ -6,8 +6,9 @@
     & figure {
         width: calc(100vw - var(--double-padding));
     }
-
 }
+
+
 
 img {
     border-radius: var(--main-B-Radius);
@@ -15,5 +16,5 @@ img {
 }
 
 h2 {
-    margin-top: 3em;
+    margin-top: 3.5em;
 }

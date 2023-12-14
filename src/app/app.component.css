@@ -2,15 +2,8 @@ html {
     scroll-behavior: smooth;
 }
 
-header {
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    max-width: 1400px;
-    margin: 0 auto;
-}
 
 .container-margin {
-    margin-top: 10rem;
+    margin-top: 7.5rem;
     margin-bottom: 6rem;
 }

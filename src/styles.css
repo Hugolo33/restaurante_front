@@ -89,7 +89,7 @@ h5 {
 
 .wrapper {
     width: auto;
-    max-width: 1400px;
+    max-width: 1800px;
     margin: 0 auto;
 }
 
@@ -98,6 +98,7 @@ h5 {
     max-width: 800px;
     margin: 0 auto;
 }
+
 
 .aside-nav {
 
@@ -169,8 +170,13 @@ h5 {
     background-color: var(--secondary-color);
 }
 
+.form-box-admin {
+    padding-top: 2.6rem;
 
-/* BUTTONS */
+}
+
+
+/* BUTTONS AND FORMS */
 
 
 .buttonCustom {
@@ -180,6 +186,7 @@ h5 {
     border: 1px solid var(--main-color);
     transition: 0.4s;
     cursor: pointer;
+    background-color: #ffffff00;
 
     &:hover {
         background-color: var(--main-color);
@@ -202,8 +209,10 @@ h5 {
         background-color: var(--white);
         color: var(--secondary-color);
     }
-
 }
+
+
+
 
 
 /* TITLES */
@@ -342,6 +351,8 @@ h5 {
     margin-top: 0.6rem;
 }
 
+
+
 .mb-3 {
     margin-bottom: 0rem !important;
 }
@@ -355,6 +366,14 @@ input.ng-invalid.ng-touched {
 
 /* //////////// */
 /* Etiquetas Globales */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    max-width: 1800px;
+    margin: 0 auto;
+}
 
 ul {
     list-style: none;

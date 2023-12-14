@@ -1,17 +1,23 @@
+<div class="form-box-admin">
+    <section>
+        <h3 class="section-title">Nuevo turno</h3>
 
-<section>
-    <h3>CREA UN NUEVO SHIFT</h3>
-    
-    <form [formGroup]="shift" (ngSubmit)="onSubmit()">
+        <form [formGroup]="shift" (ngSubmit)="onSubmit()">
 
-        <label>Time</label>
-        <input type="text" formControlName="time">
+            <div class="mb-3">
+                <label class="form-label"></label>
+                <input class="form-control editLine" type="text" placeholder="Hora" formControlName="time">
+            </div>
 
-        <label>daytime</label>
-        <input type="text" formControlName="daytime">
+            <div class="mb-3">
+                <label class="form-label"></label>
+                <input class="form-control editLine" type="text" placeholder="Nombre (Day time)"
+                    formControlName="daytime">
+            </div>
 
-        <input type="submit">
+            <input class="buttonCustom" type="submit">
 
-    </form>
+        </form>
 
-</section>
+    </section>
+</div>
