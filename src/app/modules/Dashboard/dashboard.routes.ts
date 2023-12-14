@@ -10,12 +10,14 @@ import { DbNewReservationComponent } from "./components/db-new-reservation/db-ne
 import { DbReservationListComponent } from "./components/db-reservation-list/db-reservation-list.component";
 import { DbSpotsComponent } from "./components/db-spots/db-spots.component";
 import { DbShiftsShiftEditComponent } from "./components/db-shifts-shift-edit/db-shifts-shift-edit.component";
+import { DbMenuReloadComponent } from "./components/db-menu-reload/db-menu-reload.component";
 
 const routes: Routes = [
     { path: "", component: DashboardComponent, children:[
         { path: "newreservation", component:DbNewReservationComponent },
-        { path: "reservationlist", component: DbReservationListComponent },
+        { path: "reservationlist", component: DbReservationListComponent },        
         { path: "menu", component: DbMenuComponent },
+        { path: "menureload/:menuId", component: DbMenuReloadComponent },
         { path: "review", component: DbReviewComponent },
         { path: "spots", component: DbSpotsComponent },
         { path: "shifts", component: DbShiftsComponent },

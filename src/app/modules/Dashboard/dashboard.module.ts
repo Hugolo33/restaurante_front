@@ -7,7 +7,7 @@ import { DbMenuComponent } from "./components/db-menu/db-menu.component";
 import { DbReviewComponent } from "./components/db-review/db-review.component";
 import { DbShiftsComponent } from "./components/db-shifts/db-shifts.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { DbNewReservationComponent } from './components/db-new-reservation/db-new-reservation.component';
 import { DbReservationListComponent } from './components/db-reservation-list/db-reservation-list.component';
 import { DbShiftsNewShiftComponent } from './components/db-shifts-new-shift/db-shifts-new-shift.component';
@@ -17,6 +17,7 @@ import { DbSpotsNewSpotComponent } from './components/db-spots-new-spot/db-spots
 import { DbSpotsSpotListComponent } from './components/db-spots-spot-list/db-spots-spot-list.component';
 import { DbAsideComponent } from './components/db-aside/db-aside.component';
 import { DbShiftsShiftEditComponent } from './components/db-shifts-shift-edit/db-shifts-shift-edit.component';
+import { DbMenuReloadComponent } from './components/db-menu-reload/db-menu-reload.component';
 
 
 
@@ -35,12 +36,14 @@ import { DbShiftsShiftEditComponent } from './components/db-shifts-shift-edit/db
         DbSpotsNewSpotComponent,
         DbSpotsSpotListComponent,
         DbAsideComponent,
-        DbShiftsShiftEditComponent
+        DbShiftsShiftEditComponent,
+        DbMenuReloadComponent
     ],
     imports: [
         CommonModule,
         DashboardRoutes,
-        ReactiveFormsModule      
+        ReactiveFormsModule,
+        FormsModule      
     ]
 })
 

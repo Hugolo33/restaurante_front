@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Menu } from 'src/app/core/interfaces/menu.interface';
 import { MenuService } from 'src/app/core/services/menu.service';
 
@@ -16,6 +17,10 @@ export class DbMenuComponent {
   menuService = inject(MenuService)
 
   menus: Menu[] = []
+
+  router = inject(Router)
+
+  
 
 
   constructor() {
@@ -55,5 +60,14 @@ export class DbMenuComponent {
       
     }
   }
+
+  send(menu:any) {
+    console.log(menu);
+    const id = menu.id
+    this.router.navigate(["/dashboard/menureload",id])
+  }
+
+
+  
 
 }
