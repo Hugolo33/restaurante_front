@@ -18,6 +18,10 @@ export class UsersService {
     return firstValueFrom(this.httpClient.get<User[]>(this.baseUrl))
   }
 
+  getById(userId: number): Promise<User> {
+    return firstValueFrom(this.httpClient.get<User>(`${this.baseUrl}/${userId}`))
+  }
+
   create(newUser: User): Promise<User> {
     return firstValueFrom(this.httpClient.post<User>(this.baseUrl + '/register', newUser))
   }

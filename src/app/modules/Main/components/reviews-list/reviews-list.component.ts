@@ -13,8 +13,11 @@ export class ReviewsListComponent {
   arrReviews!: Review[]
 
   async ngOnInit() {
-    this.arrReviews = await this.reviewsService.getAll()
-    //Comprobado, funciona
+    try {
+      this.arrReviews = await this.reviewsService.getLatestFour()
+    } catch (error) {
+      console.log(error);
+    }
   }
 
 }

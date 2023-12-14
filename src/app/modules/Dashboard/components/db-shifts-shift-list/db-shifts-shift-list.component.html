@@ -2,7 +2,6 @@
     <h3 class="section-title">Turnos</h3>
 
     <article *ngFor="let shift of shifts">
-        <p>{{shift.id}}</p>
         <p>{{shift.time}}</p>
         <p>{{shift.daytime}}</p>
         <button (click)="edit(shift)">EDITAR</button>
