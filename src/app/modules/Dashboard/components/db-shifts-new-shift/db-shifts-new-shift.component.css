@@ -1,4 +1,15 @@
-form input.editLine {
+.buttonCustom {
+    margin-top: 2rem;
+
+}
+
+.section-title {
+    margin-bottom: 1.5rem;
+}
+
+
+
+/* form input.editLine {
     border-radius: 0px;
     border-left: 0px;
     border-right: 0px;
@@ -23,12 +34,4 @@ form input.editLine:focus {
 
 form input::placeholder {
     color: var(--black);
-}
-
-.buttonCustom {
-    margin-top: 3rem;
-}
-
-.section-title {
-    margin-bottom: 1.5rem;
-}
+} */

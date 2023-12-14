@@ -12,16 +12,18 @@ import { DbSpotsComponent } from "./components/db-spots/db-spots.component";
 import { DbShiftsShiftEditComponent } from "./components/db-shifts-shift-edit/db-shifts-shift-edit.component";
 
 const routes: Routes = [
-    { path: "", component: DashboardComponent, children:[
-        { path: "newreservation", component:DbNewReservationComponent },
-        { path: "reservationlist", component: DbReservationListComponent },
-        { path: "menu", component: DbMenuComponent },
-        { path: "review", component: DbReviewComponent },
-        { path: "spots", component: DbSpotsComponent },
-        { path: "shifts", component: DbShiftsComponent },
-        { path: "shifts/edit/:shiftId", component: DbShiftsShiftEditComponent }
-    ] },
-    
+    {
+        path: "", component: DashboardComponent, children: [
+            { path: "newreservation", component: DbNewReservationComponent },
+            { path: "reservationlist", component: DbReservationListComponent },
+            { path: "menu", component: DbMenuComponent },
+            { path: "review", component: DbReviewComponent },
+            { path: "spots", component: DbSpotsComponent },
+            { path: "shifts", component: DbShiftsComponent },
+            { path: "shifts/edit/:shiftId", component: DbShiftsShiftEditComponent }
+        ]
+    },
+
 ]
 
 @NgModule({

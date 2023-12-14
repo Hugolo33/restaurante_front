@@ -101,7 +101,6 @@ h5 {
 
 
 .aside-nav {
-
     position: fixed;
     font-weight: 300;
     line-height: 190%;
@@ -345,12 +344,14 @@ h5 {
     padding-left: var(--main-padding);
 }
 
+
 .form-control {
     border-radius: 20rem;
-    padding: .6rem .75rem;
+    padding: .6rem 1rem;
     margin-top: 0.6rem;
 }
 
+.form-floating {}
 
 
 .mb-3 {
@@ -373,6 +374,7 @@ header {
     width: 100vw;
     max-width: 1800px;
     margin: 0 auto;
+    z-index: 3;
 }
 
 ul {
