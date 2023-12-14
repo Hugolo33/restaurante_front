@@ -29,5 +29,21 @@ export class DbReservationListComponent {
     }
   }
 
+  async cancelReservation(reservation: Reservation) {
+    try {
+      console.log(reservation.id);
+      
+      const response = await this.reservationsService.remove(reservation.id!)
+      console.log(response);
+
+      const response2 = await this.reservationsService.getAll()
+      this.arrReservations = response2
+      
+    } catch (error) {
+      console.log(error);
+      
+    }
+  }
+
 
 }

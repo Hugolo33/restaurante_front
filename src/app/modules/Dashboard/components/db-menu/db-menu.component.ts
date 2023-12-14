@@ -20,9 +20,11 @@ export class DbMenuComponent {
 
   constructor() {
     this.formulario = new FormGroup({
-      date: new FormControl(),
+      m_date: new FormControl(),
       first_course: new FormControl(),
-      main_course: new FormControl()
+      main_course: new FormControl(),
+      dessert: new FormControl(),
+      price: new FormControl()
     })
   }
 
@@ -32,6 +34,9 @@ export class DbMenuComponent {
     try {
       const response = await this.menuService.create(this.formulario.value)
       console.log(response);
+
+      const response2 = await this.menuService.getAll()      
+      this.menus = response2
       
     } catch (error) {
       console.log(error);
@@ -42,8 +47,7 @@ export class DbMenuComponent {
 
   async ngOnInit() {
     try {
-      const response = await this.menuService.getAll()
-      console.log(response);
+      const response = await this.menuService.getAll()      
       this.menus = response
       
     } catch (error) {
