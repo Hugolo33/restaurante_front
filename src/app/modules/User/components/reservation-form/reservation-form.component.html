@@ -8,20 +8,22 @@
     <label class="form-label">Turnos disponibles</label>
     <select name="" id="" [(ngModel)]="time">
         <option>Seleccione una </option>
-        <option *ngFor="let shift of arrShifts" name="">{{shift.time}}</option>
+        <option *ngFor="let shift of arrShifts" [value]="shift.time+'-'+shift.id">{{shift.time}}</option>
     </select>
 
 </div>
 
 <input type="button" name="Mostrar Mesas" value="Mostrar Mesas" (click)="onSubmitDayAndTime()">
-
+<div *ngIf="!showNoTables">
+    <p>No hay mesas disponibles</p>
+</div>
 <div class="d-flex flex-column" *ngIf="!show">
 
     <label class="form-label">Elegir Mesa Disponible</label>
 
     <select [(ngModel)]="chosenSpot" (change)="showCreateReservation()">
-        <!-- <option selected="selected" disabled="disabled">Elegir Mesa Disponible</option> -->
-        <option value="" *ngFor="let spot of avaibleSpots">
+
+        <option [value]="spot.id+'-'+spot.max_seating" *ngFor="let spot of avaibleSpots">
             <p>{{spot.id}}/// </p>
             <p>{{spot.title}} /// </p>
             <p>Comensales maximos:{{spot.max_seating}} ///</p>

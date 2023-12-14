@@ -20,14 +20,9 @@ export class ReservationFormComponent {
   time: string = "00:00:00";
   show: boolean = true;
   showReservation: boolean = true;
-  chosenSpot: Spot = {
-    id: 99,
-    title: "",
-    max_seating: 99,
-    details: ""
-  };
+  chosenSpot: string = '';
 
-  chosenShift: number = 99;
+
 
   reservationService = inject(ReservationsService)
   shiftService = inject(ShiftsService)
@@ -41,6 +36,7 @@ export class ReservationFormComponent {
   arrReservationByDayAndTime: Reservation[] = [];
   arrSpotsId: number[] = [];
   avaibleSpots: Spot[] = [];
+  showNoTables: boolean = true;
 
   async ngOnInit() {
     this.token = localStorage.getItem('token')!;
@@ -52,37 +48,56 @@ export class ReservationFormComponent {
   }
 
   async onSubmitDayAndTime() {
+    try {
+      console.log(this.time);
+      let shift_time = (this.time.split('-')[0])
+      console.log(shift_time)
+      this.arrReservationByDayAndTime = await this.reservationService.postByShiftandDay({ r_date: this.date, time: shift_time });
 
-    this.arrReservationByDayAndTime = await this.reservationService.postByShiftandDay({ r_date: this.date, time: this.time });
+      for (let reservation of this.arrReservationByDayAndTime) {
+        if (reservation.spot_id && reservation.shift_id) {
+          this.arrSpotsId.push(reservation.spot_id);
 
-    for (let reservation of this.arrReservationByDayAndTime) {
-      if (reservation.spot_id && reservation.shift_id) {
-        this.arrSpotsId.push(reservation.spot_id);
-
+        }
 
       }
 
+      this.avaibleSpots = await this.spotService.postAllBut({ spotsIds: this.arrSpotsId })
+      console.log(this.avaibleSpots);
+
+      this.show = !this.show;
+    } catch (error) {
+      console.log(error);
+
     }
-    this.avaibleSpots = await this.spotService.postAllBut({ spotsIds: this.arrSpotsId })
 
-
-    this.show = !this.show;
 
   }
 
   showCreateReservation() {
+
+
     this.showReservation = !this.showReservation;
+
   }
 
 
   async onSubmitReservation() {
-    console.log(this.chosenSpot)
+    console.log(this.chosenSpot) // "4-2"
+    let spot_id = Number(this.chosenSpot.split('-')[0])
+    let max_seating = Number(this.chosenSpot.split('-')[1])
 
 
-    const reservationResult = this.reservationService.create({ r_date: this.date, diners: this.chosenSpot.max_seating, notes: "PROBANDO PRUEBEZ FRONTON", user_id: this.loggedUser.user_id, spot_id: this.chosenSpot.id, shift_id: this.chosenShift })
+
+    let shift_time = Number(this.time.split('-')[0])
+    let shift_id = Number(this.time.split('-')[1])
+
+    console.log(shift_id)
+
+    const reservationResult = await this.reservationService.create({ r_date: this.date, diners: max_seating, notes: "PROBANDO PRUEBEZ FRONTON", user_id: this.loggedUser.user_id, spot_id: spot_id, shift_id: shift_id })
 
     console.log(reservationResult)
-    //r_date, diners, notes, user_id, spot_id, shift_id
+    // r_date, diners, notes, user_id, spot_id, shift_id
   }
 
 
