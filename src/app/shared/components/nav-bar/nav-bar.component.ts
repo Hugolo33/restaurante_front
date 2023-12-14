@@ -23,10 +23,12 @@ export class NavBarComponent {
     if (this.usersService.isLogged()) {
       this.router.navigate(['user/my-reservations/'])
     } else {
-      Swal.fire(
-        "Please login to make a reservation",
-
-      )
+      Swal.fire({
+        title: "Please login to make a reservation",
+        confirmButtonColor: "var(--secondary-color)",
+        color: "var(--main-color)",
+        background: "var(--bg-color)"
+      })
       this.router.navigate(['/login']);
     }
   }

@@ -52,7 +52,13 @@ export class ReviewFormComponent {
     this.currentReservation.r_date = this.currentReservation.r_date.slice(0, 10)
     const result = await this.reservationsService.update(this.currentReservation)
     console.log(result);
-    Swal.fire("¡Gracias por tu reseña!");
+    Swal.fire({
+      title: "¡Gracias por tu reseña!",
+      icon: "success",
+      confirmButtonColor: "var(--secondary-color)",
+      color: "var(--main-color)",
+      background: "var(--bg-color)"
+    });
     this.router.navigate(['/user/my-reservations'])
   }
 
