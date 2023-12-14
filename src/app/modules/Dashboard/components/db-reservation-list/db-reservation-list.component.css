@@ -1,9 +1,24 @@
-div {
-    gap: 15px;
-
+.flex {
+    display: flex;
 }
 
-article {
-    width: calc(33% - 15px);
+.flex div:first-child {
+    width: 18.75rem;
+}
 
+.flex div:nth-child(2) {
+    width: 17.5rem;
+}
+
+.right {
+    margin-left: auto
+}
+
+.material-symbols-outlined {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+* {
+    color: var(--main-color)
 }

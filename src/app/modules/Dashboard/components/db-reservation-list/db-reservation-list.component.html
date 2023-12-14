@@ -1,13 +1,45 @@
 <section>
-    <h3 class="section-title">LISTA DE RESERVAS</h3>
-
-    <div class="d-flex flex-wrap">
-        <article *ngFor="let reservation of arrReservations">
-            <div class="review-box">
-                <p>{{reservation.r_date | date}}</p>
-                <p>{{reservation.diners}}</p>
-                <p>{{reservation.notes}}</p>
+    <h3 class="section-title pb-3">Reservas</h3>
+    <h4 class="pb-3">Próximas</h4>
+    <article *ngFor="let r of arrFutureReservations">
+        <div class="flex">
+            <div>
+                <p><strong>{{r.r_date | date: 'dd/MM/yyyy'}} {{r.time!.slice(0,5)}}</strong></p>
+                <p>comensales: {{r.diners}}</p>
+                <p>comentarios: {{r.notes}}</p>
             </div>
-        </article>
-    </div>
+            <div>
+                <p>nombre: {{r.name}}</p>
+                <p>email: {{r.email}}</p>
+                <p>tel: {{r.phone_number}}</p>
+            </div>
+            <div class="right" (click)="onClickRemove(r.id!)">
+                <span class="material-symbols-outlined">
+                    cancel
+                </span>
+            </div>
+        </div>
+        <div class="line mt-1 mb-2"></div>
+    </article>
+    <h4 class="pb-3 pt-4">Pasadas</h4>
+    <article *ngFor="let r of arrPastReservations">
+        <div class="flex">
+            <div>
+                <p><strong>{{r.r_date | date: 'dd/MM/yyyy'}} {{r.time!.slice(0,5)}}</strong></p>
+                <p>comensales: {{r.diners}}</p>
+                <p>comentarios: {{r.notes}}</p>
+            </div>
+            <div>
+                <p>nombre: {{r.name}}</p>
+                <p>email: {{r.email}}</p>
+                <p>tel: {{r.phone_number}}</p>
+            </div>
+            <div *ngIf="r.review_id">
+                <p><strong>Reseña:</strong></p>
+                <one-review [reviewId]="r.review_id"></one-review>
+            </div>
+
+        </div>
+        <div class="line mt-1 mb-2"></div>
+    </article>
 </section>

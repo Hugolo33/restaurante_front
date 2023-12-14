@@ -1,16 +1,86 @@
-
-
-
 <section>
-    <h3>LISTA DE RESEÑAS</h3>
+    <h3>Reseñas de clientes</h3>
 
-    <article *ngFor="let review of reviews">
-        <p>{{review.date_added | date}}</p>
-        <p>{{review.content}}</p>
-        <p>Puntuación: {{review.rating}}</p>
-        <p>Usuario: {{review.user_id}}</p>
+    <article *ngFor="let review of reviews" class="review-box">
+        <div class="stars">
+            <div *ngIf="review.rating === 1"><span class="material-symbols-outlined">
+                    star
+                </span></div>
+            <div *ngIf="review.rating === 2"><span class="material-symbols-outlined">
+                    star
+                </span>
+                <span class="material-symbols-outlined">
+                    star
+                </span>
+            </div>
+            <div *ngIf="review.rating === 3"><span class="material-symbols-outlined">
+                    star
+                </span>
+                <span class="material-symbols-outlined">
+                    star
+                </span>
+                <span class="material-symbols-outlined">
+                    star
+                </span>
+            </div>
+            <div *ngIf="review.rating === 4"><span class="material-symbols-outlined">
+                    star
+                </span>
+                <span class="material-symbols-outlined">
+                    star
+                </span>
+                <span class="material-symbols-outlined">
+                    star
+                </span>
+                <span class="material-symbols-outlined">
+                    star
+                </span>
+            </div>
+            <div *ngIf="review.rating === 5"><span class="material-symbols-outlined">
+                    star
+                </span>
+                <span class="material-symbols-outlined">
+                    star
+                </span>
+                <span class="material-symbols-outlined">
+                    star
+                </span>
+                <span class="material-symbols-outlined">
+                    star
+                </span>
+                <span class="material-symbols-outlined">
+                    star
+                </span>
+            </div>
 
-        <button (click)="remove(review)">ELIMINAR</button>
+
+        </div>
+        <p>"{{review.content}}"</p>
+
+
+        <div>
+            <p><strong>Fecha de creación: </strong>{{review.date_added | date: 'dd/MM/yyyy'}}</p>
+            <p><strong>Cliente: </strong>{{review.name}} | email: {{review.email}}</p>
+            <p><strong> Datos de la reserva: </strong>{{review.daytime}} {{review.r_date | date: 'dd/MM/yyyy'}}</p>
+        </div>
+
+
+
+
     </article>
 
 </section>
+
+
+<!-- export interface Review {
+    id: number,
+    rating: number,
+    content: string,
+    date_added: Date,
+    user_id: number,
+    reservation_id: number,
+    r_date?: string,
+    name?: string,
+    email?: string,
+    daytime?: string
+} -->

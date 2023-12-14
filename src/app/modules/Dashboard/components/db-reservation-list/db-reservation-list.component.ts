@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Reservation } from 'src/app/core/interfaces/reservation.interface';
 import { ReservationsService } from 'src/app/core/services/reservations.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-db-reservation-list',
@@ -10,23 +11,53 @@ import { ReservationsService } from 'src/app/core/services/reservations.service'
 export class DbReservationListComponent {
 
   reservationsService = inject(ReservationsService)
-  arrReservations: Reservation[];
+  arrFutureReservations!: Reservation[];
+  arrPastReservations!: Reservation[];
 
-  constructor() {
-    this.arrReservations = [
-
-    ]
-  }
 
   async ngOnInit() {
     try {
-      const response = await this.reservationsService.getAll()
-      this.arrReservations = response
+      this.arrFutureReservations = await this.reservationsService.getAfterToday()
+      this.arrPastReservations = await this.reservationsService.getBeforeToday()
+      console.log('future', this.arrFutureReservations);
 
     } catch (error) {
       console.log(error);
 
     }
+  }
+
+  onClickRemove(reservationId: number) {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger"
+      },
+      buttonsStyling: false
+    });
+    swalWithBootstrapButtons.fire({
+      title: "¿Quieres cancelar esta reserva?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Sí, cancela esta reserva",
+      cancelButtonText: "No quiero cancelar mi reserva",
+      reverseButtons: true
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          const response = await this.reservationsService.remove(reservationId)
+          console.log('response', response);
+
+          this.arrFutureReservations = await this.reservationsService.getAfterToday()
+        } catch (error) {
+          console.log(error);
+        }
+        swalWithBootstrapButtons.fire({
+          title: "Reservation cancelled",
+          icon: "success"
+        });
+      }
+    });
   }
 
 

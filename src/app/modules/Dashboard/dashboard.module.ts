@@ -17,6 +17,7 @@ import { DbSpotsNewSpotComponent } from './components/db-spots-new-spot/db-spots
 import { DbSpotsSpotListComponent } from './components/db-spots-spot-list/db-spots-spot-list.component';
 import { DbAsideComponent } from './components/db-aside/db-aside.component';
 import { DbShiftsShiftEditComponent } from './components/db-shifts-shift-edit/db-shifts-shift-edit.component';
+import { OneReviewComponent } from './components/one-review/one-review.component';
 
 
 
@@ -35,12 +36,13 @@ import { DbShiftsShiftEditComponent } from './components/db-shifts-shift-edit/db
         DbSpotsNewSpotComponent,
         DbSpotsSpotListComponent,
         DbAsideComponent,
-        DbShiftsShiftEditComponent
+        DbShiftsShiftEditComponent,
+        OneReviewComponent
     ],
     imports: [
         CommonModule,
         DashboardRoutes,
-        ReactiveFormsModule      
+        ReactiveFormsModule
     ]
 })
 

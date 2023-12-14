@@ -15,6 +15,10 @@ export class ShiftsService {
     return firstValueFrom(this.httpClient.get<Shift[]>(this.baseUrl))
   }
 
+  getById(shiftId: number): Promise<Shift> {
+    return firstValueFrom(this.httpClient.get<Shift>(`${this.baseUrl}/${shiftId}`))
+  }
+
   create(newShift: Shift): Promise<Shift> {
     return firstValueFrom(this.httpClient.post<Shift>(this.baseUrl, newShift))
   }

@@ -1,10 +1,18 @@
 <section>
-    <h3 class="section-title">Turnos</h3>
+    <h3 class="section-title pt-3">Turnos</h3>
 
-    <article *ngFor="let shift of shifts">
-        <p>{{shift.time}}</p>
-        <p>{{shift.daytime}}</p>
-        <button (click)="edit(shift)">EDITAR</button>
-        <button (click)="erase(shift)">BORRAR</button>
+    <article *ngFor="let shift of shifts" class="review-box">
+        <div>
+            <p>{{shift.time.slice(0, 5)}}</p>
+            <p>{{shift.daytime}}</p>
+        </div>
+        <div>
+            <div (click)="edit(shift)">
+                <span class="material-symbols-outlined">edit</span>
+            </div>
+            <div (click)="erase(shift)">
+                <span class="material-symbols-outlined">cancel</span>
+            </div>
+        </div>
     </article>
 </section>
