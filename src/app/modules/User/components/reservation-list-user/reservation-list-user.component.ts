@@ -47,8 +47,9 @@ export class ReservationListUserComponent {
   onClickRemove(reservationId: number) {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
-        confirmButton: "btn btn-success",
-        cancelButton: "btn btn-danger"
+        confirmButton: "var(--secondary-color)",
+        cancelButton: "var(--third-color)"
+
       },
       buttonsStyling: false
     });
@@ -58,7 +59,9 @@ export class ReservationListUserComponent {
       showCancelButton: true,
       confirmButtonText: "Sí, cancela mi reserva",
       cancelButtonText: "No quiero cancelar mi reserva",
-      reverseButtons: true
+      reverseButtons: true,
+      background: "var(--bg-color)",
+      color: "var(--main-color)"
     }).then(async (result) => {
       if (result.isConfirmed) {
 
@@ -69,7 +72,10 @@ export class ReservationListUserComponent {
         }
         swalWithBootstrapButtons.fire({
           title: "Reservation cancelled",
-          icon: "success"
+          icon: "success",
+          confirmButtonColor: "var(--secondary-color)",
+          color: "var(--main-color)",
+          background: "(--bg-color)"
         });
       }
     });
