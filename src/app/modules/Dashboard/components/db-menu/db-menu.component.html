@@ -37,6 +37,8 @@
 </section>
 
 
+
+
 <section *ngIf="menus">
     <h3 class="section-title">Seleccionar menú anterior</h3>
 
@@ -48,7 +50,10 @@
                 <p>Segundo: {{menu.main_course}}</p>
                 <p>Postre: {{menu.dessert}}</p>
                 <p>{{menu.price}}</p>
+                <button (click)="send(menu)">Reutilizar menu</button>
             </div>
         </article>
+
+        <button >Enviar</button>
     </div>
 </section>
