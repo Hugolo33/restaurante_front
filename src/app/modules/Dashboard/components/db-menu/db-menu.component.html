@@ -5,7 +5,7 @@
 
         <div>
             <label>Date</label>
-            <input type="date" formControlName="date">
+            <input type="date" formControlName="m_date">
         </div>
 
         <div>
@@ -16,6 +16,16 @@
         <div>
             <label>Main Course</label>
             <input type="text" formControlName="main_course">
+        </div>
+
+        <div>
+            <label>Dessert</label>
+            <input type="text" formControlName="dessert">
+        </div>
+
+        <div>
+            <label>Price</label>
+            <input type="number" formControlName="price">
         </div>
 
         <div>
@@ -34,8 +44,10 @@
         <article *ngFor="let menu of menus">
             <div class="review-box">
                 <p>{{menu.m_date | date}}</p>
-                <p>{{menu.first_course}}</p>
-                <p>{{menu.main_course}}</p>
+                <p>Primero: {{menu.first_course}}</p>
+                <p>Segundo: {{menu.main_course}}</p>
+                <p>Postre: {{menu.dessert}}</p>
+                <p>{{menu.price}}</p>
             </div>
         </article>
     </div>
