@@ -3,20 +3,21 @@
 <div class="menu-box">
 
     <div class="menu-left">
-        <h3 class="menu-title">Menu</h3>
+        <h3 class="menu-title">Menú</h3>
     </div>
     <section class="menu-right">
+        <p class="pb-2">{{latestMenu.m_date | date: 'dd/MM/yyyy'}}</p>
         <div>
             <h5>Primer plato</h5>
-            <h3>{{latestMenu.first_course}}</h3>
+            <h3 *ngFor="let item of arrFirstCourses">{{item}}</h3>
         </div>
         <div>
             <h5>Segundo plato</h5>
-            <h3>{{latestMenu.main_course}}</h3>
+            <h3 *ngFor="let item of arrMainCourses">{{item}}</h3>
         </div>
         <div>
             <h5>Postre</h5>
-            <h3>{{latestMenu.dessert}}</h3>
+            <h3 *ngFor="let item of arrDesserts">{{item}}</h3>
         </div>
         <div>
             <h3>{{latestMenu.price}}€ p.p</h3>

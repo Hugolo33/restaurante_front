@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { JwtServicesService } from 'src/app/core/services/jwt-services.service';
 import { UsersService } from 'src/app/core/services/users.service';
 import Swal from 'sweetalert2';
 
@@ -12,11 +13,15 @@ export class NavBarComponent {
 
   private router = inject(Router);
   usersService = inject(UsersService)
+  jwtService = inject(JwtServicesService)
+  token: string = "";
+
+
 
 
   onClickReservation() {
     if (this.usersService.isLogged()) {
-      this.router.navigate(['user/my-reservations/my-reservations'])
+      this.router.navigate(['user/my-reservations/'])
     } else {
       Swal.fire(
         "Please login to make a reservation"
@@ -43,9 +48,15 @@ export class NavBarComponent {
         });
       }
     });
-
-
-
   }
 
+  onClickNavRole() {
+    this.token = localStorage.getItem('token')!;
+    const loggedUser = this.jwtService.DecodeToken(this.token)
+    if (loggedUser.user_role === 'admin') {
+      this.router.navigate(['/dashboard/reservationlist'])
+    } else if (loggedUser.user_role === 'client') {
+      this.router.navigate(['/user/my-reservations'])
+    }
+  }
 }

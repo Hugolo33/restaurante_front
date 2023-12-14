@@ -12,7 +12,7 @@ import { UsersService } from 'src/app/core/services/users.service';
 })
 export class UserComponent {
 
-  decodedTokem!: DecodedToken
+  decodedToken!: DecodedToken
   jwtService = inject(JwtServicesService)
   usersService = inject(UsersService)
   token: string = "";
@@ -22,8 +22,8 @@ export class UserComponent {
 
   async ngOnInit() {
     this.token = localStorage.getItem('token')!;
-    this.decodedTokem = this.jwtService.DecodeToken(this.token)
-    this.loggedUser = await this.usersService.getById(this.decodedTokem.user_id)
+    this.decodedToken = this.jwtService.DecodeToken(this.token)
+    this.loggedUser = await this.usersService.getById(this.decodedToken.user_id)
     this.userName = this.loggedUser.name
     console.log(this.loggedUser.name);
 
