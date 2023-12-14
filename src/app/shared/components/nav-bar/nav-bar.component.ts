@@ -24,7 +24,7 @@ export class NavBarComponent {
       this.router.navigate(['user/my-reservations/'])
     } else {
       Swal.fire(
-        "Please login to make a reservation"
+        "Please login to make a reservation",
       )
       this.router.navigate(['/login']);
     }
@@ -44,7 +44,8 @@ export class NavBarComponent {
         this.router.navigate(['/']);
         Swal.fire({
           text: "Succesfully logged out",
-          icon: "success"
+          icon: "success",
+          confirmButtonColor: "var(--secondary-color)"
         });
       }
     });
