@@ -7,7 +7,7 @@ import { ReservationListUserComponent } from './components/reservation-list-user
 
 const routes: Routes = [
     {
-        path: 'my-reservations', component: UserComponent, children: [
+        path: '', component: UserComponent, children: [
             { path: 'new-reservation', component: ReservationFormComponent },
             { path: 'my-reservations', component: ReservationListUserComponent },
             { path: 'new-review/:reservationId', component: ReviewFormComponent },
