@@ -18,8 +18,16 @@ export class ReservationFormComponent {
 
   date: string = "9999-99-99";
   time: string = "00:00:00";
+  show: boolean = true;
+  showReservation: boolean = true;
+  chosenSpot: Spot = {
+    id: 99,
+    title: "",
+    max_seating: 99,
+    details: ""
+  };
 
-
+  chosenShift: number = 99;
 
   reservationService = inject(ReservationsService)
   shiftService = inject(ShiftsService)
@@ -34,7 +42,6 @@ export class ReservationFormComponent {
   arrSpotsId: number[] = [];
   avaibleSpots: Spot[] = [];
 
-
   async ngOnInit() {
     this.token = localStorage.getItem('token')!;
     this.loggedUser = this.jwtService.DecodeToken(this.token)
@@ -42,25 +49,41 @@ export class ReservationFormComponent {
 
     this.arrShifts = await this.shiftService.getAll();
 
-
-
-
-
-
   }
 
   async onSubmitDayAndTime() {
-    console.log(this.date, this.time)
+
     this.arrReservationByDayAndTime = await this.reservationService.postByShiftandDay({ r_date: this.date, time: this.time });
 
     for (let reservation of this.arrReservationByDayAndTime) {
-      if (reservation.spot_id) {
+      if (reservation.spot_id && reservation.shift_id) {
         this.arrSpotsId.push(reservation.spot_id);
+
+
       }
 
     }
     this.avaibleSpots = await this.spotService.postAllBut({ spotsIds: this.arrSpotsId })
-    console.log(this.avaibleSpots)
+
+
+    this.show = !this.show;
+
   }
+
+  showCreateReservation() {
+    this.showReservation = !this.showReservation;
+  }
+
+
+  async onSubmitReservation() {
+    console.log(this.chosenSpot)
+
+
+    const reservationResult = this.reservationService.create({ r_date: this.date, diners: this.chosenSpot.max_seating, notes: "PROBANDO PRUEBEZ FRONTON", user_id: this.loggedUser.user_id, spot_id: this.chosenSpot.id, shift_id: this.chosenShift })
+
+    console.log(reservationResult)
+    //r_date, diners, notes, user_id, spot_id, shift_id
+  }
+
 
 }
