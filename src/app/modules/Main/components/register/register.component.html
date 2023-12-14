@@ -18,11 +18,19 @@
         </div>
         <div class="mb-3">
             <label class="form-label"></label>
-            <input type="text" class="form-control" placeholder="Password" formControlName="password">
+            <input type="text" class="form-control" placeholder="Phone Number" formControlName="phone_number">
         </div>
         <div class="mb-3">
             <label class="form-label"></label>
-            <input type="text" class="form-control" placeholder="Phone Number" formControlName="phone_number">
+            <input type="password" class="form-control" placeholder="Password" formControlName="password">
+            <p class="error" *ngIf="checkError('password', 'pattern')">
+                Password incorrecto
+            </p>
+        </div>
+        <div class="mb-3">
+            <label class="form-label"></label>
+            <input type="password" class="form-control" placeholder="Repite Password" formControlName="repite_password">
+
         </div>
 
         <div class="text-center">
