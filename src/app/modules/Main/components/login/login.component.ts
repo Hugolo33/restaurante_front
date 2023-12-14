@@ -39,9 +39,9 @@ export class LoginComponent {
       }
       const loggedUser = this.jwtService.DecodeToken(response.token)
       if (loggedUser.user_role === 'admin') {
-        this.router.navigate(['/dashboard'])
+        this.router.navigate(['/dashboard/reservationlist'])
       } else if (loggedUser.user_role === 'client') {
-        this.router.navigate(['/user'])
+        this.router.navigate(['/user/my-reservations'])
       }
     } catch (error) {
       console.log(error)
