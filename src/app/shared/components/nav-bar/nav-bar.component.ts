@@ -25,6 +25,7 @@ export class NavBarComponent {
     } else {
       Swal.fire(
         "Please login to make a reservation",
+
       )
       this.router.navigate(['/login']);
     }
@@ -36,8 +37,11 @@ export class NavBarComponent {
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "var(--secondary-color)",
-      cancelButtonColor: "var(--main-color)",
-      confirmButtonText: "Yes, logout!"
+      cancelButtonColor: "var(--third-color)",
+      confirmButtonText: "Yes, logout!",
+      background: "var(--bg-color)",
+      color: "var(--main-color)",
+
     }).then((result) => {
       if (result.isConfirmed) {
         localStorage.removeItem('token')
