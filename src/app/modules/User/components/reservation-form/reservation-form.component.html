@@ -1,25 +1,25 @@
 <div class="mb-3">
-    <label class="form-label">Fecha de la Reserva</label>
-    <input type="date" [(ngModel)]="date" />
+    <label class="section-title">Fecha de la Reserva</label>
+    <input class="form-button" type="date" [(ngModel)]="date" />
 </div>
 
 
 <div class="mb-3">
-    <label class="form-label">Turnos disponibles</label>
-    <select name="" id="" [(ngModel)]="time">
+    <label class="section-title">Turnos disponibles</label>
+    <select class="form-button" name="" id="" [(ngModel)]="time">
         <option>Seleccione una </option>
         <option *ngFor="let shift of arrShifts" [value]="shift.time+'-'+shift.id">{{shift.time}}</option>
     </select>
 
 </div>
 
-<input type="button" name="Mostrar Mesas" value="Mostrar Mesas" (click)="onSubmitDayAndTime()">
+<input class="form-button" type="button" name="Mostrar Mesas" value="Mostrar Mesas" (click)="onSubmitDayAndTime()">
 <div *ngIf="!showNoTables">
     <p>No hay mesas disponibles</p>
 </div>
 <div class="d-flex flex-column" *ngIf="!show">
 
-    <label class="form-label">Elegir Mesa Disponible</label>
+    <label class="section-title">Elegir Mesa Disponible</label>
 
     <select [(ngModel)]="chosenSpot" (change)="showCreateReservation()">
 
@@ -39,5 +39,6 @@
         </option>
     </select> -->
 
-    <input *ngIf="!showReservation" type="button" value="Crear Reserva" (click)="onSubmitReservation()">
+    <input class="form-button" *ngIf="!showReservation" type="button" value="Crear Reserva"
+        (click)="onSubmitReservation()">
 </div>
