@@ -18,33 +18,35 @@ import { DbSpotsSpotListComponent } from './components/db-spots-spot-list/db-spo
 import { DbAsideComponent } from './components/db-aside/db-aside.component';
 import { DbShiftsShiftEditComponent } from './components/db-shifts-shift-edit/db-shifts-shift-edit.component';
 import { DbMenuReloadComponent } from './components/db-menu-reload/db-menu-reload.component';
+import { OneReviewComponent } from './components/one-review/one-review.component';
 
 
 
 @NgModule({
-    declarations: [
-        DashboardComponent,
-        DbMenuComponent,
-        DbNewReservationComponent,
-        DbReviewComponent,
-        DbShiftsComponent,
-        DbNewReservationComponent,
-        DbReservationListComponent,
-        DbShiftsNewShiftComponent,
-        DbShiftsShiftListComponent,
-        DbSpotsComponent,
-        DbSpotsNewSpotComponent,
-        DbSpotsSpotListComponent,
-        DbAsideComponent,
-        DbShiftsShiftEditComponent,
-        DbMenuReloadComponent
-    ],
-    imports: [
-        CommonModule,
-        DashboardRoutes,
-        ReactiveFormsModule,
-        FormsModule      
-    ]
+        declarations: [
+                DashboardComponent,
+                DbMenuComponent,
+                DbNewReservationComponent,
+                DbReviewComponent,
+                DbShiftsComponent,
+                DbNewReservationComponent,
+                DbReservationListComponent,
+                DbShiftsNewShiftComponent,
+                DbShiftsShiftListComponent,
+                DbSpotsComponent,
+                DbSpotsNewSpotComponent,
+                DbSpotsSpotListComponent,
+                DbAsideComponent,
+                DbShiftsShiftEditComponent,
+                DbMenuReloadComponent,
+                OneReviewComponent
+        ],
+        imports: [
+                CommonModule,
+                DashboardRoutes,
+                ReactiveFormsModule,
+                FormsModule
+        ]
 })
 
 export class DashboardModule { }

@@ -10,17 +10,18 @@ import { ReviewsService } from 'src/app/core/services/reviews.service';
 export class DbReviewComponent {
 
   reviews: Review[] = []
-
   reviewsService = inject(ReviewsService)
 
   async ngOnInit() {
     try {
-      const response = await this.reviewsService.getAll()
+      const response = await this.reviewsService.getAllAdmin()
+      console.log(response);
       this.reviews = response
-      
+
+
     } catch (error) {
       console.log(error);
-    }    
+    }
   }
 
   async remove(review: Review) {
@@ -28,12 +29,9 @@ export class DbReviewComponent {
       const response = await this.reviewsService.remove(review.id);
       console.log(response);
 
-      const response2 = await this.reviewsService.getAll()
-      this.reviews = response2      
-
     } catch (error) {
       console.log(error);
-      
+
     }
   }
 

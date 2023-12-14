@@ -15,6 +15,10 @@ export class ReviewsService {
     return firstValueFrom(this.httpClient.get<Review[]>(this.baseUrl))
   }
 
+  getAllAdmin(): Promise<Review[]> {
+    return firstValueFrom(this.httpClient.get<Review[]>(`${this.baseUrl}/admin`))
+  }
+
   getLatestFour(): Promise<Review[]> {
     return firstValueFrom(this.httpClient.get<Review[]>(`${this.baseUrl}/latestFour`))
   }

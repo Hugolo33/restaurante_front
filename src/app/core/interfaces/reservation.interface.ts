@@ -8,5 +8,8 @@ export interface Reservation {
     shift_id?: number,
     review_id?: number
     time?: string,
-    content?: string
+    content?: string,
+    name?: string,
+    phone_number?: string,
+    email?: string
 }

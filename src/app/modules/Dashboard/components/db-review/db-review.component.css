@@ -1,17 +1,25 @@
-
-section{
+section {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    padding: 15px;
+    gap: var(--main-padding);
 }
 
 h3 {
     width: 100%;
 }
 
-article {
-    width: 33%;
-    border: 3px solid black;
-    padding: 15px;
+.review-box {
+    width: calc(50% - var(--double-padding));
+    padding: var(--main-padding);
+    background-color: var(--secondary-color);
+    border: 0
+}
+
+* {
+    color: var(--bg-color)
+}
+
+div>p {
+    font-size: 0.75rem;
+    margin-bottom: 0.125rem;
 }

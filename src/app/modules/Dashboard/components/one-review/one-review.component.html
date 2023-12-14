@@ -1,0 +1,58 @@
+<div *ngIf="review">
+    <div>
+        <div *ngIf="review.rating === 1"><span class="material-symbols-outlined">
+                star
+            </span></div>
+        <div *ngIf="review.rating === 2"><span class="material-symbols-outlined">
+                star
+            </span>
+            <span class="material-symbols-outlined">
+                star
+            </span>
+        </div>
+        <div *ngIf="review.rating === 3"><span class="material-symbols-outlined">
+                star
+            </span>
+            <span class="material-symbols-outlined">
+                star
+            </span>
+            <span class="material-symbols-outlined">
+                star
+            </span>
+        </div>
+        <div *ngIf="review.rating === 4"><span class="material-symbols-outlined">
+                star
+            </span>
+            <span class="material-symbols-outlined">
+                star
+            </span>
+            <span class="material-symbols-outlined">
+                star
+            </span>
+            <span class="material-symbols-outlined">
+                star
+            </span>
+        </div>
+        <div *ngIf="review.rating === 5"><span class="material-symbols-outlined">
+                star
+            </span>
+            <span class="material-symbols-outlined">
+                star
+            </span>
+            <span class="material-symbols-outlined">
+                star
+            </span>
+            <span class="material-symbols-outlined">
+                star
+            </span>
+            <span class="material-symbols-outlined">
+                star
+            </span>
+        </div>
+
+
+    </div>
+
+    <p>{{review!.content}}</p>
+
+</div>
