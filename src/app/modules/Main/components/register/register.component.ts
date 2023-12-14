@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/core/services/users.service';
 
@@ -26,13 +26,23 @@ export class RegisterComponent {
       email: new FormControl(null, [
         Validators.pattern(/^[\w.-]+@[\w.-]+.[\w.-]+$/)
       ]),
-      password: new FormControl(),
       phone_number: new FormControl(null, [
         Validators.minLength(9),
         Validators.maxLength(10),
         Validators.pattern(/^([0-9])*$/)
       ]),
-    })
+      password: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(6),
+        Validators.maxLength(25),
+        Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$')
+      ]),
+      repite_password: new FormControl(null, [
+        Validators.required
+      ]),
+    }, [
+      this.passwordRepeatValidator
+    ]);
   }
 
   async onSubmit() {
@@ -51,6 +61,17 @@ export class RegisterComponent {
       this.formulario.get(controlName)?.touched
   }
 
+  passwordRepeatValidator(form: AbstractControl) {
+    const passwordValue = form.get('password')?.value;
+    const repitePasswordValue = form.get('repite_password')?.value;
 
+    if (passwordValue === repitePasswordValue) {
+      form.get('repite_password')?.setErrors(null);
+      return null;
+    }
+
+    form.get('repite_password')?.setErrors({ passwordrepeatvalidator: true })
+    return { passwordrepeatvalidator: true };
+  }
 
 }
