@@ -27,22 +27,6 @@ export class DbReservationListComponent {
     }
   }
 
-<<<<<<< HEAD
-  async cancelReservation(reservation: Reservation) {
-    try {
-      console.log(reservation.id);
-      
-      const response = await this.reservationsService.remove(reservation.id!)
-      console.log(response);
-
-      const response2 = await this.reservationsService.getAll()
-      this.arrReservations = response2
-      
-    } catch (error) {
-      console.log(error);
-      
-    }
-=======
   onClickRemove(reservationId: number) {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
@@ -74,7 +58,6 @@ export class DbReservationListComponent {
         });
       }
     });
->>>>>>> feature-nav
   }
 
 
