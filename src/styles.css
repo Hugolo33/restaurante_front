@@ -283,10 +283,10 @@ h5 {
 }
 
 .footer-nav {
-    padding: 3rem 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     font-weight: 300;
 }
-
 
 
 
@@ -359,7 +359,6 @@ h5 {
     margin-top: 0.6rem;
 }
 
-.form-floating {}
 
 
 .mb-3 {
