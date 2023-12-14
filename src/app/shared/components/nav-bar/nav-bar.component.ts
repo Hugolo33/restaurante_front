@@ -30,8 +30,8 @@ export class NavBarComponent {
       title: "Are you sure you want to logout?",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
+      confirmButtonColor: "var(--secondary-color)",
+      cancelButtonColor: "var(--main-color)",
       confirmButtonText: "Yes, logout!"
     }).then((result) => {
       if (result.isConfirmed) {
