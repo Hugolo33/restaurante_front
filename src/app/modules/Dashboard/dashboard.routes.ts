@@ -12,12 +12,14 @@ import { DbSpotsComponent } from "./components/db-spots/db-spots.component";
 import { DbShiftsShiftEditComponent } from "./components/db-shifts-shift-edit/db-shifts-shift-edit.component";
 import { DbMenuReloadComponent } from "./components/db-menu-reload/db-menu-reload.component";
 import { DbMenuListComponent } from "./components/db-menu-list/db-menu-list.component";
+import { DbMenuEditComponent } from "./components/db-menu-edit/db-menu-edit.component";
 
 const routes: Routes = [
     {
         path: "", component: DashboardComponent, children: [
             { path: "newreservation", component: DbNewReservationComponent },
             { path: "reservationlist", component: DbReservationListComponent },
+            { path: "menuedit/:menuId", component: DbMenuEditComponent },
             { path: "menureload/:menuId", component:DbMenuReloadComponent },
             { path: "menuview", component: DbMenuListComponent },
             { path: "menu", component: DbMenuComponent },
