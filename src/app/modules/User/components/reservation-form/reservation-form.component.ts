@@ -19,6 +19,7 @@ export class ReservationFormComponent {
   date: string = "9999-99-99";
   time: string = "00:00:00";
   show: boolean = true;
+  notes: string = "";
   showReservation: boolean = true;
   chosenSpot: string = '';
 
@@ -50,15 +51,24 @@ export class ReservationFormComponent {
       console.log(this.time);
       let shift_time = (this.time.split('-')[0])
       console.log(shift_time)
+      console.log(this.date);
+
       this.arrReservationByDayAndTime = await this.reservationService.postByShiftandDay({ r_date: this.date, time: shift_time });
+      console.log(this.arrReservationByDayAndTime);
+
 
       for (let reservation of this.arrReservationByDayAndTime) {
         if (reservation.spot_id && reservation.shift_id) {
           this.arrSpotsId.push(reservation.spot_id);
+          console.log(this.arrSpotsId);
         }
       }
 
-      this.avaibleSpots = await this.spotService.postAllBut({ spotsIds: this.arrSpotsId })
+      if (this.arrReservationByDayAndTime.length !== 0) {
+        this.avaibleSpots = await this.spotService.postAllBut({ spotsIds: this.arrSpotsId })
+      } else {
+        this.avaibleSpots = await this.spotService.getAll();
+      }
       console.log(this.avaibleSpots);
 
       this.show = !this.show;
@@ -90,7 +100,7 @@ export class ReservationFormComponent {
 
     console.log(shift_id)
 
-    const reservationResult = await this.reservationService.create({ r_date: this.date, diners: max_seating, notes: "PROBANDO PRUEBEZ FRONTON", user_id: this.loggedUser.user_id, spot_id: spot_id, shift_id: shift_id })
+    const reservationResult = await this.reservationService.create({ r_date: this.date, diners: max_seating, notes: this.notes, user_id: this.loggedUser.user_id, spot_id: spot_id, shift_id: shift_id })
 
     console.log(reservationResult)
     // r_date, diners, notes, user_id, spot_id, shift_id
