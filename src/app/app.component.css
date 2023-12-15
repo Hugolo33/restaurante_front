@@ -1,9 +1,24 @@
 html {
     scroll-behavior: smooth;
+
 }
 
 
 .container-margin {
     margin-top: 7.5rem;
     margin-bottom: 6rem;
+}
+
+#fade-in-animation {
+    animation: fadein 1s;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

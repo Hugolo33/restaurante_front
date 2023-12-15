@@ -22,3 +22,13 @@
 * {
     color: var(--main-color)
 }
+
+article {
+
+    transition: 0.3s;
+
+    &:hover {
+
+        scale: 1.02;
+    }
+}
