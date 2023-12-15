@@ -30,13 +30,11 @@ export class DbSpotsNewSpotComponent {
     try {
       const response = await this.spotService.create(this.spot.value)
       console.log(response);
-      
-      const response2 = await this.spotService.getAll()
-      
+      this.spot.reset()
 
     } catch (error) {
       console.log(error);
-      
+
     }
   }
 
