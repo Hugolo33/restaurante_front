@@ -6,7 +6,7 @@
 
 <div class="mb-3">
     <label class="section-title">Turnos disponibles</label>
-    <select class="form-button" name="" id="" [(ngModel)]="time">
+    <select class="buttonCustom" name="" id="" [(ngModel)]="time">
         <option>Seleccione una </option>
         <option *ngFor="let shift of arrShifts" [value]="shift.time+'-'+shift.id">{{shift.time}}</option>
     </select>
@@ -21,7 +21,7 @@
 
     <label class="section-title">Elegir Mesa Disponible</label>
 
-    <select [(ngModel)]="chosenSpot" (change)="showCreateReservation()">
+    <select class="buttonCustom" [(ngModel)]="chosenSpot" (change)="showCreateReservation()">
 
         <option [value]="spot.id+'-'+spot.max_seating" *ngFor="let spot of avaibleSpots">
             <p>{{spot.id}}/// </p>
