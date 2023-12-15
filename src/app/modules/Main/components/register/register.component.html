@@ -24,12 +24,15 @@
             <label class="form-label"></label>
             <input type="password" class="form-control" placeholder="Password" formControlName="password">
             <p class="error" *ngIf="checkError('password', 'pattern')">
-                Password incorrecto
+                Necesita poner letras y numeros incorrecto
             </p>
         </div>
         <div class="mb-3">
             <label class="form-label"></label>
             <input type="password" class="form-control" placeholder="Repite Password" formControlName="repite_password">
+            <p class="error" *ngIf="checkError('password', 'pattern')">
+                El password no coincide
+            </p>
 
         </div>
 
