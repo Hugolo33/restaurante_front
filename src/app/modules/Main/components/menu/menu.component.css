@@ -1,0 +1,11 @@
+.menu-box {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 8rem;
+}
+
+.menu-left p {
+    color: var(--main-color);
+    padding-right: 2rem;
+
+}

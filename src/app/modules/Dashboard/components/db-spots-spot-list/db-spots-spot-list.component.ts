@@ -15,7 +15,7 @@ export class DbSpotsSpotListComponent {
 
   spotsService = inject(SpotsService)
 
-  router = inject(Router)
+  private router = inject(Router)
 
   @Input() newSpot!: Spot
 

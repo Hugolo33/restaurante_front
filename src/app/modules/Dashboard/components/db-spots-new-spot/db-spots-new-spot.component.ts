@@ -17,7 +17,7 @@ export class DbSpotsNewSpotComponent {
 
   spotService = inject(SpotsService)
 
-  router = inject(Router)
+  private router = inject(Router)
 
   constructor() {
     this.spot = new FormGroup({
@@ -29,14 +29,9 @@ export class DbSpotsNewSpotComponent {
 
   async onSubmit() {
     console.log(this.spot.value)
+    this.onNewSpot.emit(this.spot.value)
+    this.spot.reset()
 
-    try {
-      this.onNewSpot.emit(this.spot.value)
-      this.spot.reset()
-    } catch (error) {
-      console.log(error);
-
-    }
   }
 
 

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Shift } from 'src/app/core/interfaces/shift.interface';
 import { ShiftsService } from 'src/app/core/services/shifts.service';
@@ -9,6 +9,8 @@ import { ShiftsService } from 'src/app/core/services/shifts.service';
   styleUrls: ['./db-shifts-new-shift.component.css']
 })
 export class DbShiftsNewShiftComponent {
+
+  @Output() onNewShift: EventEmitter<Shift> = new EventEmitter()
 
   shift: FormGroup;
 
@@ -22,17 +24,8 @@ export class DbShiftsNewShiftComponent {
   }
 
   async onSubmit() {
-    console.log(this.shift.value)
-
-    try {
-      const response = await this.shiftsService.create(this.shift.value)
-      console.log(response);
-      
-
-    } catch (error) {
-      console.log(error);
-      
-    }
+    this.onNewShift.emit(this.shift.value)
+    this.shift.reset()
   }
 
 

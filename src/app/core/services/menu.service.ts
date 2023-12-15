@@ -20,8 +20,6 @@ export class MenuService {
   }
 
   getByDate(menuDate: string): Promise<Menu> {
-    console.log(menuDate);
-
     return firstValueFrom(this.httpClient.get<Menu>(`${this.baseUrl}/date/${menuDate}`))
   }
 

@@ -1,7 +1,8 @@
-<section class="container">
+<section class="container-reduction">
     <h3 class="section-title">Menús</h3>
     <div class="mb-3 form-floating">
-        <input type="date" class="form-control editLine" placeholder="Selecciona una fecha">
+        <input type="date" class="form-control editLine" placeholder="Selecciona una fecha"
+            (change)="onChangeDate($event)">
         <label for="floatingInputValue">Selecciona una fecha</label>
     </div>
     <div class="menu-box">
@@ -13,15 +14,15 @@
 
             <div>
                 <h5>Primer plato</h5>
-                <!-- <h3 *ngFor="let item of arrFirstCourses">{{item}}</h3> -->
+                <h3 *ngFor="let item of arrFirstCourses">{{item}}</h3>
             </div>
             <div>
                 <h5>Segundo plato</h5>
-                <!-- <h3 *ngFor="let item of arrMainCourses">{{item}}</h3> -->
+                <h3 *ngFor="let item of arrMainCourses">{{item}}</h3>
             </div>
             <div>
                 <h5>Postre</h5>
-                <!-- <h3 *ngFor="let item of arrDesserts">{{item}}</h3> -->
+                <h3 *ngFor="let item of arrDesserts">{{item}}</h3>
             </div>
             <div>
                 <h3>{{currentMenu.price}}€ p.p</h3>
