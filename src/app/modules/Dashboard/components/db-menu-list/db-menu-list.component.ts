@@ -34,12 +34,19 @@ export class DbMenuListComponent {
     try {
       const response = await this.menuService.delete(Number(menu.id))
       console.log(response);
+      const response2 = await this.menuService.getAll()      
+      this.menus = response2
       
     } catch (error) {
-      console.log(error);
-      
+      console.log(error);      
     }
+  }
 
+  async edit(menu: Menu) {
+    console.log(menu)
+    const id = menu.id?.toString()
+    this.router.navigate(["/dashboard/menuedit",id])
+    
   }
 
 
