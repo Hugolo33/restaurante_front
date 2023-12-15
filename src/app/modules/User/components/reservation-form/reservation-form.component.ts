@@ -19,7 +19,7 @@ export class ReservationFormComponent {
   date: string = "9999-99-99";
   time: string = "00:00:00";
   show: boolean = true;
-  notes: string = "-"
+  notes: string = "";
   showReservation: boolean = true;
   chosenSpot: string = '';
 

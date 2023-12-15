@@ -1,6 +1,6 @@
 <div class="mb-3">
     <label class="section-title">Fecha de la Reserva</label>
-    <input class="form-button" type="date" [(ngModel)]="date" />
+    <input class="buttonCustom" type="date" [(ngModel)]="date" />
 </div>
 
 
@@ -23,6 +23,7 @@
 
     <select class="buttonCustom" [(ngModel)]="chosenSpot" (change)="showCreateReservation()">
 
+        <option value="" disabled selected hidden>Selecciona una mesa</option>
         <option [value]="spot.id+'-'+spot.max_seating" *ngFor="let spot of avaibleSpots">
 
             <p>{{spot.title}}__</p>
@@ -31,7 +32,7 @@
         </option>
     </select>
 
-    <input class="form-button" [(ngModel)]="notes" *ngIf="!showReservation" class="form-control"
+    <input class="form-button" type="text" [(ngModel)]="notes" *ngIf="!showReservation" class="form-control"
         placeholder="¿Tienes alguna petición?" value="Notas">
 
     <!-- 
