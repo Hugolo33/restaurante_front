@@ -1,14 +1,18 @@
-
 <section>
-    <h3>LISTA DE SPOTS</h3>
+    <h3 class="pt-3">Listado de spots</h3>
 
-    <article *ngFor="let spot of spots">
-        <p>Mesa: {{spot.title}}</p>
-        <p>Comensales: {{spot.max_seating}}</p>
-        <p>Detalle: {{spot.details}}</p>
-        <button (click)="add(spot)">+</button>
-        <p>Comensales</p>
-        <button (click)="subtract(spot)">-</button>
-        <button (click)="erase(spot)">BORRAR</button>
+    <article *ngFor="let spot of spots" class="review-box">
+        <div>
+            <p>Mesa {{spot.id}}: {{spot.title}}</p>
+            <div>Comensales:
+                <span (click)="subtract(spot)">-</span>
+                {{spot.max_seating}}
+                <span (click)="add(spot)">+</span>
+            </div>
+            <p>Detalle: {{spot.details}}</p>
+        </div>
+        <div class="material-symbols-outlined" (click)="erase(spot)">
+            cancel
+        </div>
     </article>
 </section>
