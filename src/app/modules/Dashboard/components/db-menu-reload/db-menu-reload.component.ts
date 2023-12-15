@@ -40,7 +40,7 @@ export class DbMenuReloadComponent {
 
   async send() {
     this.newMenu.m_date = this.newDate
-    const response = await this.menuService.create(this.newMenu)
+    const response = await this.menuService.create(this.newMenu)    
     this.router.navigate(["/dashboard/menu"])
   }
 
