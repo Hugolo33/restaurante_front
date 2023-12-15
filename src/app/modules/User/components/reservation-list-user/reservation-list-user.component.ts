@@ -67,6 +67,7 @@ export class ReservationListUserComponent {
 
         try {
           const response = await this.reservationsService.remove(reservationId)
+          this.arrReservationsAfterToday = await this.reservationsService.getByUserAfterToday(this.loggedUser.user_id)
         } catch (error) {
           console.log(error);
         }

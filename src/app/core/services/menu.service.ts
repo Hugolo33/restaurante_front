@@ -33,6 +33,10 @@ export class MenuService {
     return firstValueFrom(this.httpClient.post<Menu>(this.baseUrl, newMenu))
   }
 
+  update(menu: Menu): Promise<Menu> {
+    return firstValueFrom(this.httpClient.put<Menu>(`${this.baseUrl}/${menu.id}`, menu))
+  }
+
   delete(menuId: number) {
     return firstValueFrom(this.httpClient.delete<Menu>(`${this.baseUrl}/${menuId}`))
   }

@@ -1,6 +1,6 @@
 <form [formGroup]="formReview" (ngSubmit)="onSubmit()" class="form-box-users">
     <h2>Añadir nueva reseña</h2>
-    <label class="form-label">Rating {{rating}}/5</label>
+    <label class="form-label">Clasificación {{rating}}/5</label>
     <input type="range" class="form-range" min="1" max="5" step="1" value="5" (change)="onChangeRating($event)">
     <div class="mb-3">
         <textarea type="text-area" class="form-control" formControlName="content" rows="5"

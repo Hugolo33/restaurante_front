@@ -2,22 +2,22 @@
     <nav>
         <ul class="navigate">
             <li [routerLink]="['/']">Home</li>
-            <li [routerLink]="['/']" fragment="navmenu">Menu</li>
-            <li [routerLink]="['/']" fragment="footernav">Contact</li>
-            <li (click)="onClickReservation()">Reservation</li>
+            <li [routerLink]="['/']" fragment="navmenu">Menú</li>
+            <li [routerLink]="['/']" fragment="footernav">Contáctanos</li>
+            <li (click)="onClickReservation()">Reservar</li>
         </ul>
         <div class="logo">
             <p [routerLink]="['/']">casa Miranda</p>
         </div>
         <ul class="users">
-            <li class="buttonCustom" [routerLink]="['/register']" *ngIf="!usersService.isLogged()">Register</li>
-            <li class="buttonCustom" [routerLink]="['/login']" *ngIf="!usersService.isLogged()">Sign in</li>
+            <li class="buttonCustom" [routerLink]="['/register']" *ngIf="!usersService.isLogged()">Registro</li>
+            <li class="buttonCustom" [routerLink]="['/login']" *ngIf="!usersService.isLogged()">Iniciar sesión</li>
             <li (click)="onClickNavRole()" *ngIf="usersService.isLogged()">
                 <span class="material-symbols-outlined">
                     account_circle
                 </span>
             </li>
-            <li class="buttonCustom" (click)="onClickLogout()" *ngIf="usersService.isLogged()">Logout</li>
+            <li class="buttonCustom" (click)="onClickLogout()" *ngIf="usersService.isLogged()">Cerrar sesión</li>
         </ul>
     </nav>
     <div class="line"></div>

@@ -20,6 +20,7 @@ import { DbShiftsShiftEditComponent } from './components/db-shifts-shift-edit/db
 import { DbMenuReloadComponent } from './components/db-menu-reload/db-menu-reload.component';
 import { OneReviewComponent } from './components/one-review/one-review.component';
 import { DbMenuListComponent } from './components/db-menu-list/db-menu-list.component';
+import { DbMenuEditComponent } from './components/db-menu-edit/db-menu-edit.component';
 
 
 
@@ -41,7 +42,8 @@ import { DbMenuListComponent } from './components/db-menu-list/db-menu-list.comp
                 DbShiftsShiftEditComponent,
                 DbMenuReloadComponent,
                 OneReviewComponent,
-                DbMenuListComponent
+                DbMenuListComponent,
+                DbMenuEditComponent
         ],
         imports: [
                 CommonModule,
