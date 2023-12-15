@@ -42,9 +42,7 @@ export class ReservationFormComponent {
     this.token = localStorage.getItem('token')!;
     this.loggedUser = this.jwtService.DecodeToken(this.token)
     /////////////////////////////////////////////
-
     this.arrShifts = await this.shiftService.getAll();
-
   }
 
   async onSubmitDayAndTime() {
@@ -57,9 +55,7 @@ export class ReservationFormComponent {
       for (let reservation of this.arrReservationByDayAndTime) {
         if (reservation.spot_id && reservation.shift_id) {
           this.arrSpotsId.push(reservation.spot_id);
-
         }
-
       }
 
       this.avaibleSpots = await this.spotService.postAllBut({ spotsIds: this.arrSpotsId })

@@ -1,7 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { SpotsService } from 'src/app/core/services/spots.service';
 import { Router } from '@angular/router';
+import { Spot } from 'src/app/core/interfaces/spot.interface';
 
 @Component({
   selector: 'app-db-spots-new-spot',
@@ -9,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./db-spots-new-spot.component.css']
 })
 export class DbSpotsNewSpotComponent {
+
+  @Output() onNewSpot: EventEmitter<Spot> = new EventEmitter()
 
   spot: FormGroup;
 
@@ -28,10 +31,8 @@ export class DbSpotsNewSpotComponent {
     console.log(this.spot.value)
 
     try {
-      const response = await this.spotService.create(this.spot.value)
-      console.log(response);
+      this.onNewSpot.emit(this.spot.value)
       this.spot.reset()
-
     } catch (error) {
       console.log(error);
 

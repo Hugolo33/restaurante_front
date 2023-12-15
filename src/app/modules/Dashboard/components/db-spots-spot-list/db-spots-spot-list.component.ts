@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { Spot } from 'src/app/core/interfaces/spot.interface';
 import { SpotsService } from 'src/app/core/services/spots.service';
 import { Router } from '@angular/router';
@@ -17,6 +17,8 @@ export class DbSpotsSpotListComponent {
 
   router = inject(Router)
 
+  @Input() newSpot!: Spot
+
   async ngOnInit() {
     try {
       const response = await this.spotsService.getAll()
@@ -28,9 +30,14 @@ export class DbSpotsSpotListComponent {
     }
   }
 
+  async ngOnChanges() {
+    const response = await this.spotsService.create(this.newSpot)
+    console.log(response);
+    this.spots = await this.spotsService.getAll()
+
+  }
+
   async erase(spot: Spot) {
-
-
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: "btn btn-success",

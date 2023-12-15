@@ -16,12 +16,15 @@ export class NavBarComponent {
   jwtService = inject(JwtServicesService)
   token: string = "";
 
-
-
-
   onClickReservation() {
     if (this.usersService.isLogged()) {
-      this.router.navigate(['user/my-reservations/'])
+      this.token = localStorage.getItem('token')!;
+      const loggedUser = this.jwtService.DecodeToken(this.token)
+      if (loggedUser.user_role === 'admin') {
+        this.router.navigate(['/dashboard/reservationlist'])
+      } else if (loggedUser.user_role === 'client') {
+        this.router.navigate(['/user/my-reservations'])
+      }
     } else {
       Swal.fire({
         title: "Please login to make a reservation",

@@ -1,0 +1,33 @@
+<section class="container">
+    <h3 class="section-title">Menús</h3>
+    <div class="mb-3 form-floating">
+        <input type="date" class="form-control editLine" placeholder="Selecciona una fecha">
+        <label for="floatingInputValue">Selecciona una fecha</label>
+    </div>
+    <div class="menu-box">
+        <div class="menu-left">
+            <h3 class="menu-title">Menú</h3>
+            <p class="pb-2">{{currentMenu.m_date | date: 'dd/MM/yyyy'}}</p>
+        </div>
+        <section class="menu-right">
+
+            <div>
+                <h5>Primer plato</h5>
+                <!-- <h3 *ngFor="let item of arrFirstCourses">{{item}}</h3> -->
+            </div>
+            <div>
+                <h5>Segundo plato</h5>
+                <!-- <h3 *ngFor="let item of arrMainCourses">{{item}}</h3> -->
+            </div>
+            <div>
+                <h5>Postre</h5>
+                <!-- <h3 *ngFor="let item of arrDesserts">{{item}}</h3> -->
+            </div>
+            <div>
+                <h3>{{currentMenu.price}}€ p.p</h3>
+            </div>
+        </section>
+
+    </div>
+
+</section>

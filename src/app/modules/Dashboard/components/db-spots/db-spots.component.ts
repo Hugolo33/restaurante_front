@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Spot } from 'src/app/core/interfaces/spot.interface';
 
 @Component({
   selector: 'app-db-spots',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class DbSpotsComponent {
 
+  newSpot!: Spot
+
+  onNewSpot($event: any) {
+    this.newSpot = $event
+  }
 }

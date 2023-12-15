@@ -4,5 +4,5 @@ export interface Menu {
     first_course: string;
     main_course: string;
     dessert: string;
-    price: Number;
+    price: number;
 }

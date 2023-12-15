@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { MenuViewComponent } from './components/menu-view/menu-view.component';
 import { ReviewsListComponent } from './components/reviews-list/reviews-list.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 
 
@@ -23,7 +24,8 @@ import { ReviewsListComponent } from './components/reviews-list/reviews-list.com
         HomeComponent,
         HeroComponent,
         MenuViewComponent,
-        ReviewsListComponent
+        ReviewsListComponent,
+        MenuComponent
     ],
     imports: [
         CommonModule,

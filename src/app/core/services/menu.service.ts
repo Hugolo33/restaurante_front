@@ -18,7 +18,12 @@ export class MenuService {
   getLatest(): Promise<Menu> {
     return firstValueFrom(this.httpClient.get<Menu>(`${this.baseUrl}/latest`))
   }
-  // TODO Confirmar que esta es la URL correcta
+
+  getByDate(menuDate: string): Promise<Menu> {
+    console.log(menuDate);
+
+    return firstValueFrom(this.httpClient.get<Menu>(`${this.baseUrl}/date/${menuDate}`))
+  }
 
   getById(menuId: number): Promise<Menu> {
     return firstValueFrom(this.httpClient.get<Menu>(`${this.baseUrl}/${menuId}`))
