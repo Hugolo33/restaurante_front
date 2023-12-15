@@ -1,0 +1,19 @@
+<section *ngIf="menus">
+    <h3 class="section-title">Menús actuales</h3>
+
+    <div class="d-flex flex-wrap">
+        <article *ngFor="let menu of menus">
+            <div class="review-box">
+                <p>{{menu.m_date | date}}</p>
+                <p>Primero: {{menu.first_course}}</p>
+                <p>Segundo: {{menu.main_course}}</p>
+                <p>Postre: {{menu.dessert}}</p>
+                <p>{{menu.price}} €</p>
+                <button (click)="erase(menu)">BORRAR</button>
+                <button>EDITAR</button>
+            </div>
+        </article>
+
+        
+    </div>
+</section>

@@ -28,5 +28,9 @@ export class MenuService {
     return firstValueFrom(this.httpClient.post<Menu>(this.baseUrl, newMenu))
   }
 
+  delete(menuId: number) {
+    return firstValueFrom(this.httpClient.delete<Menu>(`${this.baseUrl}/${menuId}`))
+  }
+
 
 }
