@@ -1,10 +1,10 @@
 <div class="container form-box-users">
     <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-        <p class="form-title">Register</p>
+        <p class="form-title">Registro</p>
 
         <div class="mb-3">
             <label class="form-label"></label>
-            <input type="text" class="form-control" placeholder="Name" formControlName="name">
+            <input type="text" class="form-control" placeholder="Nombre" formControlName="name">
             <p class="error" *ngIf="checkError('nombre', 'required')">
                 Nombre incorrecto
             </p>
@@ -18,20 +18,21 @@
         </div>
         <div class="mb-3">
             <label class="form-label"></label>
-            <input type="text" class="form-control" placeholder="Phone Number" formControlName="phone_number">
+            <input type="text" class="form-control" placeholder="Número teléfono" formControlName="phone_number">
         </div>
         <div class="mb-3">
             <label class="form-label"></label>
-            <input type="password" class="form-control" placeholder="Password" formControlName="password">
+            <input type="password" class="form-control" placeholder="Contraseña" formControlName="password">
             <p class="error" *ngIf="checkError('password', 'pattern')">
                 Necesita poner letras y numeros incorrecto
             </p>
         </div>
         <div class="mb-3">
             <label class="form-label"></label>
-            <input type="password" class="form-control" placeholder="Repite Password" formControlName="repite_password">
+            <input type="password" class="form-control" placeholder="Repite contraseña"
+                formControlName="repite_password">
             <p class="error" *ngIf="checkError('password', 'pattern')">
-                El password no coincide
+                La contraseña no coincide
             </p>
 
         </div>
