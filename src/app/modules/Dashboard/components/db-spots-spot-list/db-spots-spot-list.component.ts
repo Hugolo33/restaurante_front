@@ -33,8 +33,10 @@ export class DbSpotsSpotListComponent {
 
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
-        confirmButton: "btn btn-success",
-        cancelButton: "btn btn-danger"
+        confirmButton: "var(--secondary-color)",
+        cancelButton: "var(--third-color)"
+
+
       },
       buttonsStyling: false
     });
@@ -44,7 +46,11 @@ export class DbSpotsSpotListComponent {
       showCancelButton: true,
       confirmButtonText: "Sí, eliminar",
       cancelButtonText: "Cancelar",
-      reverseButtons: true
+      reverseButtons: true,
+      confirmButtonColor: "var(--secondary-color)",
+      cancelButtonColor: "var(--third-color)",
+      color: "var(--main-color)",
+      background: "var(--bg-color)"
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
