@@ -24,12 +24,15 @@
     <select class="buttonCustom" [(ngModel)]="chosenSpot" (change)="showCreateReservation()">
 
         <option [value]="spot.id+'-'+spot.max_seating" *ngFor="let spot of avaibleSpots">
-            <p>{{spot.id}}/// </p>
-            <p>{{spot.title}} /// </p>
-            <p>Comensales maximos:{{spot.max_seating}} ///</p>
-            <p>Detalles: {{spot.details}}</p>
+
+            <p>{{spot.title}}__</p>
+            <p>Comensales maximos: {{spot.max_seating}}</p>
+
         </option>
     </select>
+
+    <input class="form-button" [(ngModel)]="notes" *ngIf="!showReservation" class="form-control"
+        placeholder="¿Tienes alguna petición?" value="Notas">
 
     <!-- 
     <select name="" id="">
@@ -39,6 +42,6 @@
         </option>
     </select> -->
 
-    <input class="form-button" *ngIf="!showReservation" type="button" value="Crear Reserva"
-        (click)="onSubmitReservation()">
+    <input [routerLink]="['/user/my-reservations']" class="form-button" *ngIf="!showReservation" type="button"
+        value="Crear Reserva" (click)="onSubmitReservation() ">
 </div>
