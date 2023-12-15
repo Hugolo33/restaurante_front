@@ -37,6 +37,7 @@ export class DbSpotsSpotListComponent {
         cancelButton: "var(--third-color)"
 
 
+
       },
       buttonsStyling: false
     });
@@ -68,7 +69,9 @@ export class DbSpotsSpotListComponent {
         }
         swalWithBootstrapButtons.fire({
           title: "Mesa eliminada",
-          icon: "success"
+          icon: "success",
+          confirmButtonColor: "var(--secondary-color)"
+
         });
       }
     });
