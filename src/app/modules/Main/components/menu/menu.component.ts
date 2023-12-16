@@ -18,18 +18,25 @@ export class MenuComponent {
   arrMainCourses!: string[]
   arrDesserts!: string[]
   date!: string
+  menuDate!: string
+  arrMenuDates!: string[]
 
 
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(async params => {
-      let menuDate = params['menuDate']
-      console.log(menuDate);
+      this.menuDate = params['menuDate']
 
       try {
-        this.currentMenu = await this.menuService.getByDate(menuDate)
-        console.log(this.currentMenu);
+        const result = await this.menuService.getAll()
+        console.log(result);
 
+        this.arrMenuDates = result.map((menu) => {
+          return menu.m_date.slice(0, 10)
+        })
+        console.log(this.arrMenuDates);
+
+        this.currentMenu = await this.menuService.getByDate(this.menuDate)
         this.arrFirstCourses = this.currentMenu.first_course.split(",")
         this.arrMainCourses = this.currentMenu.main_course.split(",")
         this.arrDesserts = this.currentMenu.dessert.split(",");
@@ -42,9 +49,10 @@ export class MenuComponent {
 
 
   async onChangeDate($event: any) {
-    let menuDate = $event.target.value
-    window.location.href = `/menu/${menuDate}`
-    console.log(menuDate);
+    this.menuDate = $event.target.value
+    this.router.navigate(['/menu', this.menuDate])
+
+
   }
 
 }
