@@ -1,10 +1,14 @@
 <section class="container-reduction">
     <h3 class="section-title">Menús</h3>
-    <div class="mb-3 form-floating">
-        <input type="date" class="form-control editLine" placeholder="Selecciona una fecha"
-            (change)="onChangeDate($event)">
-        <label for="floatingInputValue">Selecciona una fecha</label>
+
+    <div class="form-floating">
+        <select (change)="onChangeDate($event)" class="form-select" aria-label="Selecciona una fecha">
+            <option selected>Selecciona una fecha</option>
+            <option [value]="date" *ngFor="let date of arrMenuDates">{{date}}</option>
+        </select>
+        <label for="floatingSelect">Selecciona una fecha</label>
     </div>
+
     <div class="menu-box">
         <div class="menu-left">
             <h3 class="menu-title">Menú</h3>
