@@ -37,6 +37,28 @@ nav .users {
     align-items: center;
 }
 
+
 .material-symbols-outlined {
-    font-size: 2rem;
+    font-size: 3.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+    line-height: 1.5;
+
+    font-variation-settings: 'FILL' 0,
+        'wght' 100,
+        'GRAD' 0,
+        'opsz' 20;
+
+    &:hover {
+        color: rgb(3, 106, 85);
+        font-variation-settings: 'FILL' 0,
+            'wght' 200,
+            'GRAD' 0,
+            'opsz' 24;
+
+    }
+}
+
+li.icon-user {
+    margin: 0;
 }

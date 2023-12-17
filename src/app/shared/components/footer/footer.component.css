@@ -2,6 +2,23 @@ h3 {
     margin-bottom: 3rem;
 }
 
+p {
+    color: var(--dark-grey);
+}
+
+.info-contact {
+    & li {
+        padding-right: 3rem;
+    }
+}
+
+.legal-information {
+    & p {
+        padding-right: 3rem;
+        cursor: pointer;
+    }
+}
+
 .map {
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);

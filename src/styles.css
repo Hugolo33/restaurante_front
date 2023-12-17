@@ -23,16 +23,19 @@ font-family: 'Syne', sans-serif;
 
 
     /* Colors */
-    --main-color: #713636;
-    --secondary-color: #3E5048;
-    --third-color: rgb(255, 142, 93);
+    --main-color: #741f34;
+    --secondary-color: #294947;
+    --third-color: #ff992c;
 
     --bg-color: #F5F5F4;
 
+    --blue-brand: #1136c7;
+    --red-delete: #cd1212;
+
     --white: #ffffff;
     --light-grey: #E8E8E8;
-    --dark-grey: #969696;
-    --red-delete: #cd1212;
+    --dark-grey: #808080;
+
     --black: #1A1A1A;
 
     /* Spaces */
@@ -398,7 +401,6 @@ ul {
     list-style: none;
     padding-left: 0rem;
     gap: var(--main-padding);
-    cursor: pointer;
     transition: 0.5s;
 }
 

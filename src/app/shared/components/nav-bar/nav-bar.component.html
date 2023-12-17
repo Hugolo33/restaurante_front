@@ -12,7 +12,7 @@
         <ul class="users">
             <li class="buttonCustom" [routerLink]="['/register']" *ngIf="!usersService.isLogged()">Registro</li>
             <li class="buttonCustom" [routerLink]="['/login']" *ngIf="!usersService.isLogged()">Iniciar sesión</li>
-            <li (click)="onClickNavRole()" *ngIf="usersService.isLogged()">
+            <li class="icon-user" (click)="onClickNavRole()" *ngIf="usersService.isLogged()">
                 <span class="material-symbols-outlined">
                     account_circle
                 </span>
