@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { JwtServicesService } from 'src/app/core/services/jwt-services.service';
 import { UsersService } from 'src/app/core/services/users.service';
+import Swal from 'sweetalert2';
 
 
 
@@ -45,6 +46,14 @@ export class LoginComponent {
       }
     } catch (error) {
       console.log(error)
+      Swal.fire({
+        title: "Email y/o contraseña incorrectos",
+        confirmButtonColor: "var(--secondary-color)",
+        color: "var(--main-color)",
+        background: "var(--bg-color)"
+      })
+
+
     }
   }
 

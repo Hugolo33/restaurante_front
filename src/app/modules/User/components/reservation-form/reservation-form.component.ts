@@ -19,7 +19,7 @@ import Swal from 'sweetalert2';
 export class ReservationFormComponent {
 
   date: string = "9999-99-99";
-  time: string = "00:00:00";
+  time: string = "";
   show: boolean = true;
   notes: string = "";
   showReservation: boolean = true;
@@ -62,28 +62,45 @@ export class ReservationFormComponent {
     // console.log(selectedDate.getMonth());
     // console.log(selectedDate.getFullYear());
     // console.log(today);
-    if (selectedDate.getDate() >= today.getDate() && selectedDate.getMonth() >= today.getMonth() && selectedDate.getFullYear() >= today.getFullYear()) {
+    if (selectedDate >= today && this.time != "" || (selectedDate.getDate() === today.getDate() && selectedDate.getMonth() === today.getMonth() && selectedDate.getFullYear() === today.getFullYear())) {
       try {
-
+        //te traes todas las reservars en esa fecha y hora
         this.arrReservationByDayAndTime = await this.reservationService.postByShiftandDay({ r_date: this.date, time: shift_time });
         console.log(this.arrReservationByDayAndTime);
 
 
         for (let reservation of this.arrReservationByDayAndTime) {
+          // recorres el array de reservas y guardas el Id de las mesas ocupadas en un array
           if (reservation.spot_id && reservation.shift_id) {
             this.arrSpotsId.push(reservation.spot_id);
             console.log(this.arrSpotsId);
           }
         }
-
+        // si el array de reservas en esa fecha y hora es diferente de 0, es decir, si hay reservas ese dia, te traes las mesas disponibles usando el array de mesas ocupadas como filtro
         if (this.arrReservationByDayAndTime.length !== 0) {
           this.avaibleSpots = await this.spotService.postAllBut({ spotsIds: this.arrSpotsId })
+
+          if (this.avaibleSpots.length === 0) {
+            Swal.fire({
+              title: "No hay mesas disponibles",
+              confirmButtonColor: "var(--secondary-color)",
+              color: "var(--main-color)",
+              background: "var(--bg-color)"
+            })
+
+          } else {
+            this.show = !this.show;
+            this.showReservation = !this.showReservation;
+          }
+
+          //si no hay reservas ese dia te traes todas las mesas          
         } else {
           this.avaibleSpots = await this.spotService.getAll();
+          this.show = !this.show;
+          this.showReservation = !this.showReservation;
         }
-        console.log(this.avaibleSpots);
 
-        this.show = !this.show;
+
 
       } catch (error) {
         console.log(error);
@@ -93,7 +110,7 @@ export class ReservationFormComponent {
     } else {
 
       Swal.fire({
-        title: "La fecha es anterior al dia de hoy",
+        title: "La fecha es anterior al dia de hoy y/o falta escoger hora",
         confirmButtonColor: "var(--secondary-color)",
         color: "var(--main-color)",
         background: "var(--bg-color)"
