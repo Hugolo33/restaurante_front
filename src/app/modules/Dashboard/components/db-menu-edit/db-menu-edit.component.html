@@ -1,4 +1,4 @@
-<section>
+<section *ngIf="previousMenu">
     <h3 class="section-title">Editar menú</h3>
 
     <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
@@ -37,9 +37,7 @@
             <input type="submit" [disabled]="formulario.invalid">
         </div>
 
-        <p>{{formulario.invalid}}</p>
-
-        
+        <!-- <p>{{formulario.invalid}}</p> -->        
 
     </form>
 

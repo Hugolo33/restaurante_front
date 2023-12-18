@@ -41,9 +41,7 @@ export class DbMenuEditComponent {
     } )
 
     const response = await this.menuService.getById(Number(this.newMenuId))
-    this.previousMenu = response
-    console.log("responseGetById");    
-    console.log(response);    
+    this.previousMenu = response   
 
     this.formulario = new FormGroup({
       m_date : new FormControl("", [Validators.required]),
@@ -58,21 +56,13 @@ export class DbMenuEditComponent {
   async onSubmit() {
     this.activatedRoute.params.subscribe((params) => {
       this.newMenuId = params["menuId"]
-    } )
-    console.log("formulario.value");    
-    console.log(this.formulario.value);  
+    } ) 
 
     this.newMenu = this.formulario.value
     this.newMenu.id = Number(this.newMenuId)
     // this.newMenu.m_date = this.previousMenu.m_date
-
-    console.log("newMenu");        
-    console.log(this.newMenu);
     
-    const response = await this.menuService.update(this.newMenu)
-    
-    console.log("response");    
-    console.log(response);
+    const response = await this.menuService.update(this.newMenu)    
 
     this.router.navigate(["/dashboard/menuview"])
     

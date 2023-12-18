@@ -33,7 +33,7 @@ export class DbMenuListComponent {
   async erase(menu: Menu) {
     try {
       const response = await this.menuService.delete(Number(menu.id))
-      console.log(response);
+      
       const response2 = await this.menuService.getAll()      
       this.menus = response2
       
@@ -43,7 +43,7 @@ export class DbMenuListComponent {
   }
 
   async edit(menu: Menu) {
-    console.log(menu)
+    
     const id = menu.id?.toString()
     this.router.navigate(["/dashboard/menuedit",id])
     
