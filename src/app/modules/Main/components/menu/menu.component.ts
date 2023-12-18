@@ -32,14 +32,18 @@ export class MenuComponent {
         console.log(result);
 
         this.arrMenuDates = result.map((menu) => {
-          return menu.m_date.slice(0, 10)
+          return dayjs(menu.m_date).format('YYYY-MM-DD')
         })
         console.log(this.arrMenuDates);
 
         this.currentMenu = await this.menuService.getByDate(this.menuDate)
-        this.arrFirstCourses = this.currentMenu.first_course.split(",")
-        this.arrMainCourses = this.currentMenu.main_course.split(",")
-        this.arrDesserts = this.currentMenu.dessert.split(",");
+
+        if(this.currentMenu) {
+          this.arrFirstCourses =  this.currentMenu.first_course.split(",")
+          this.arrMainCourses =  this.currentMenu.main_course.split(",")
+          this.arrDesserts =  this.currentMenu.dessert.split(",");
+        }
+        
       } catch (error) {
         console.log(error);
       }

@@ -6,8 +6,10 @@ p {
 .menu-left p {
     color: var(--main-color);
     padding-right: 2rem;
-
 }
+
+
+
 
 div.buttonCustom {
     font-size: 0.75rem;
@@ -19,15 +21,18 @@ div.buttonCustom {
     div.buttonCustom {
         padding: 0.5rem;
         text-align: center;
+        margin: 0 auto;
+        margin-top: var(--main-padding);
     }
 
     .menu-box {
         display: block;
         padding: 6rem 0;
+        text-align: center;
     }
 
     .menu-title {
-        padding: 0
+        padding: 0;
     }
 
     .menu-right {
@@ -43,8 +48,15 @@ div.buttonCustom {
 
     .menu-left {
         padding: 0;
-        text-align: left;
+        padding-right: 0;
+        padding-bottom: var(--double-padding);
+        text-align: center;
         width: 100%;
+
+        & p {
+            padding-right: 0;
+        }
+
     }
 
 

@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,0");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,0");
+
+span {
+    cursor: pointer;
+    font-weight: 30px;
+    margin-left: auto;
+}
+
+div {
+    gap: 15px;
+
+}
+
+article {
+    width: calc(50% - 15px);
+
+}

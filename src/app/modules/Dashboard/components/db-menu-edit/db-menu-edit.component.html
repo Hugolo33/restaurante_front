@@ -4,40 +4,37 @@
     <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
 
         <div>
-            <label>Date</label>
             <p>{{previousMenu.m_date | date}}</p>
-            <input type="date" formControlName="m_date">
+
         </div>
 
-        <div>
-            <p>(Los platos incluidos en el first o en el main deben ir separados por comas)</p>
+
+
+        <div class="mb-3 form-floating">
+            <input type="text" formControlName="first_course" class="form-control editLine" placeholder="Primer plato">
+            <label for="floatingInputValue">Primer plato</label>
         </div>
 
-        <div>
-            <label>First Course</label>
-            <input type="text" formControlName="first_course">
+        <div class="mb-3 form-floating">
+            <input type="text" formControlName="main_course" class="form-control editLine" placeholder="Segundo plato">
+            <label for="floatingInputValue">Segundo plato</label>
         </div>
 
-        <div>
-            <label>Main Course</label>
-            <input type="text" formControlName="main_course">
+        <div class="mb-3 form-floating">
+            <input type="text" formControlName="dessert" class="form-control editLine" placeholder="Postres">
+            <label for="floatingInputValue">Postres</label>
         </div>
 
-        <div>
-            <label>Dessert</label>
-            <input type="text" formControlName="dessert">
+        <div class="mb-3 form-floating">
+            <input type="number" formControlName="price" class="form-control editLine" placeholder="Precio">
+            <label for="floatingInputValue">Precio</label>
         </div>
 
-        <div>
-            <label>Price</label>
-            <input type="number" formControlName="price">
+        <div class="mb-3">
+            <input type="submit" value="Editar menú" class="buttonCustom">
         </div>
 
-        <div>
-            <input type="submit" [disabled]="formulario.invalid">
-        </div>
-
-        <!-- <p>{{formulario.invalid}}</p> -->        
+        <!-- <p>{{formulario.invalid}}</p> -->
 
     </form>
 

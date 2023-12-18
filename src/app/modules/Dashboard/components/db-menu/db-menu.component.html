@@ -1,39 +1,37 @@
-<section>
-    <h3 class="section-title">Añadir menú</h3>
+<section class="form-box-admin">
+    <h3 class="section-title pb-3">Añadir menú</h3>
 
     <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
 
-        <div>
-            <label>Fecha</label>
-            <input type="date" formControlName="m_date">
+        <div class="mb-3 form-floating">
+            <input type="date" formControlName="m_date" class="form-control editLine" placeholder="Fecha">
+            <label for="floatingInputValue">Fecha</label>
         </div>
 
-        <div>
-            <p>(Los platos incluidos en el first o en el main deben ir separados por comas)</p>
+
+
+        <div class="mb-3 form-floating">
+            <input type="text" formControlName="first_course" class="form-control editLine" placeholder="Primer plato">
+            <label for="floatingInputValue">Primer plato</label>
         </div>
 
-        <div>
-            <label>Primer plato</label>
-            <input type="text" formControlName="first_course">
+        <div class="mb-3 form-floating">
+            <input type="text" formControlName="main_course" class="form-control editLine" placeholder="Segundo plato">
+            <label for="floatingInputValue">Segundo plato</label>
         </div>
 
-        <div>
-            <label>Segundo plato</label>
-            <input type="text" formControlName="main_course">
+        <div class="mb-3 form-floating">
+            <input type="text" formControlName="dessert" class="form-control editLine" placeholder="Postre">
+            <label for="floatingInputValue">Postre</label>
         </div>
 
-        <div>
-            <label>Postre</label>
-            <input type="text" formControlName="dessert">
+        <div class="mb-3 form-floating">
+            <input type="number" formControlName="price" class="form-control editLine" placeholder="Precio">
+            <label for="floatingInputValue">Precio</label>
         </div>
 
-        <div>
-            <label>Precio</label>
-            <input type="number" formControlName="price">
-        </div>
-
-        <div>
-            <input type="submit">
+        <div class="mb-3">
+            <input type="submit" value="Crear menú" class="buttonCustom">
         </div>
 
     </form>
@@ -54,7 +52,7 @@
                 <p>Segundo: {{menu.main_course}}</p>
                 <p>Postre: {{menu.dessert}}</p>
                 <p>{{menu.price}}</p>
-                <button (click)="send(menu)">Reutilizar menu</button>
+                <button (click)="send(menu)" value="Reutilizar menú" class="buttonCustom">Reutilizar menú</button>
             </div>
         </article>
 
