@@ -4,8 +4,8 @@ section {
     gap: var(--main-padding);
 }
 
-h3 {
-    width: 100%;
+h2 {
+    color: var(--main-color)
 }
 
 .review-box {
