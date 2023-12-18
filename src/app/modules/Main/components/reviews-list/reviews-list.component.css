@@ -15,3 +15,14 @@ small {
     align-items: center;
     flex-direction: row;
 }
+
+@media (max-width: 480px) {
+    .flex {
+        display: block;
+    }
+
+
+    .review-box {
+        margin-bottom: var(--main-padding);
+    }
+}

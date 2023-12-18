@@ -3,9 +3,12 @@
 <div class="menu-box">
 
     <div class="menu-left">
-        <h3 class="menu-title">Menú</h3>
-        <p class="pb-2">{{latestMenu.m_date | date: 'dd/MM/yyyy'}}</p>
-        <div class="buttonCustom" [routerLink]="['/menu', latestMenu.m_date.slice(0,10)]">Ver
+        <div>
+            <h3 class="menu-title">Menú</h3>
+            <p class="pb-2">{{latestMenu.m_date | date: 'dd/MM/yyyy'}}</p>
+        </div>
+        <div class="buttonCustom" [routerLink]="['/menu', latestMenu.m_date.slice(0,10)]">
+            Ver
             menús de otras fechas
         </div>
     </div>

@@ -22,3 +22,25 @@ h2 {
 h3 {
     cursor: pointer;
 }
+
+
+/* # Mobile only screen and (min-width: 480px)  */
+@media (max-width: 480px) {
+
+    .heroImages {
+        display: block;
+
+
+        & figure {
+            width: 100%;
+        }
+    }
+
+    .hero-text {
+        font-size: 3rem;
+        max-width: 100%;
+        padding: var(--main-padding) 0;
+    }
+
+
+}

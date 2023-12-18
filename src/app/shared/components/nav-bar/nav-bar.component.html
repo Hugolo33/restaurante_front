@@ -1,5 +1,5 @@
-<div class="container-fluid">
-    <nav>
+<nav clas>
+    <div class="container-fluid">
         <ul class="navigate">
             <li [routerLink]="['/']">Home</li>
             <li [routerLink]="['/']" fragment="navmenu">Menú</li>
@@ -19,6 +19,7 @@
             </li>
             <li class="buttonCustom" (click)="onClickLogout()" *ngIf="usersService.isLogged()">Cerrar sesión</li>
         </ul>
-    </nav>
-    <div class="line"></div>
-</div>
+
+        <div class="line"></div>
+    </div>
+</nav>

@@ -32,3 +32,25 @@ p {
     text-align: right;
     width: calc(50vw - var(--main-padding));
 }
+
+
+@media (max-width: 480px) {
+    .form-footer {
+        display: block;
+    }
+
+    .d-flex {
+        display: block !important
+    }
+
+
+    .map-box {
+        text-align: right;
+        width: 100%;
+        padding-top: var(--double-padding);
+    }
+
+
+
+
+}
