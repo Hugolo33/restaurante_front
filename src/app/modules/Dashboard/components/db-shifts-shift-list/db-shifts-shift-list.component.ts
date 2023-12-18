@@ -38,15 +38,8 @@ export class DbShiftsShiftListComponent {
   }
 
   async erase(shift: any) {
-    const swalWithBootstrapButtons = Swal.mixin({
-      customClass: {
-        confirmButton: "var(--secondary-color)",
-        cancelButton: "var(--third-color)"
 
-      },
-      buttonsStyling: false
-    });
-    swalWithBootstrapButtons.fire({
+    Swal.fire({
       title: "¿Quieres eliminar este turno?",
       icon: "warning",
       showCancelButton: true,
@@ -54,7 +47,9 @@ export class DbShiftsShiftListComponent {
       cancelButtonText: "Cancelar",
       reverseButtons: true,
       background: "var(--bg-color)",
-      color: "var(--main-color)"
+      color: "var(--main-color)",
+      confirmButtonColor: "var(--secondary-color)",
+      cancelButtonColor: "var(--third-color)"
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
@@ -65,7 +60,7 @@ export class DbShiftsShiftListComponent {
         } catch (error) {
           console.log(error);
         }
-        swalWithBootstrapButtons.fire({
+        Swal.fire({
           title: "Reservation cancelled",
           icon: "success",
           confirmButtonColor: "var(--secondary-color)",

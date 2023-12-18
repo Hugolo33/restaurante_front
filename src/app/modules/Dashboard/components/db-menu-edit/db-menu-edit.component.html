@@ -1,38 +1,36 @@
-<section>
-    <h3 class="section-title">Añadir menú</h3>
+<section class="form-box-admin">
+    <h3 class="section-title pb-3">Añadir menú</h3>
 
     <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
 
-        <div>
-            <label>Fecha</label>
+        <div class="mb-3 form-floating">
             <input type="date" formControlName="m_date" class="form-control editLine" placeholder="Fecha">
+            <label class="form-label">Fecha</label>
         </div>
 
-        <div>
-            <p>(Los platos incluidos en el first o en el main deben ir separados por comas)</p>
-        </div>
 
-        <div>
-            <label>Primer plato</label>
+
+        <div class="mb-3 form-floating">
             <input type="text" formControlName="first_course" class="form-control editLine" placeholder="Primer plato">
+            <label for="floatingInputValue">Primer platos</label>
         </div>
 
-        <div>
-            <label>Segundo plato</label>
+        <div class="mb-3 form-floating">
             <input type="text" formControlName="main_course" class="form-control editLine" placeholder="Segundo plato">
+            <label for="floatingInputValue">Segundo plato</label>
         </div>
 
-        <div>
-            <label>Postres</label>
+        <div class="mb-3 form-floating">
             <input type="text" formControlName="dessert" class="form-control editLine" placeholder="Postres">
+            <label for="floatingInputValue">Postres</label>
         </div>
 
-        <div>
-            <label>Precio</label>
+        <div class="mb-3 form-floating">
             <input type="number" formControlName="price" class="form-control editLine" placeholder="Precio">
+            <label for="floatingInputValue">Precio</label>
         </div>
 
-        <div>
+        <div class="mb-3">
             <input type="submit" value="Editar menú" class="buttonCustom">
         </div>
 

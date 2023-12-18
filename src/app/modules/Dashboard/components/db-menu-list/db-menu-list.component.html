@@ -1,4 +1,4 @@
-<section *ngIf="menus">
+<section *ngIf="menus" class="form-box-admin">
     <h3 class="section-title">Menús actuales</h3>
 
     <div class="d-flex flex-wrap">
@@ -9,11 +9,16 @@
                 <p>Segundo: {{menu.main_course}}</p>
                 <p>Postre: {{menu.dessert}}</p>
                 <p>{{menu.price}} €</p>
-                <button (click)="erase(menu)">BORRAR</button>
-                <button (click)="edit(menu)">EDITAR</button>
+                <div (click)="erase(menu)">
+                    <span class="material-symbols-outlined">cancel
+                    </span>
+                </div>
+                <div (click)="edit(menu)">
+                    <span class="material-symbols-outlined">edit</span>
+                </div>
             </div>
         </article>
 
-        
+
     </div>
 </section>

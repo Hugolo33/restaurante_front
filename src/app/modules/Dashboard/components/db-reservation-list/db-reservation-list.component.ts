@@ -28,14 +28,8 @@ export class DbReservationListComponent {
   }
 
   onClickRemove(reservationId: number) {
-    const swalWithBootstrapButtons = Swal.mixin({
-      customClass: {
-        confirmButton: "var(--secondary-color)",
-        cancelButton: "var(--third-color)"
-      },
-      buttonsStyling: false
-    });
-    swalWithBootstrapButtons.fire({
+
+    Swal.fire({
       title: "¿Quieres cancelar esta reserva?",
       icon: "warning",
       showCancelButton: true,
@@ -55,7 +49,7 @@ export class DbReservationListComponent {
         } catch (error) {
           console.log(error);
         }
-        swalWithBootstrapButtons.fire({
+        Swal.fire({
           title: "Reservation cancelled",
           icon: "success",
           confirmButtonColor: "var(--secondary-color)",

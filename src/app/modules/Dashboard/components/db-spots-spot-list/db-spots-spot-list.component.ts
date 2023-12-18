@@ -38,17 +38,7 @@ export class DbSpotsSpotListComponent {
   }
 
   async erase(spot: Spot) {
-    const swalWithBootstrapButtons = Swal.mixin({
-      customClass: {
-        confirmButton: "var(--secondary-color)",
-        cancelButton: "var(--third-color)"
-
-
-
-      },
-      buttonsStyling: false
-    });
-    swalWithBootstrapButtons.fire({
+    Swal.fire({
       title: "¿Quieres eliminar esta mesa?",
       icon: "warning",
       showCancelButton: true,
@@ -58,7 +48,10 @@ export class DbSpotsSpotListComponent {
       confirmButtonColor: "var(--secondary-color)",
       cancelButtonColor: "var(--third-color)",
       color: "var(--main-color)",
-      background: "var(--bg-color)"
+      background: "var(--bg-color)",
+
+
+
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
@@ -74,7 +67,7 @@ export class DbSpotsSpotListComponent {
         } catch (error) {
           console.log(error);
         }
-        swalWithBootstrapButtons.fire({
+        Swal.fire({
           title: "Mesa eliminada",
           icon: "success",
           confirmButtonColor: "var(--secondary-color)"
