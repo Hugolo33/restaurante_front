@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Reservation } from 'src/app/core/interfaces/reservation.interface';
 import { Shift } from 'src/app/core/interfaces/shift.interface';
 import { Spot } from 'src/app/core/interfaces/spot.interface';
@@ -8,6 +9,7 @@ import { JwtServicesService } from 'src/app/core/services/jwt-services.service';
 import { ReservationsService } from 'src/app/core/services/reservations.service';
 import { ShiftsService } from 'src/app/core/services/shifts.service';
 import { SpotsService } from 'src/app/core/services/spots.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'reservation-form',
@@ -28,6 +30,7 @@ export class ReservationFormComponent {
   reservationService = inject(ReservationsService)
   shiftService = inject(ShiftsService)
   spotService = inject(SpotsService);
+  router = inject(Router);
 
   jwtService = inject(JwtServicesService)
   loggedUser!: DecodedToken
@@ -39,6 +42,7 @@ export class ReservationFormComponent {
   avaibleSpots: Spot[] = [];
   showNoTables: boolean = true;
 
+
   async ngOnInit() {
     this.token = localStorage.getItem('token')!;
     this.loggedUser = this.jwtService.DecodeToken(this.token)
@@ -47,35 +51,58 @@ export class ReservationFormComponent {
   }
 
   async onSubmitDayAndTime() {
-    try {
-      console.log(this.time);
-      let shift_time = (this.time.split('-')[0])
-      console.log(shift_time)
-      console.log(this.date);
+    // console.log(this.time);
+    let shift_time = (this.time.split('-')[0])
+    // console.log(shift_time)
+    // console.log(this.date);
+    let today = new Date();
+    let selectedDate = new Date(this.date);
 
-      this.arrReservationByDayAndTime = await this.reservationService.postByShiftandDay({ r_date: this.date, time: shift_time });
-      console.log(this.arrReservationByDayAndTime);
+    // console.log(selectedDate.getDate());
+    // console.log(selectedDate.getMonth());
+    // console.log(selectedDate.getFullYear());
+    // console.log(today);
+    if (selectedDate.getDate() >= today.getDate() && selectedDate.getMonth() >= today.getMonth() && selectedDate.getFullYear() >= today.getFullYear()) {
+      try {
+
+        this.arrReservationByDayAndTime = await this.reservationService.postByShiftandDay({ r_date: this.date, time: shift_time });
+        console.log(this.arrReservationByDayAndTime);
 
 
-      for (let reservation of this.arrReservationByDayAndTime) {
-        if (reservation.spot_id && reservation.shift_id) {
-          this.arrSpotsId.push(reservation.spot_id);
-          console.log(this.arrSpotsId);
+        for (let reservation of this.arrReservationByDayAndTime) {
+          if (reservation.spot_id && reservation.shift_id) {
+            this.arrSpotsId.push(reservation.spot_id);
+            console.log(this.arrSpotsId);
+          }
         }
+
+        if (this.arrReservationByDayAndTime.length !== 0) {
+          this.avaibleSpots = await this.spotService.postAllBut({ spotsIds: this.arrSpotsId })
+        } else {
+          this.avaibleSpots = await this.spotService.getAll();
+        }
+        console.log(this.avaibleSpots);
+
+        this.show = !this.show;
+
+      } catch (error) {
+        console.log(error);
+
       }
 
-      if (this.arrReservationByDayAndTime.length !== 0) {
-        this.avaibleSpots = await this.spotService.postAllBut({ spotsIds: this.arrSpotsId })
-      } else {
-        this.avaibleSpots = await this.spotService.getAll();
-      }
-      console.log(this.avaibleSpots);
+    } else {
 
-      this.show = !this.show;
-    } catch (error) {
-      console.log(error);
+      Swal.fire({
+        title: "La fecha es anterior al dia de hoy",
+        confirmButtonColor: "var(--secondary-color)",
+        color: "var(--main-color)",
+        background: "var(--bg-color)"
+      })
+      this.router.navigate(['/user/new-reservation']);
 
     }
+
+
 
 
   }

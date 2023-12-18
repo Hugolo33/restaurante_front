@@ -28,16 +28,12 @@ export class ReservationListUserComponent {
     this.loggedUser = this.jwtservices.DecodeToken(this.token)
     try {
       this.arrReservationsBeforeToday = await this.reservationsService.getByUserBeforeToday(this.loggedUser.user_id)
-
-    } catch (error) {
-      console.log(error);
-    }
-    try {
       this.arrReservationsAfterToday = await this.reservationsService.getByUserAfterToday(this.loggedUser.user_id)
 
     } catch (error) {
       console.log(error);
     }
+
   }
 
   onClickReview(reservationId: number) {
