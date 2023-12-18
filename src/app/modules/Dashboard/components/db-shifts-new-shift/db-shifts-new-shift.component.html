@@ -12,8 +12,14 @@
 
             <div class="mb-3 form-floating">
 
-                <input class="form-control editLine" type="text" placeholder="Introduce el nombre (Day time)"
-                    formControlName="daytime">
+
+                <select formControlName="daytime" class="form-control editLine"
+                    placeholder="Introduce el nombre (Day time)">
+                    <option value="dinner">Dinner</option>
+                    <option value="lunch">Lunch</option>
+                </select>
+                <!-- <input class="form-control editLine" type="select" placeholder="Introduce el nombre (Day time)"
+                    formControlName="daytime"> -->
                 <label for="floatingInputValue">Introduce el nombre (Day time)</label>
             </div>
 
