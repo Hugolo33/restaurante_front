@@ -32,3 +32,16 @@ span {
 article>div:last-child {
     margin-left: auto;
 }
+
+@media(max-width: 49.375rem) {
+    .review-box {
+        width: calc(50% - var(--main-padding));
+    }
+}
+
+
+@media(max-width: 37.5rem) {
+    .review-box {
+        width: 100%
+    }
+}

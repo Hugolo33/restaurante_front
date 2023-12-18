@@ -1,12 +1,22 @@
 <section>
-    <h3>PALOS DE CIEGO</h3>
+    <h3>Reutilizar menú en nueva fecha</h3>
 
-    <p>{{newMenu | json}}</p>
 
-    <label>Nueva Fecha</label>
-    <input type="date" [(ngModel)]="newDate">
 
-    <button (click)="send()">ENVIAR</button>
+    <h5 class="pt-3">{{newMenu.m_date | date: 'dd/MM/yyyy'}}</h5>
+    <p><strong>Primero: </strong>{{newMenu.first_course}}</p>
+    <p><strong>Segundo: </strong>{{newMenu.main_course}}</p>
+    <p><strong>Postre: </strong> {{newMenu.dessert}}</p>
+    <p class="pb-2"><strong>Precio: </strong>{{newMenu.price | currency: 'EUR'}}</p>
+
+
+    <div class="mb-3 form-floating">
+        <input type="date" [(ngModel)]="newDate" class="form-control editLine" placeholder="Seleccionar nueva fecha">
+        <label for="floatingInputValue">Seleccionar nueva fecha</label>
+    </div>
+
+
+    <button class="buttonCustom" (click)="send()">Guardar</button>
 
 
 </section>

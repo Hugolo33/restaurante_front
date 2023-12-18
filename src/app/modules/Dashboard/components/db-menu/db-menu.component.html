@@ -41,7 +41,7 @@
 
 
 
-<section *ngIf="menus">
+<section *ngIf="menus" class="pt-4">
     <h3 class="section-title">Seleccionar menú anterior</h3>
 
     <div class="d-flex flex-wrap">
@@ -51,7 +51,7 @@
                 <p>Primero: {{menu.first_course}}</p>
                 <p>Segundo: {{menu.main_course}}</p>
                 <p>Postre: {{menu.dessert}}</p>
-                <p>{{menu.price}}</p>
+                <p>{{menu.price | currency: 'EUR'}}</p>
                 <button (click)="send(menu)" value="Reutilizar menú" class="buttonCustom">Reutilizar menú</button>
             </div>
         </article>

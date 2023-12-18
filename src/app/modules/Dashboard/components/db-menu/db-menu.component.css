@@ -1,9 +1,15 @@
 div {
-    gap: 15px;
+    gap: var(--main-padding);
 
 }
 
 article {
-    width: calc(33% - 15px);
+    width: calc(50% - (var(--main-padding))/2);
 
+}
+
+@media (max-width: 53.125rem) {
+    article {
+        width: 100%
+    }
 }

@@ -39,6 +39,7 @@ span {
 }
 
 .material-symbols-outlined {
+    margin-left: auto;
     font-size: 2rem;
     cursor: pointer;
     transition: 0.3s;
@@ -55,4 +56,11 @@ span {
             'opsz' 24;
 
     }
+}
+
+@media (max-width: 53.125rem) {
+    .review-box {
+        width: 100%
+    }
+
 }
