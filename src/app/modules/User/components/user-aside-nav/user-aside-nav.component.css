@@ -1,0 +1,20 @@
+.aside-nav li {
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+
+    .aside-nav {
+        position: static;
+    }
+
+
+    .container-reduction {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+
+
+}

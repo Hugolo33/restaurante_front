@@ -8,3 +8,10 @@
     width: 130px;
 
 }
+
+@media (max-width: 750px) {
+    .flex {
+        display: block;
+    }
+
+}

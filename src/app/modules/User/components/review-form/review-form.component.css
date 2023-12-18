@@ -19,3 +19,13 @@ textarea {
         color: var(--main-color);
     }
 }
+
+
+
+@media (max-width: 750px) {
+    .form-box-users {
+        margin-top: var(--double-padding);
+        width: 100%;
+    }
+
+}

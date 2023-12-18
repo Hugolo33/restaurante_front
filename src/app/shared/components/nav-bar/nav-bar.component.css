@@ -22,17 +22,9 @@ nav {
     }
 }
 
-nav .logo {
-    width: 30%;
-}
-
-nav .navigate {
-    width: 30%
-}
 
 nav .users {
     display: flex;
-    width: 30%;
     justify-content: flex-end;
     align-items: center;
 }
@@ -61,4 +53,8 @@ nav .users {
 
 li.icon-user {
     margin: 0;
+}
+
+.active {
+    font-weight: bold;
 }

@@ -1,11 +1,12 @@
+<h2 class="section-title pb-4">Crear nueva reserva</h2>
 <div class="mb-3">
-    <label class="section-title">Fecha de la Reserva</label>
+    <h4>Fecha de la Reserva</h4>
     <input class="buttonCustom" type="date" [(ngModel)]="date" />
 </div>
 
 
 <div class="mb-3">
-    <label class="section-title">Turnos disponibles</label>
+    <h4>Turnos disponibles</h4>
     <select class="buttonCustom" name="" id="" [(ngModel)]="time">
         <option>Seleccione una </option>
         <option *ngFor="let shift of arrShifts" [value]="shift.time+'-'+shift.id">{{shift.time}}</option>
@@ -19,7 +20,7 @@
 </div>
 <div class="d-flex flex-column" *ngIf="!show">
 
-    <label class="section-title">Elegir Mesa Disponible</label>
+    <h4>Elegir Mesa Disponible</h4>
 
     <select class="buttonCustom" [(ngModel)]="chosenSpot" (change)="showCreateReservation()">
 

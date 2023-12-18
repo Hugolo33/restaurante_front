@@ -1,7 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import * as dayjs from 'dayjs';
 import { Menu } from 'src/app/core/interfaces/menu.interface';
 import { MenuService } from 'src/app/core/services/menu.service';
+
 
 @Component({
   selector: 'menu-view',
@@ -21,6 +23,7 @@ export class MenuViewComponent {
   async ngOnInit() {
     this.latestMenu = await this.menuService.getLatest()
     console.log(this.latestMenu);
+    this.latestMenu.m_date = dayjs(this.latestMenu.m_date).format('YYYY-MM-DD')
     //Comprobado, funciona
     this.arrFirstCourses = this.latestMenu.first_course.split(",")
     this.arrMainCourses = this.latestMenu.main_course.split(",")
