@@ -30,7 +30,20 @@ div span {
     color: var(--main-color)
 }
 
-@media (max-width: 750px) {
+@media (max-width: 65.625rem) {
+
+
+    .flex {
+        display: inline-block;
+        padding-right: 6rem;
+    }
+
+
+
+}
+
+@media (max-width: 46.875rem) {
+
     .flex {
         display: block;
     }
@@ -38,4 +51,6 @@ div span {
     .buttonCustom {
         margin-top: var(--main-padding);
     }
+
+
 }

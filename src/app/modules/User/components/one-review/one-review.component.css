@@ -5,13 +5,15 @@
 }
 
 .stars {
-    width: 130px;
+    min-width: 130px;
 
 }
 
-@media (max-width: 750px) {
+
+@media (max-width: 65.625rem) {
     .flex {
         display: block;
     }
+
 
 }

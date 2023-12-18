@@ -1,0 +1,17 @@
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.stars {
+    width: 130px;
+    min-width: 9.375rem;
+}
+
+@media (max-width: 46.875rem) {
+    .flex {
+        display: block;
+    }
+
+}
