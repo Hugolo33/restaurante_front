@@ -7,11 +7,12 @@
 }
 
 .flex div:nth-child(2) {
-    width: 17.5rem;
+    width: 17rem;
 }
 
 .right {
-    margin-left: auto
+    width: 100%;
+
 }
 
 .material-symbols-outlined {
@@ -31,4 +32,37 @@ article {
 
         scale: 1.02;
     }
+}
+
+
+/* TODO ESTAS MEDIAQUERIES DE ABAJO HAY QUE REVISARLAS: */
+
+@media (max-width: 63.125rem) {
+    .flex {
+        display: inline-block;
+        padding-right: 0;
+    }
+
+    .flex div {
+        width: max-content;
+        padding-right: 3rem;
+    }
+
+    .flex div {
+        display: inline-block
+    }
+}
+
+
+@media (max-width: 46.875rem) {
+
+    .flex {
+        display: block;
+    }
+
+    .buttonCustom {
+        margin-top: var(--main-padding);
+    }
+
+
 }

@@ -58,3 +58,21 @@ li.icon-user {
 .active {
     font-weight: bold;
 }
+
+@media (max-width: 61.875rem) {
+
+    nav li,
+    p {
+        cursor: pointer;
+        margin: 0;
+    }
+
+    li.nav-item {
+        font-size: 1.5rem;
+    }
+
+    nav .users {
+        flex-direction: row;
+        justify-content: start;
+    }
+}

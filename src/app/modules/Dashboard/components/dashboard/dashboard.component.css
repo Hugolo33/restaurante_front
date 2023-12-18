@@ -27,3 +27,30 @@ li {
     font-size: 20px;
     font-weight: bold;
 } */
+
+@media (max-width: 70rem) {
+
+    .container-reduction {
+        width: 60vw;
+        margin: 0;
+        margin-left: 15rem
+    }
+}
+
+@media (max-width: 43.75rem) {
+
+    .aside-nav {
+        position: static;
+
+
+    }
+
+    .container-reduction {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+
+
+}

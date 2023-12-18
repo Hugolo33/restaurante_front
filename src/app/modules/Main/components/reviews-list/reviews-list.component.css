@@ -3,6 +3,7 @@
     background-color: var(--secondary-color);
     border: 0px;
     flex: 1;
+    min-width: 17.5rem;
 }
 
 small {
@@ -16,7 +17,19 @@ small {
     flex-direction: row;
 }
 
-@media (max-width: 480px) {
+.stars {
+    min-width: 9.375rem;
+}
+
+@media (max-width: 59.375rem) {
+
+    .review-box {
+        width: calc(50% - var(--main-padding));
+    }
+
+}
+
+@media (max-width: 34.375rem) {
     .flex {
         display: block;
     }
@@ -24,5 +37,6 @@ small {
 
     .review-box {
         margin-bottom: var(--main-padding);
+        width: 100%;
     }
 }

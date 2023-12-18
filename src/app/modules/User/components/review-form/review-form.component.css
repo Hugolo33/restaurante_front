@@ -22,7 +22,7 @@ textarea {
 
 
 
-@media (max-width: 750px) {
+@media (max-width: 46.875rem) {
     .form-box-users {
         margin-top: var(--double-padding);
         width: 100%;

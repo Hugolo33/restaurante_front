@@ -23,3 +23,11 @@ div>p {
     font-size: 0.75rem;
     margin-bottom: 0.125rem;
 }
+
+
+@media(max-width: 69.6875rem) {
+    .review-box {
+        width: 100%;
+        max-width: 100%;
+    }
+}

@@ -14,12 +14,12 @@ p {
 div.buttonCustom {
     font-size: 0.75rem;
     width: max-content;
+    display: inline-block
 }
 
-@media (max-width: 480px) {
+@media (max-width: 46.875rem) {
 
     div.buttonCustom {
-        padding: 0.5rem;
         text-align: center;
         margin: 0 auto;
         margin-top: var(--main-padding);
@@ -36,8 +36,9 @@ div.buttonCustom {
     }
 
     .menu-right {
+        padding-right: 0;
         padding-top: 0;
-        padding: 0;
+
         border-left: 0;
         width: 100%;
 
@@ -46,16 +47,16 @@ div.buttonCustom {
         }
     }
 
+    .menu-left p {
+        padding-right: 0;
+    }
+
     .menu-left {
         padding: 0;
         padding-right: 0;
         padding-bottom: var(--double-padding);
         text-align: center;
         width: 100%;
-
-        & p {
-            padding-right: 0;
-        }
 
     }
 
