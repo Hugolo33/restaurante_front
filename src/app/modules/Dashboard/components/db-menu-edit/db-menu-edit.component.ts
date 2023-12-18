@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Menu } from 'src/app/core/interfaces/menu.interface';
 import { MenuService } from 'src/app/core/services/menu.service';
@@ -21,7 +21,9 @@ export class DbMenuEditComponent {
 
   newMenuId: string = ""
 
-  router = inject(Router)
+  router = inject(Router);
+
+  previousMenu!: Menu;
 
   constructor() {
     this.formulario = new FormGroup({
@@ -33,19 +35,46 @@ export class DbMenuEditComponent {
     })
   }
 
+  async ngOnInit() {
+    this.activatedRoute.params.subscribe((params) => {
+      this.newMenuId = params["menuId"]
+    } )
+
+    const response = await this.menuService.getById(Number(this.newMenuId))
+    this.previousMenu = response
+    console.log("responseGetById");    
+    console.log(response);    
+
+    this.formulario = new FormGroup({
+      m_date : new FormControl("", [Validators.required]),
+      first_course : new FormControl(this.previousMenu.first_course, [Validators.required]),
+      main_course : new FormControl(this.previousMenu.main_course, [Validators.required]),
+      dessert : new FormControl(this.previousMenu.dessert, [Validators.required]),
+      price : new FormControl(this.previousMenu.price, [Validators.required])
+    })
+
+  }
 
   async onSubmit() {
     this.activatedRoute.params.subscribe((params) => {
       this.newMenuId = params["menuId"]
     } )
-    console.log(this.formulario.value);
-    
+    console.log("formulario.value");    
+    console.log(this.formulario.value);  
+
     this.newMenu = this.formulario.value
     this.newMenu.id = Number(this.newMenuId)
+    // this.newMenu.m_date = this.previousMenu.m_date
+
+    console.log("newMenu");        
+    console.log(this.newMenu);
+    
     const response = await this.menuService.update(this.newMenu)
+    
+    console.log("response");    
     console.log(response);
 
-    this.router.navigate(["/dashboard/menu"])
+    this.router.navigate(["/dashboard/menuview"])
     
   }
 
