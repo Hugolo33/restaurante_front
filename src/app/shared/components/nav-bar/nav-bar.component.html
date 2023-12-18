@@ -1,25 +1,43 @@
-<div class="container-fluid">
-    <nav>
-        <ul class="navigate">
-            <li [routerLink]="['/']">Home</li>
-            <li [routerLink]="['/']" fragment="navmenu">Menú</li>
-            <li [routerLink]="['/']" fragment="footernav">Contáctanos</li>
-            <li (click)="onClickReservation()">Reservar</li>
-        </ul>
-        <div class="logo">
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <div class="logo navbar-brand d-block d-lg-none">
             <p [routerLink]="['/']">casa Miranda</p>
         </div>
-        <ul class="users">
-            <li class="buttonCustom" [routerLink]="['/register']" *ngIf="!usersService.isLogged()">Registro</li>
-            <li class="buttonCustom" [routerLink]="['/login']" *ngIf="!usersService.isLogged()">Iniciar sesión</li>
-            <li class="icon-user" (click)="onClickNavRole()" *ngIf="usersService.isLogged()">
-                <span class="material-symbols-outlined">
-                    account_circle
-                </span>
-            </li>
-            <li class="buttonCustom" (click)="onClickLogout()" *ngIf="usersService.isLogged()">Cerrar sesión</li>
-        </ul>
-
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navigate navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class=" navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item" [routerLink]="['/']">Home</li>
+                    <li class="nav-item" [routerLink]="['/']" fragment="navmenu">
+                        Menú
+                    </li>
+                    <li class="nav-item" (click)="onClickReservation()">Reservar</li>
+                    <li class="nav-item" [routerLink]="['/']" fragment="footernav">Contacto</li>
+                </ul>
+            </div>
+            <div class="logo navbar-brand d-none d-lg-block">
+                <p [routerLink]="['/']">casa Miranda</p>
+            </div>
+            <div class="navigate navbar-nav mb-2 mb-lg-0 ms-auto">
+                <ul class="users navbar-nav mb-2 mb-lg-0">
+                    <li class="buttonCustom nav-item" [routerLink]="['/register']" *ngIf="!usersService.isLogged()">
+                        Registro
+                    </li>
+                    <li class="buttonCustom nav-item" [routerLink]="['/login']" *ngIf="!usersService.isLogged()">Iniciar
+                        sesión</li>
+                    <li class="icon-user nav-item" (click)="onClickNavRole()" *ngIf="usersService.isLogged()">
+                        <span class="material-symbols-outlined">
+                            account_circle
+                        </span>
+                    </li>
+                    <li class="buttonCustom nav-item" (click)="onClickLogout()" *ngIf="usersService.isLogged()">Cerrar
+                        sesión</li>
+                </ul>
+            </div>
+        </div>
         <div class="line"></div>
-    </nav>
-</div>
+    </div>
+</nav>

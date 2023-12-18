@@ -29,3 +29,13 @@ div span {
 * {
     color: var(--main-color)
 }
+
+@media (max-width: 750px) {
+    .flex {
+        display: block;
+    }
+
+    .buttonCustom {
+        margin-top: var(--main-padding);
+    }
+}

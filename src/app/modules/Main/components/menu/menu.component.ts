@@ -32,7 +32,7 @@ export class MenuComponent {
         console.log(result);
 
         this.arrMenuDates = result.map((menu) => {
-          return menu.m_date.slice(0, 10)
+          return dayjs(menu.m_date).format('YYYY-MM-DD')
         })
         console.log(this.arrMenuDates);
 

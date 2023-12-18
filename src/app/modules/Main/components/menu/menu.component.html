@@ -4,7 +4,7 @@
     <div class="form-floating">
         <select (change)="onChangeDate($event)" class="form-select" aria-label="Selecciona una fecha">
             <option selected>Selecciona una fecha</option>
-            <option [value]="date" *ngFor="let date of arrMenuDates">{{date}}</option>
+            <option [value]="date" *ngFor="let date of arrMenuDates">{{date | date: 'dd/MM/yyyy'}}</option>
         </select>
         <label for="floatingSelect">Selecciona una fecha</label>
     </div>
@@ -12,7 +12,7 @@
     <div class="menu-box">
         <div class="menu-left">
             <h3 class="menu-title">Menú</h3>
-            <p class="pb-2">{{currentMenu.m_date | date: 'dd/MM/yyyy'}}</p>
+            <p class="pb-2">{{currentMenu?.m_date | date: 'dd/MM/yyyy'}}</p>
         </div>
         <section class="menu-right">
 
@@ -29,7 +29,7 @@
                 <h3 *ngFor="let item of arrDesserts">{{item}}</h3>
             </div>
             <div>
-                <h3>{{currentMenu.price}}€ p.p</h3>
+                <h3>{{currentMenu?.price}}€ p.p</h3>
             </div>
         </section>
 
