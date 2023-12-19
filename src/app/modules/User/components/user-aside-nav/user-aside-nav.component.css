@@ -2,6 +2,10 @@
     cursor: pointer;
 }
 
+.active {
+    font-weight: bold;
+}
+
 @media (max-width: 43.75rem) {
 
     .aside-nav {

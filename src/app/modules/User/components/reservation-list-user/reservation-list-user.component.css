@@ -30,23 +30,20 @@ div span {
     color: var(--main-color)
 }
 
-@media (max-width: 65.625rem) {
+.block {
+    display: flex;
+    gap: var(--main-padding)
+}
 
-
-    .flex {
-        display: inline-block;
-        padding-right: 6rem;
+@media (max-width: 69.6875rem) {
+    .block {
+        display: block;
     }
-
-
-
 }
 
 @media (max-width: 46.875rem) {
 
-    .flex {
-        display: block;
-    }
+
 
     .buttonCustom {
         margin-top: var(--main-padding);

@@ -42,7 +42,7 @@ export class LoginComponent {
       if (loggedUser.user_role === 'admin') {
         this.router.navigate(['/dashboard/reservationlist'])
       } else if (loggedUser.user_role === 'client') {
-        this.router.navigate(['/user/my-reservations'])
+        this.router.navigate(['/user/new-reservation'])
       }
     } catch (error) {
       console.log(error)

@@ -83,7 +83,7 @@ export class ReservationFormComponent {
 
           if (this.avaibleSpots.length === 0) {
             Swal.fire({
-              title: "No hay mesas disponibles",
+              title: "No hay mesas disponibles en el día y hora seleccionados",
               confirmButtonColor: "var(--secondary-color)",
               color: "var(--main-color)",
               background: "var(--bg-color)"
@@ -92,8 +92,6 @@ export class ReservationFormComponent {
           } else {
             this.show = false;
             this.showReservation = false;
-
-
           }
 
           //si no hay reservas ese dia te traes todas las mesas          

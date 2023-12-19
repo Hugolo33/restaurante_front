@@ -20,7 +20,7 @@ export class DbMenuComponent {
 
   router = inject(Router)
 
-  
+
 
 
   constructor() {
@@ -40,34 +40,36 @@ export class DbMenuComponent {
       const response = await this.menuService.create(this.formulario.value)
       console.log(response);
 
-      const response2 = await this.menuService.getAll()      
+      const response2 = await this.menuService.getAll()
       this.menus = response2
-      
+
     } catch (error) {
       console.log(error);
-      
+
     }
-    
+
+    this.formulario.reset()
+
   }
 
   async ngOnInit() {
     try {
-      const response = await this.menuService.getAll()      
+      const response = await this.menuService.getAll()
       this.menus = response
-      
+
     } catch (error) {
       console.log(error);
-      
+
     }
   }
 
-  send(menu:any) {
+  send(menu: any) {
     console.log(menu);
     const id = menu.id.toString()
-    this.router.navigate(["/dashboard/menureload",id])
+    this.router.navigate(["/dashboard/menureload", id])
   }
 
 
-  
+
 
 }

@@ -3,16 +3,29 @@
 
 span {
     cursor: pointer;
-    font-weight: 30px;
-    margin-left: auto;
+    font-weight: 1.875rem;
 }
 
-div {
-    gap: 15px;
-
-}
 
 article {
     width: calc(50% - 15px);
+}
 
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+article .review-box {
+    min-height: 280px;
+}
+
+@media (max-width: 68.125rem) {
+    article {
+        width: 100%
+    }
+
+    article .review-box {
+        min-height: 0;
+    }
 }
