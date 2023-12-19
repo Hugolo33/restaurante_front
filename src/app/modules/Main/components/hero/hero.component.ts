@@ -19,7 +19,7 @@ export class HeroComponent {
       this.router.navigate(['user/my-reservations/my-reservations'])
     } else {
       Swal.fire({
-        title: "Please login to make a reservation",
+        title: "Por favor, inicia sesión para hacer una reserva",
         confirmButtonColor: "var(--secondary-color)",
         background: "var(--bg-color)",
         color: "var(--main-color)"
