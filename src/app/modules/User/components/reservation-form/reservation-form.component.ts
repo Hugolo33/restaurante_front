@@ -28,6 +28,7 @@ export class ReservationFormComponent {
 
 
 
+  usersService = inject(UsersService);
   reservationService = inject(ReservationsService)
   shiftService = inject(ShiftsService)
   spotService = inject(SpotsService);
@@ -49,34 +50,31 @@ export class ReservationFormComponent {
     this.token = localStorage.getItem('token')!;
     this.loggedUser = this.jwtService.DecodeToken(this.token)
     /////////////////////////////////////////////
+
     this.arrShifts = await this.shiftService.getAll();
   }
 
   async onSubmitDayAndTime() {
 
-    // console.log(this.time);
+
     let shift_time = (this.time.split('-')[0])
-    // console.log(shift_time)
-    // console.log(this.date);
+
     let today = new Date();
     let selectedDate = new Date(this.date);
 
-    // console.log(selectedDate.getDate());
-    // console.log(selectedDate.getMonth());
-    // console.log(selectedDate.getFullYear());
-    // console.log(today);
-    if (selectedDate >= today && this.time != "" || (selectedDate.getDate() === today.getDate() && selectedDate.getMonth() === today.getMonth() && selectedDate.getFullYear() === today.getFullYear())) {
+
+    if (selectedDate >= today && this.time != "" || (selectedDate.getDate() === today.getDate() && selectedDate.getMonth() === today.getMonth() && selectedDate.getFullYear() === today.getFullYear() && this.time != "")) {
       try {
         //te traes todas las reservars en esa fecha y hora
         this.arrReservationByDayAndTime = await this.reservationService.postByShiftandDay({ r_date: this.date, time: shift_time });
-        console.log(this.arrReservationByDayAndTime);
+
 
 
         for (let reservation of this.arrReservationByDayAndTime) {
           // recorres el array de reservas y guardas el Id de las mesas ocupadas en un array
           if (reservation.spot_id && reservation.shift_id) {
             this.arrSpotsId.push(reservation.spot_id);
-            console.log(this.arrSpotsId);
+            // console.log(this.arrSpotsId);
           }
         }
         // si el array de reservas en esa fecha y hora es diferente de 0, es decir, si hay reservas ese dia, te traes las mesas disponibles usando el array de mesas ocupadas como filtro
@@ -136,31 +134,33 @@ export class ReservationFormComponent {
 
 
   async onSubmitReservation() {
-    console.log(this.chosenSpot) // "4-2"
+
     let spot_id = Number(this.chosenSpot.split('-')[0])
     let max_seating = Number(this.chosenSpot.split('-')[1])
 
-
-
-
     let shift_id = Number(this.time.split('-')[1])
-
-    let shift_time = (this.time.split('-')[0])
 
     let today = new Date();
     let selectedDate = new Date(this.date);
+    const user = await this.userService.getById(this.loggedUser.user_id);
 
-    console.log(shift_id)
-    if (selectedDate >= today && this.time != "" || (selectedDate.getDate() === today.getDate() && selectedDate.getMonth() === today.getMonth() && selectedDate.getFullYear() === today.getFullYear())) {
 
-      const user = await this.userService.getById(this.loggedUser.user_id);
+
+    if (selectedDate >= today && this.time != "" && this.chosenSpot != "" || (selectedDate.getDate() === today.getDate() && selectedDate.getMonth() === today.getMonth() && selectedDate.getFullYear() === today.getFullYear() && this.time != "" && this.chosenSpot != "")) {
+
+      // const user = await this.usersService.getById(this.loggedUser.user_id);
+
       const reservationResult = await this.reservationService.create({ r_date: this.date, diners: max_seating, notes: this.notes, user_id: this.loggedUser.user_id, spot_id: spot_id, shift_id: shift_id, email: user.email })
 
-      console.log(reservationResult)
+
+      // console.log(user);
+
+      // console.log(reservationResult)
+      // console.log("hola")
     } else {
 
       Swal.fire({
-        title: "La fecha es anterior al dia de hoy y/o falta escoger hora. No se ha creado la reserva.",
+        title: "Datos de fecha, hora o mesa incorrectos. No se ha creado la reserva.",
         confirmButtonColor: "var(--secondary-color)",
         color: "var(--main-color)",
         background: "var(--bg-color)"
