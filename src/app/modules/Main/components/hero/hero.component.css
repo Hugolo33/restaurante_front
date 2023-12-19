@@ -23,7 +23,17 @@ h3 {
 }
 
 
-/* # Mobile only screen and (min-width: 480px)  */
+@media (max-width: 46.875rem) {
+
+
+    .hero-text {
+        max-width: 100%;
+        padding: var(--main-padding);
+    }
+
+
+}
+
 @media (max-width: 30rem) {
 
     .heroImages {
@@ -37,7 +47,6 @@ h3 {
 
     .hero-text {
         font-size: 3rem;
-        max-width: 100%;
         padding: var(--main-padding) 0;
     }
 
