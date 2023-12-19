@@ -13,14 +13,14 @@
                     <li class="nav-item" [routerLink]="['/']" fragment="home"
                         [ngClass]="{'active': (active_fragment | async) === 'home'}">
                         Home</li>
-                    <li class="nav-item" [routerLink]="['/']" fragment="navmenu"
-                        [ngClass]="{'active': (active_fragment | async) === 'navmenu'}">
+                    <li class="nav-item" [routerLink]="['/']" fragment="menu"
+                        [ngClass]="{'active': (active_fragment | async) === 'menu'}">
                         Menú
                     </li>
                     <li class="nav-item" (click)="onClickReservation()" [ngClass]="{'active': isReservation}">Reservar
                     </li>
-                    <li class="nav-item" [routerLink]="['/']" fragment="footernav"
-                        [ngClass]="{'active': (active_fragment | async) === 'footernav'}">Contacto
+                    <li class="nav-item" [routerLink]="['/']" fragment="footer"
+                        [ngClass]="{'active': (active_fragment | async) === 'footer'}">Contacto
                     </li>
                 </ul>
             </div>
