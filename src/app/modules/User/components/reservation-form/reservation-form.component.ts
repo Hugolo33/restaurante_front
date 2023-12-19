@@ -9,6 +9,7 @@ import { JwtServicesService } from 'src/app/core/services/jwt-services.service';
 import { ReservationsService } from 'src/app/core/services/reservations.service';
 import { ShiftsService } from 'src/app/core/services/shifts.service';
 import { SpotsService } from 'src/app/core/services/spots.service';
+import { UsersService } from 'src/app/core/services/users.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -31,6 +32,7 @@ export class ReservationFormComponent {
   shiftService = inject(ShiftsService)
   spotService = inject(SpotsService);
   router = inject(Router);
+  userService = inject(UsersService)
 
   jwtService = inject(JwtServicesService)
   loggedUser!: DecodedToken
@@ -150,7 +152,9 @@ export class ReservationFormComponent {
 
     console.log(shift_id)
     if (selectedDate >= today && this.time != "" || (selectedDate.getDate() === today.getDate() && selectedDate.getMonth() === today.getMonth() && selectedDate.getFullYear() === today.getFullYear())) {
-      const reservationResult = await this.reservationService.create({ r_date: this.date, diners: max_seating, notes: this.notes, user_id: this.loggedUser.user_id, spot_id: spot_id, shift_id: shift_id })
+
+      const user = await this.userService.getById(this.loggedUser.user_id);
+      const reservationResult = await this.reservationService.create({ r_date: this.date, diners: max_seating, notes: this.notes, user_id: this.loggedUser.user_id, spot_id: spot_id, shift_id: shift_id, email: user.email })
 
       console.log(reservationResult)
     } else {
