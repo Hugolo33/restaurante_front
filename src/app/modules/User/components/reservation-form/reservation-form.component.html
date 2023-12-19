@@ -7,14 +7,14 @@
 
 <div class="mb-3">
     <h4>Turnos disponibles</h4>
-    <select class="buttonCustom" name="" id="" [(ngModel)]="time">
+    <select (change)="onSubmitDayAndTime()" class="buttonCustom" name="" id="" [(ngModel)]="time">
 
         <option *ngFor="let shift of arrShifts" [value]="shift.time+'-'+shift.id">{{shift.time}}</option>
     </select>
 
 </div>
 
-<input (click)="onSubmitDayAndTime()" class="form-button" type="button" name="Mostrar Mesas" value="Mostrar Mesas">
+<!-- <input (click)="onSubmitDayAndTime()" class="form-button" type="button" name="Mostrar Mesas" value="Mostrar Mesas"> -->
 <div *ngIf="!showNoTables">
     <p>No hay mesas disponibles</p>
 </div>
