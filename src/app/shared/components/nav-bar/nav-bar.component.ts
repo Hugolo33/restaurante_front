@@ -40,12 +40,12 @@ export class NavBarComponent {
 
   onClickLogout() {
     Swal.fire({
-      title: "Are you sure you want to logout?",
+      title: "¿Quieres cerrar sesión?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "var(--secondary-color)",
       cancelButtonColor: "var(--third-color)",
-      confirmButtonText: "Yes, logout!",
+      confirmButtonText: "Sí, cerrar",
       background: "var(--bg-color)",
       color: "var(--main-color)",
 
@@ -54,7 +54,7 @@ export class NavBarComponent {
         localStorage.removeItem('token')
         this.router.navigate(['/']);
         Swal.fire({
-          text: "Succesfully logged out",
+          text: "Has cerrado sesión",
           icon: "success",
           confirmButtonColor: "var(--secondary-color)",
           color: "var(--main-color)",

@@ -50,7 +50,7 @@ export class DbReservationListComponent {
           console.log(error);
         }
         Swal.fire({
-          title: "Reservation cancelled",
+          title: "Reserva cancelada",
           icon: "success",
           confirmButtonColor: "var(--secondary-color)",
           color: "var(--main-color)",
