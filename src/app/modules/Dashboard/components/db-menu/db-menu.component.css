@@ -3,13 +3,30 @@ div {
 
 }
 
-article {
-    width: calc(50% - (var(--main-padding))/2);
-
+.flex {
+    display: flex;
+    flex-wrap: wrap;
 }
 
+article {
+    width: calc(50% - (var(--main-padding))/2);
+}
+
+
+article .review-box {
+    min-height: 20rem;
+}
+
+
+
 @media (max-width: 53.125rem) {
+
+
     article {
-        width: 100%
+        width: 100%;
+    }
+
+    article .review-box {
+        min-height: 0px;
     }
 }

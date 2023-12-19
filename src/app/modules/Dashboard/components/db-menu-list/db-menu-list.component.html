@@ -1,21 +1,27 @@
 <section *ngIf="menus" class="form-box-admin">
-    <h3 class="section-title">Menús actuales</h3>
+    <h3 class="section-title pb-3">Menús actuales</h3>
 
-    <div class="d-flex flex-wrap">
+    <div class="d-flex flex-wrap gap-4">
         <article *ngFor="let menu of menus">
             <div class="review-box">
-                <p>{{menu.m_date | date}}</p>
+                <div class="flex">
+                    <p> <strong>{{menu.m_date | date}}</strong></p>
+                    <div class="d-flex gap-1">
+                        <div (click)="edit(menu)">
+                            <span class="material-symbols-outlined">edit</span>
+                        </div>
+                        <div (click)="erase(menu)">
+                            <span class="material-symbols-outlined">cancel
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
                 <p>Primero: {{menu.first_course}}</p>
                 <p>Segundo: {{menu.main_course}}</p>
                 <p>Postre: {{menu.dessert}}</p>
-                <p>{{menu.price}} €</p>
-                <div (click)="erase(menu)">
-                    <span class="material-symbols-outlined">cancel
-                    </span>
-                </div>
-                <div (click)="edit(menu)">
-                    <span class="material-symbols-outlined">edit</span>
-                </div>
+                <p>Precio: {{menu.price}} €</p>
+
             </div>
         </article>
 

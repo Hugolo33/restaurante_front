@@ -12,7 +12,7 @@
                 <div>
                     <p>nombre: {{r.name}}</p>
                     <p>email: {{r.email}}</p>
-                    <p>tel: {{r.phone_number}}</p>
+                    <p *ngIf="r.phone_number">tel: {{r.phone_number}}</p>
                 </div>
                 <div class="right" (click)="onClickRemove(r.id!)">
                     <span class="material-symbols-outlined">
@@ -35,14 +35,14 @@
                 <div>
                     <p>cliente: {{r.name}}</p>
                     <p>email: {{r.email}}</p>
-                    <p>tel: {{r.phone_number}}</p>
+                    <p *ngIf="r.phone_number">tel: {{r.phone_number}}</p>
                 </div>
-                <div *ngIf="r.review_id">
-                    <p><strong>Reseña:</strong></p>
-                    <one-review [reviewId]="r.review_id"></one-review>
-                </div>
-
             </div>
+            <div *ngIf="r.review_id" class="pt-2">
+                <p><strong>Reseña:</strong></p>
+                <one-review [reviewId]="r.review_id"></one-review>
+            </div>
+
             <div class="line mt-1 mb-2"></div>
         </article>
     </div>

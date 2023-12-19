@@ -35,6 +35,8 @@ export class DbReservationListComponent {
       showCancelButton: true,
       confirmButtonText: "Sí, cancela esta reserva",
       cancelButtonText: "No quiero cancelar mi reserva",
+      confirmButtonColor: "var(--secondary-color)",
+      cancelButtonColor: "var(--third-color)",
       reverseButtons: true,
       color: "var(--main-color)",
       background: "var(--bg-color)"

@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { JwtServicesService } from 'src/app/core/services/jwt-services.service';
 import { UsersService } from 'src/app/core/services/users.service';
 import Swal from 'sweetalert2';
@@ -14,11 +15,21 @@ export class NavBarComponent {
   private router = inject(Router);
   usersService = inject(UsersService)
   jwtService = inject(JwtServicesService)
+  activatedRoute = inject(ActivatedRoute)
   token: string = "";
+  isReservation: boolean = false;
+  public active_fragment: BehaviorSubject<string> = new BehaviorSubject('');
 
+  constructor() {
+    this.activatedRoute.fragment.subscribe((frag: any) => {
+      this.active_fragment.next(frag);
+      this.isReservation = false;
+    });
+  }
 
 
   onClickReservation() {
+
     if (this.usersService.isLogged()) {
       this.token = localStorage.getItem('token')!;
       const loggedUser = this.jwtService.DecodeToken(this.token)
@@ -29,13 +40,14 @@ export class NavBarComponent {
       }
     } else {
       Swal.fire({
-        title: "Please login to make a reservation",
+        title: "Para realizar una reserva, debes iniciar sesión",
         confirmButtonColor: "var(--secondary-color)",
         color: "var(--main-color)",
         background: "var(--bg-color)"
       })
       this.router.navigate(['/login']);
     }
+    this.isReservation = true;
   }
 
   onClickLogout() {

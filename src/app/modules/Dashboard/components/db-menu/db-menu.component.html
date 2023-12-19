@@ -42,16 +42,18 @@
 
 
 <section *ngIf="menus" class="pt-4">
-    <h3 class="section-title">Seleccionar menú anterior</h3>
+    <h3 class="section-title pb-3">Seleccionar menú anterior</h3>
 
-    <div class="d-flex flex-wrap">
+    <div class="flex">
         <article *ngFor="let menu of menus">
             <div class="review-box">
-                <p>{{menu.m_date | date}}</p>
-                <p>Primero: {{menu.first_course}}</p>
-                <p>Segundo: {{menu.main_course}}</p>
-                <p>Postre: {{menu.dessert}}</p>
-                <p>{{menu.price | currency: 'EUR'}}</p>
+                <div>
+                    <p>{{menu.m_date | date}}</p>
+                    <p>Primero: {{menu.first_course}}</p>
+                    <p>Segundo: {{menu.main_course}}</p>
+                    <p>Postre: {{menu.dessert}}</p>
+                    <p>{{menu.price | currency: 'EUR'}}</p>
+                </div>
                 <button (click)="send(menu)" value="Reutilizar menú" class="buttonCustom">Reutilizar menú</button>
             </div>
         </article>
