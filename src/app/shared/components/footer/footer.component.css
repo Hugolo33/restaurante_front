@@ -34,7 +34,7 @@ p {
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 38.125rem) {
     .form-footer {
         display: block;
     }
@@ -50,7 +50,30 @@ p {
         padding-top: var(--double-padding);
     }
 
+}
+
+@media (max-width: 82rem) {
+    .info-contact {
+        & li {
+            padding-right: 1.2rem;
+        }
+    }
+}
+
+@media (max-width: 73.75rem) {
+    .info-contact .d-flex {
+        display: block !important;
+    }
 
 
+    h3 {
+        margin-bottom: var(--main-padding);
+    }
 
+}
+
+@media (max-width: 68.75rem) {
+    .legal-information {
+        display: block !important;
+    }
 }
