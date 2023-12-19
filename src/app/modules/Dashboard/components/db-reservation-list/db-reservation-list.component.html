@@ -1,6 +1,6 @@
 <section class="form-box-admin">
     <h3 class="section-title pb-3">Reservas</h3>
-    <div *ngIf="arrFutureReservations.length !== 0">
+    <div *ngIf="arrFutureReservations.length">
         <h4 class="pb-3">Próximas</h4>
         <article *ngFor="let r of arrFutureReservations">
             <div class="flex">
@@ -23,7 +23,7 @@
             <div class="line mt-1 mb-2"></div>
         </article>
     </div>
-    <div *ngIf="arrPastReservations.length !== 0">
+    <div *ngIf="arrPastReservations.length">
         <h4 class="pb-3 pt-4">Pasadas</h4>
         <article *ngFor="let r of arrPastReservations">
             <div class="flex">
