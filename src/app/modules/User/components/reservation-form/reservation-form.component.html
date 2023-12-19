@@ -14,7 +14,7 @@
 
 </div>
 
-<input class="form-button" type="button" name="Mostrar Mesas" value="Mostrar Mesas" (click)="onSubmitDayAndTime()">
+<input (click)="onSubmitDayAndTime()" class="form-button" type="button" name="Mostrar Mesas" value="Mostrar Mesas">
 <div *ngIf="!showNoTables">
     <p>No hay mesas disponibles</p>
 </div>

@@ -51,6 +51,7 @@ export class ReservationFormComponent {
   }
 
   async onSubmitDayAndTime() {
+
     // console.log(this.time);
     let shift_time = (this.time.split('-')[0])
     // console.log(shift_time)
@@ -89,15 +90,17 @@ export class ReservationFormComponent {
             })
 
           } else {
-            this.show = !this.show;
-            this.showReservation = !this.showReservation;
+            this.show = false;
+            this.showReservation = false;
+
+
           }
 
           //si no hay reservas ese dia te traes todas las mesas          
         } else {
           this.avaibleSpots = await this.spotService.getAll();
-          this.show = !this.show;
-          this.showReservation = !this.showReservation;
+          this.show = false;
+          this.showReservation = false;
         }
 
 
@@ -110,7 +113,7 @@ export class ReservationFormComponent {
     } else {
 
       Swal.fire({
-        title: "La fecha es anterior al dia de hoy y/o falta escoger hora",
+        title: "La fecha es anterior al dia de hoy y/o falta escoger hora.",
         confirmButtonColor: "var(--secondary-color)",
         color: "var(--main-color)",
         background: "var(--bg-color)"
@@ -124,12 +127,12 @@ export class ReservationFormComponent {
 
   }
 
-  showCreateReservation() {
+  // showCreateReservation() {
 
 
-    this.showReservation = !this.showReservation;
+  //   this.showReservation = !this.showReservation;
 
-  }
+  // }
 
 
   async onSubmitReservation() {
@@ -139,14 +142,32 @@ export class ReservationFormComponent {
 
 
 
-    let shift_time = Number(this.time.split('-')[0])
+
     let shift_id = Number(this.time.split('-')[1])
 
+    let shift_time = (this.time.split('-')[0])
+
+    let today = new Date();
+    let selectedDate = new Date(this.date);
+
     console.log(shift_id)
+    if (selectedDate >= today && this.time != "" || (selectedDate.getDate() === today.getDate() && selectedDate.getMonth() === today.getMonth() && selectedDate.getFullYear() === today.getFullYear())) {
+      const reservationResult = await this.reservationService.create({ r_date: this.date, diners: max_seating, notes: this.notes, user_id: this.loggedUser.user_id, spot_id: spot_id, shift_id: shift_id })
 
-    const reservationResult = await this.reservationService.create({ r_date: this.date, diners: max_seating, notes: this.notes, user_id: this.loggedUser.user_id, spot_id: spot_id, shift_id: shift_id })
+      console.log(reservationResult)
+    } else {
 
-    console.log(reservationResult)
+      Swal.fire({
+        title: "La fecha es anterior al dia de hoy y/o falta escoger hora. No se ha creado la reserva.",
+        confirmButtonColor: "var(--secondary-color)",
+        color: "var(--main-color)",
+        background: "var(--bg-color)"
+      })
+
+
+    }
+
+
     // r_date, diners, notes, user_id, spot_id, shift_id
   }
 
