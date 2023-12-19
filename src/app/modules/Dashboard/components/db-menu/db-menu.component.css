@@ -28,5 +28,6 @@ article .review-box {
 
     article .review-box {
         min-height: 0px;
+        max-width: 100%;
     }
 }
