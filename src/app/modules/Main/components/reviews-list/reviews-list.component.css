@@ -4,10 +4,14 @@
     border: 0px;
     flex: 1;
     min-width: 17.5rem;
+    min-height: 350px;
+
 }
 
 small {
     font-size: 0.625rem;
+
+
 }
 
 .flex {
