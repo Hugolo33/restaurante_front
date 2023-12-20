@@ -60,7 +60,7 @@ li.icon-user {
 }
 
 .active {
-    font-weight: bold;
+    font-weight: 600;
 }
 
 @media (max-width: 61.875rem) {
