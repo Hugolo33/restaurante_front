@@ -1,5 +1,5 @@
 <h2 class="section-title">Mis reservas</h2>
-<section *ngIf="arrReservationsAfterToday.length">
+<section *ngIf="arrReservationsAfterToday">
     <h4 class="pb-3">Próximas</h4>
     <article *ngFor="let r of arrReservationsAfterToday">
         <div class="flex">
@@ -18,7 +18,7 @@
     </article>
 </section>
 
-<section *ngIf="arrReservationsBeforeToday.length">
+<section *ngIf="arrReservationsBeforeToday">
     <h4 class="pt-3">Pasadas</h4>
     <article *ngFor="let r of arrReservationsBeforeToday">
         <div class="flex">
