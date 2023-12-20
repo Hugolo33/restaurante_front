@@ -46,7 +46,7 @@
 
     <div class="flex">
         <article *ngFor="let menu of menus">
-            <div class="review-box">
+            <div class="review-box d-flex flex-column justify-content-between">
                 <div>
                     <p>{{menu.m_date | date}}</p>
                     <p>Primero: {{menu.first_course}}</p>

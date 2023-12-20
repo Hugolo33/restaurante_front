@@ -23,11 +23,11 @@ font-family: 'Syne', sans-serif;
 
 
     /* Colors */
-    --main-color: #741f34;
-    --secondary-color: #294947;
-    --third-color: #ff992c;
+    --main-color: #273c27;
+    --secondary-color: #334833;
+    --third-color: rgb(41, 92, 92);
 
-    --bg-color: #F5F5F4;
+    --bg-color: rgb(237, 231, 223);
 
     --blue-brand: #1136c7;
     --red-delete: #cd1212;

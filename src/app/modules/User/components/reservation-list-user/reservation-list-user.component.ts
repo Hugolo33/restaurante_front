@@ -16,7 +16,7 @@ export class ReservationListUserComponent {
   router = inject(Router)
   reservationsService = inject(ReservationsService)
   arrReservationsBeforeToday!: Reservation[]
-  arrReservationsAfterToday!: Reservation[]
+  arrReservationsAfterToday!: Reservation[];
   jwtservices = inject(JwtServicesService);
   token: string = "";
   loggedUser!: DecodedToken

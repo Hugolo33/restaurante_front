@@ -1,49 +1,51 @@
-<h2 class="section-title pb-4">Crear nueva reserva</h2>
-<div class="mb-3">
-    <h4>Fecha de la Reserva</h4>
-    <input class="buttonCustom" type="date" [(ngModel)]="date" />
-</div>
+<div class="form-box-admin">
+    <h2 class="section-title pb-4">Crear nueva reserva</h2>
+    <div class="mb-3">
+        <h4>Fecha de la Reserva</h4>
+        <input class="buttonCustom" type="date" [(ngModel)]="date" />
+    </div>
 
 
-<div class="mb-3">
-    <h4>Turnos disponibles</h4>
-    <select (change)="onSubmitDayAndTime()" class="buttonCustom" name="" id="" [(ngModel)]="time">
+    <div class="mb-3">
+        <h4>Turnos disponibles</h4>
+        <select (change)="onSubmitDayAndTime()" class="buttonCustom" name="" id="" [(ngModel)]="time">
 
-        <option *ngFor="let shift of arrShifts" [value]="shift.time+'-'+shift.id">{{shift.time}}</option>
-    </select>
+            <option *ngFor="let shift of arrShifts" [value]="shift.time+'-'+shift.id">{{shift.time}}</option>
+        </select>
 
-</div>
+    </div>
 
-<!-- <input (click)="onSubmitDayAndTime()" class="form-button" type="button" name="Mostrar Mesas" value="Mostrar Mesas"> -->
-<div *ngIf="!showNoTables">
-    <p>No hay mesas disponibles</p>
-</div>
-<div class="d-flex flex-column" *ngIf="!show">
+    <!-- <input (click)="onSubmitDayAndTime()" class="form-button" type="button" name="Mostrar Mesas" value="Mostrar Mesas"> -->
+    <div *ngIf="!showNoTables">
+        <p>No hay mesas disponibles</p>
+    </div>
+    <div class="d-flex flex-column" *ngIf="!show">
 
-    <h4>Elegir Mesa Disponible</h4>
+        <h4>Elegir Mesa Disponible</h4>
 
-    <select class="buttonCustom" [(ngModel)]="chosenSpot">
+        <select class="buttonCustom" [(ngModel)]="chosenSpot">
 
-        <option value="" disabled selected hidden>Selecciona una mesa</option>
-        <option [value]="spot.id+'-'+spot.max_seating" *ngFor="let spot of avaibleSpots">
+            <option value="" disabled selected hidden>Selecciona una mesa</option>
+            <option [value]="spot.id+'-'+spot.max_seating" *ngFor="let spot of avaibleSpots">
 
-            <p>{{spot.title}}__</p>
-            <p>Comensales maximos: {{spot.max_seating}}</p>
+                <p>{{spot.title}}__</p>
+                <p>Comensales maximos: {{spot.max_seating}}</p>
 
-        </option>
-    </select>
+            </option>
+        </select>
 
-    <input class="form-button" type="text" [(ngModel)]="notes" *ngIf="!showReservation" class="form-control"
-        placeholder="¿Tienes alguna petición?" value="Notas">
+        <input class="form-button" type="text" [(ngModel)]="notes" *ngIf="!showReservation" class="form-control"
+            placeholder="¿Tienes alguna petición?" value="Notas">
 
-    <!-- 
-    <select name="" id="">
-        <option value="">Elegir comensales</option>
-        <option value="" *ngFor="let spot of avaibleSpots">
-            <p>{{spot.max_seating}}</p>
-        </option>
-    </select> -->
+        <!-- 
+        <select name="" id="">
+            <option value="">Elegir comensales</option>
+            <option value="" *ngFor="let spot of avaibleSpots">
+                <p>{{spot.max_seating}}</p>
+            </option>
+        </select> -->
 
-    <input [routerLink]="['/user/my-reservations']" class="form-button" *ngIf="!showReservation" type="button"
-        value="Crear Reserva" (click)="onSubmitReservation() ">
+        <input [routerLink]="['/user/my-reservations']" class="form-button" *ngIf="!showReservation" type="button"
+            value="Crear Reserva" (click)="onSubmitReservation() ">
+    </div>
 </div>
