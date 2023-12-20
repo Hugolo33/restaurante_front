@@ -302,7 +302,6 @@ h5 {
 
 .menu-right {
     padding-top: var(--main-padding);
-    padding: var(--main-padding) 2rem 0 2rem;
     border-left: 1px solid var(--main-color);
     width: 45vw;
 
