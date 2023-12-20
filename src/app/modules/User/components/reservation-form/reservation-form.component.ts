@@ -11,7 +11,7 @@ import { ShiftsService } from 'src/app/core/services/shifts.service';
 import { SpotsService } from 'src/app/core/services/spots.service';
 import { UsersService } from 'src/app/core/services/users.service';
 import Swal from 'sweetalert2';
-
+import * as dayjs from 'dayjs';
 @Component({
   selector: 'reservation-form',
   templateUrl: './reservation-form.component.html',
@@ -49,32 +49,33 @@ export class ReservationFormComponent {
   async ngOnInit() {
     this.token = localStorage.getItem('token')!;
     this.loggedUser = this.jwtService.DecodeToken(this.token)
-    /////////////////////////////////////////////
 
     this.arrShifts = await this.shiftService.getAll();
+
+
   }
 
   async onSubmitDayAndTime() {
 
+    try {
+      let shift_time = (this.time.split('-')[0])
 
-    let shift_time = (this.time.split('-')[0])
+      let today = new Date();
+      let selectedDate = new Date(this.date);
 
-    let today = new Date();
-    let selectedDate = new Date(this.date);
+      let shiftDateTime = dayjs().hour(Number(shift_time.split(':')[0]))
 
+      if (selectedDate > today && this.time != "" || (selectedDate.getDate() === today.getDate() && selectedDate.getMonth() === today.getMonth() && selectedDate.getFullYear() === today.getFullYear() && this.time != "" && shiftDateTime.isAfter(dayjs()))) {
 
-    if (selectedDate >= today && this.time != "" || (selectedDate.getDate() === today.getDate() && selectedDate.getMonth() === today.getMonth() && selectedDate.getFullYear() === today.getFullYear() && this.time != "")) {
-      try {
         //te traes todas las reservars en esa fecha y hora
         this.arrReservationByDayAndTime = await this.reservationService.postByShiftandDay({ r_date: this.date, time: shift_time });
 
-
-
+        this.arrSpotsId = []
         for (let reservation of this.arrReservationByDayAndTime) {
           // recorres el array de reservas y guardas el Id de las mesas ocupadas en un array
           if (reservation.spot_id && reservation.shift_id) {
+
             this.arrSpotsId.push(reservation.spot_id);
-            // console.log(this.arrSpotsId);
           }
         }
         // si el array de reservas en esa fecha y hora es diferente de 0, es decir, si hay reservas ese dia, te traes las mesas disponibles usando el array de mesas ocupadas como filtro
@@ -88,8 +89,11 @@ export class ReservationFormComponent {
               color: "var(--main-color)",
               background: "var(--bg-color)"
             })
+            this.showReservation = true;
+            this.show = true;
 
           } else {
+            // muestras las mesas y la opcion de reservar
             this.show = false;
             this.showReservation = false;
           }
@@ -101,76 +105,66 @@ export class ReservationFormComponent {
           this.showReservation = false;
         }
 
+      } else {
 
-
-      } catch (error) {
-        console.log(error);
-
+        Swal.fire({
+          title: "La fecha es anterior al dia de hoy y/o falta escoger una hora valida.",
+          confirmButtonColor: "var(--secondary-color)",
+          color: "var(--main-color)",
+          background: "var(--bg-color)"
+        })
+        this.show = true;
+        this.showReservation = true;
       }
 
-    } else {
-
-      Swal.fire({
-        title: "La fecha es anterior al dia de hoy y/o falta escoger hora.",
-        confirmButtonColor: "var(--secondary-color)",
-        color: "var(--main-color)",
-        background: "var(--bg-color)"
-      })
-      this.router.navigate(['/user/new-reservation']);
+    } catch (error) {
+      console.log(error);
 
     }
-
-
-
-
   }
-
-  // showCreateReservation() {
-
-
-  //   this.showReservation = !this.showReservation;
-
-  // }
 
 
   async onSubmitReservation() {
+    try {
+      let spot_id = Number(this.chosenSpot.split('-')[0])
+      let max_seating = Number(this.chosenSpot.split('-')[1])
 
-    let spot_id = Number(this.chosenSpot.split('-')[0])
-    let max_seating = Number(this.chosenSpot.split('-')[1])
+      let shift_id = Number(this.time.split('-')[1])
 
-    let shift_id = Number(this.time.split('-')[1])
-
-    let today = new Date();
-    let selectedDate = new Date(this.date);
-    const user = await this.userService.getById(this.loggedUser.user_id);
-
-
-
-    if (selectedDate >= today && this.time != "" && this.chosenSpot != "" || (selectedDate.getDate() === today.getDate() && selectedDate.getMonth() === today.getMonth() && selectedDate.getFullYear() === today.getFullYear() && this.time != "" && this.chosenSpot != "")) {
-
-      // const user = await this.usersService.getById(this.loggedUser.user_id);
-
-      const reservationResult = await this.reservationService.create({ r_date: this.date, diners: max_seating, notes: this.notes, user_id: this.loggedUser.user_id, spot_id: spot_id, shift_id: shift_id, email: user.email })
+      let today = new Date();
+      let selectedDate = new Date(this.date);
+      const user = await this.userService.getById(this.loggedUser.user_id);
 
 
-      // console.log(user);
 
-      // console.log(reservationResult)
-      // console.log("hola")
-    } else {
+      if (selectedDate >= today && this.time != "" && this.chosenSpot != "" || (selectedDate.getDate() === today.getDate() && selectedDate.getMonth() === today.getMonth() && selectedDate.getFullYear() === today.getFullYear() && this.time != "" && this.chosenSpot != "")) {
 
+
+
+        const reservationResult = await this.reservationService.create({ r_date: this.date, diners: max_seating, notes: this.notes, user_id: this.loggedUser.user_id, spot_id: spot_id, shift_id: shift_id, email: user.email })
+
+
+      } else {
+
+        Swal.fire({
+          title: "Datos de fecha, hora o mesa incorrectos. No se ha creado la reserva.",
+          confirmButtonColor: "var(--secondary-color)",
+          color: "var(--main-color)",
+          background: "var(--bg-color)"
+        })
+
+
+      }
+    } catch (error) {
       Swal.fire({
         title: "Datos de fecha, hora o mesa incorrectos. No se ha creado la reserva.",
         confirmButtonColor: "var(--secondary-color)",
         color: "var(--main-color)",
         background: "var(--bg-color)"
       })
-
-
     }
 
 
-    // r_date, diners, notes, user_id, spot_id, shift_id
   }
 
 
