@@ -3,7 +3,7 @@
 }
 
 article {
-    margin-bottom: var(--main-padding);
+    margin: var(--main-padding) 0;
 }
 
 div span {
@@ -32,7 +32,9 @@ div span {
 
 .block {
     display: flex;
-    gap: var(--main-padding)
+    gap: var(--main-padding);
+    display: block;
+
 }
 
 @media (max-width: 69.6875rem) {

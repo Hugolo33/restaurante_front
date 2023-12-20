@@ -27,7 +27,7 @@ font-family: 'Syne', sans-serif;
     --secondary-color: #334833;
     --third-color: rgb(41, 92, 92);
 
-    --bg-color: rgb(237, 231, 223);
+    --bg-color: rgb(242, 238, 233);
 
     --blue-brand: #1136c7;
     --red-delete: #cd1212;
@@ -152,6 +152,10 @@ h5 {
     height: 1px;
     width: 100%;
     margin: 0 auto;
+}
+
+.date-time {
+    padding: 0.3rem 0;
 }
 
 
