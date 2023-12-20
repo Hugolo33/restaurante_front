@@ -4,7 +4,9 @@
     <article *ngFor="let shift of shifts" class="review-box">
         <div>
             <p>{{shift.time.slice(0, 5)}}</p>
-            <p>{{shift.daytime}}</p>
+            <p *ngIf="shift.daytime === 'lunch'">Comida</p>
+            <p *ngIf="shift.daytime === 'dinner'">Cena</p>
+
         </div>
         <div>
             <div (click)="edit(shift)">

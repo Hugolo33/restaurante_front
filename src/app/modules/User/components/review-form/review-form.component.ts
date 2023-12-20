@@ -49,9 +49,13 @@ export class ReviewFormComponent {
     this.formReview.value.reservation_id = this.reservationId
     this.formReview.value.rating = this.rating
     const newReview = await this.reviewsService.create(this.formReview.value)
+    console.log(newReview);
+
     this.currentReservation.review_id = newReview.id
     this.currentReservation.r_date = this.currentReservation.r_date.slice(0, 10)
     const result = await this.reservationsService.update(this.currentReservation)
+    console.log(result);
+
     Swal.fire({
       title: "¡Gracias por tu reseña!",
       icon: "success",

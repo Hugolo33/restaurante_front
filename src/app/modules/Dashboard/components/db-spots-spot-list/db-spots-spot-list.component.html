@@ -9,7 +9,7 @@
                 {{spot.max_seating}}
                 <span (click)="add(spot)">+</span>
             </div>
-            <p>Detalle: {{spot.details}}</p>
+            <p *ngIf="spot.details">Detalle: {{spot.details}}</p>
         </div>
         <div class="material-symbols-outlined" (click)="erase(spot)">
             cancel
