@@ -39,7 +39,8 @@
                             account_circle
                         </span>
                     </li>
-                    <li class="buttonCustom nav-item" (click)="onClickLogout()" *ngIf="usersService.isLogged()">Cerrar
+                    <li class="buttonCustom nav-item log-out" (click)="onClickLogout()" *ngIf="usersService.isLogged()">
+                        Cerrar
                         sesión</li>
                 </ul>
             </div>

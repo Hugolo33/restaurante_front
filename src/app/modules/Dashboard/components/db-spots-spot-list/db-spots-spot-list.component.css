@@ -58,9 +58,10 @@ span {
     }
 }
 
-@media (max-width: 53.125rem) {
+@media (max-width: 68rem) {
     .review-box {
-        width: 100%
+        width: 100%;
+        max-width: 100%;
     }
 
 }

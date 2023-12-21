@@ -1,59 +1,59 @@
 <div class="flex gap-3">
     <article *ngFor="let item of arrReviews" class="review-box">
         <div class="stars">
-            <div *ngIf="item.rating === 1"><span class="material-symbols-outlined">
+            <div *ngIf="item.rating === 1"><span class="material-symbols-rounded">
                     star
                 </span></div>
-            <div *ngIf="item.rating === 2"><span class="material-symbols-outlined">
+            <div *ngIf="item.rating === 2"><span class="material-symbols-rounded">
                     star
                 </span>
-                <span class="material-symbols-outlined">
-                    star
-                </span>
-            </div>
-            <div *ngIf="item.rating === 3"><span class="material-symbols-outlined">
-                    star
-                </span>
-                <span class="material-symbols-outlined">
-                    star
-                </span>
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-rounded">
                     star
                 </span>
             </div>
-            <div *ngIf="item.rating === 4"><span class="material-symbols-outlined">
+            <div *ngIf="item.rating === 3"><span class="material-symbols-rounded">
                     star
                 </span>
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-rounded">
                     star
                 </span>
-                <span class="material-symbols-outlined">
-                    star
-                </span>
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-rounded">
                     star
                 </span>
             </div>
-            <div *ngIf="item.rating === 5"><span class="material-symbols-outlined">
+            <div *ngIf="item.rating === 4"><span class="material-symbols-rounded">
                     star
                 </span>
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-rounded">
                     star
                 </span>
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-rounded">
                     star
                 </span>
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-rounded">
                     star
                 </span>
-                <span class="material-symbols-outlined">
+            </div>
+            <div *ngIf="item.rating === 5"><span class="material-symbols-rounded">
+                    star
+                </span>
+                <span class="material-symbols-rounded">
+                    star
+                </span>
+                <span class="material-symbols-rounded">
+                    star
+                </span>
+                <span class="material-symbols-rounded">
+                    star
+                </span>
+                <span class="material-symbols-rounded">
                     star
                 </span>
             </div>
 
 
         </div>
-        <p>"{{item.content}}"</p>
+        <p class="review-text">"{{item.content}}"</p>
         <small> {{item.date_added | date: 'dd/MM/yyyy' }}</small>
     </article>
 </div>

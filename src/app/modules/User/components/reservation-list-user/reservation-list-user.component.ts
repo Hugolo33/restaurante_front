@@ -44,14 +44,14 @@ export class ReservationListUserComponent {
 
     Swal.fire({
       title: "¿Quieres cancelar esta reserva?",
-      icon: "warning",
       showCancelButton: true,
       confirmButtonText: "Sí, cancela mi reserva",
       cancelButtonText: "No quiero cancelar mi reserva",
       reverseButtons: true,
       background: "var(--bg-color)",
       color: "var(--main-color)",
-      confirmButtonColor: "var(--secondary-color)",
+      padding: "10px",
+      confirmButtonColor: "var(--red-delete)",
       cancelButtonColor: "var(--third-color)"
     }).then(async (result) => {
       if (result.isConfirmed) {

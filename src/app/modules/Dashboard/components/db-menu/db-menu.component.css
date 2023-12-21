@@ -14,12 +14,17 @@ article {
 
 
 article .review-box {
-    min-height: 20rem;
+    min-height: 28rem;
+}
+
+.buttonCustom {
+
+    margin-bottom: 0;
+
 }
 
 
-
-@media (max-width: 53.125rem) {
+@media (max-width: 70rem) {
 
 
     article {

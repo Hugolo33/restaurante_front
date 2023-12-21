@@ -4,13 +4,41 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 
+
+@font-face {
+    font-family: 'Ogg';
+    src: url('./fonts/Ogg-Roman.woff')format("woff");
+
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OggItalic';
+    src: url('./fonts/Ogg-Italic.woff')format("woff");
+
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
 
 
 /* 
 font-family: 'Inter', sans-serif;
 font-family: 'Baskervville', serif;
 font-family: 'Syne', sans-serif;
+ */
+
+/* 
+ color: #273c27;
+
+ #8b1919;
+
+ #4781a1;
+
  */
 
 :root {
@@ -20,17 +48,23 @@ font-family: 'Syne', sans-serif;
     --main-font: 'Inter', sans-serif;
     --secondary-font: 'Baskervville', serif;
     --joker-font: 'Syne', sans-serif;
-
+    --hero-font: 'Ogg', serif;
+    --hero-font-light: 'OggItalic', serif;
 
     /* Colors */
-    --main-color: #273c27;
-    --secondary-color: #334833;
-    --third-color: rgb(41, 92, 92);
+    --main-color: #014f79;
+    --secondary-color: #113b47;
+    --third-color: #458aa1;
 
-    --bg-color: rgb(242, 238, 233);
+    --bg-color: #edf2f4;
 
-    --blue-brand: #1136c7;
-    --red-delete: #cd1212;
+    --light-blue: #0a73ad;
+    --dark-blue: #064365;
+
+    --granade: #592020;
+
+    --red-delete: #bd0c0c;
+    --edit-color: #ffc800;
 
     --white: #ffffff;
     --light-grey: #E8E8E8;
@@ -66,10 +100,6 @@ body {
     font-size: 1rem;
 }
 
-
-
-
-
 h3 {
     color: var(--main-color);
     font-family: Syne;
@@ -99,9 +129,11 @@ h5 {
 }
 
 
+
 /* Clases Globales */
 
 /* GENERALES */
+
 
 .wrapper {
     width: auto;
@@ -137,14 +169,14 @@ h5 {
 
 .hero-text {
     color: var(--third-color);
-    font-family: var(--main-font);
-    font-size: 4.125rem;
-    font-style: normal;
-    font-weight: 300;
+    font-family: var(--hero-font);
+    font-size: 4.3rem;
+    text-rendering: geometricPrecision;
+
     line-height: 108%;
     /* 4.455rem */
-    max-width: 70%;
-    margin: 10rem 0;
+    max-width: 80%;
+    margin: 9rem 0;
 }
 
 .line {
@@ -156,8 +188,13 @@ h5 {
 
 .date-time {
     padding: 0.3rem 0;
+    font-weight: 400;
 }
 
+.review-text {
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+}
 
 .error {
     color: red;
@@ -173,6 +210,7 @@ h5 {
 }
 
 .review-box {
+    color: var(--main-color);
     max-width: 500px;
     padding: 2rem;
     border-radius: var(--main-B-Radius);
@@ -199,6 +237,7 @@ h5 {
 
 
 .buttonCustom {
+    color: var(--main-color);
     padding: 0.5rem 1.875rem;
     margin: var(--main-padding) 0;
     border-radius: 1.6875rem;
@@ -253,6 +292,7 @@ h5 {
     font-size: 2.25rem;
     font-style: normal;
     font-weight: 200;
+    margin-bottom: 1rem;
 }
 
 .menu-title {
@@ -443,6 +483,16 @@ label {
             'opsz' 24;
 
     }
+}
+
+.material-symbols-rounded {
+    font-size: 2rem;
+
+    transition: 0.3s;
+    font-variation-settings: 'FILL' 1,
+        'wght' 100,
+        'GRAD' 0,
+        'opsz' 24;
 }
 
 

@@ -27,7 +27,8 @@ div.buttonCustom {
 
 .menu-box {
     display: block;
-    padding: 6rem 0;
+    padding: 8rem 0;
+    margin-bottom: 2rem;
     text-align: center;
 }
 

@@ -1,11 +1,22 @@
 .heroImages {
     display: flex;
+
     gap: var(--main-padding);
 
 
     & figure {
         width: calc(100vw - var(--double-padding));
     }
+}
+
+.galery-image {
+    background-image: url("https://graydonherriott.com/wp-content/uploads/2019/11/2080-78-day03-2080-78-day03-may-10-2018-0362-opt.jpg");
+    background-color: #cccccc00;
+    border-radius: var(--main-B-Radius);
+    width: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -15,7 +26,7 @@ img {
 }
 
 h2 {
-    margin-top: 3.5em;
+    margin-top: 3.3em;
 }
 
 h3 {
@@ -31,18 +42,34 @@ h3 {
         font-size: 3.5rem;
     }
 
+    .image1 {
+        display: none;
+    }
+
 
 }
 
-@media (max-width: 30rem) {
+@media (max-width: 33rem) {
 
     .heroImages {
-        display: block;
 
+        width: 100%;
+        display: flex;
+        flex-direction: column;
 
         & figure {
             width: 100%;
         }
+    }
+
+    .galery-image {
+
+        width: 100%;
+        height: 500px;
+        display: block;
+        margin-bottom: 0;
+
+
     }
 
     .hero-text {

@@ -5,8 +5,9 @@
 }
 
 .stars {
-    width: 130px;
-    min-width: 9.375rem;
+    min-width: 130px;
+    position: relative;
+    left: -6px;
 }
 
 @media (max-width: 46.875rem) {

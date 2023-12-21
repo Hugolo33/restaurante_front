@@ -3,15 +3,15 @@
     <div *ngIf="arrFutureReservations.length">
         <h4 class="pb-3">Próximas</h4>
         <article *ngFor="let r of arrFutureReservations">
-            <div class="flex">
+            <div class="flex scale">
                 <div>
                     <p><strong>{{r.r_date | date: 'dd/MM/yyyy'}} {{r.time!.slice(0,5)}}</strong></p>
-                    <p>comensales: {{r.diners}}</p>
-                    <p>comentarios: {{r.notes}}</p>
+                    <p>Comensales: {{r.diners}}</p>
+                    <p>Comentarios: {{r.notes}}</p>
                 </div>
                 <div>
-                    <p>nombre: {{r.name}}</p>
-                    <p>email: {{r.email}}</p>
+                    <p>Nombre: {{r.name}}</p>
+                    <p>Email: {{r.email}}</p>
                     <p *ngIf="r.phone_number">tel: {{r.phone_number}}</p>
                 </div>
                 <div class="right" (click)="onClickRemove(r.id!)">
@@ -20,30 +20,32 @@
                     </span>
                 </div>
             </div>
-            <div class="line mt-1 mb-2"></div>
+            <div class="line"></div>
         </article>
     </div>
     <div *ngIf="arrPastReservations.length">
         <h4 class="pb-3 pt-4">Pasadas</h4>
         <article *ngFor="let r of arrPastReservations">
-            <div class="flex">
-                <div>
-                    <p><strong>{{r.r_date | date: 'dd/MM/yyyy'}} {{r.time!.slice(0,5)}}</strong></p>
-                    <p>comensales: {{r.diners}}</p>
-                    <p>comentarios: {{r.notes}}</p>
+            <div class="scale">
+                <div class="flex">
+                    <div>
+                        <p><strong>{{r.r_date | date: 'dd/MM/yyyy'}} {{r.time!.slice(0,5)}}</strong></p>
+                        <p>Comensales: {{r.diners}}</p>
+                        <p>Comentarios: {{r.notes}}</p>
+                    </div>
+                    <div>
+                        <p>Cliente: {{r.name}}</p>
+                        <p>Email: {{r.email}}</p>
+                        <p *ngIf="r.phone_number">tel: {{r.phone_number}}</p>
+                    </div>
                 </div>
-                <div>
-                    <p>cliente: {{r.name}}</p>
-                    <p>email: {{r.email}}</p>
-                    <p *ngIf="r.phone_number">tel: {{r.phone_number}}</p>
+                <div *ngIf="r.review_id" class="pt-2">
+                    <p><strong>Reseña:</strong></p>
+                    <one-review [reviewId]="r.review_id"></one-review>
                 </div>
-            </div>
-            <div *ngIf="r.review_id" class="pt-2">
-                <p><strong>Reseña:</strong></p>
-                <one-review [reviewId]="r.review_id"></one-review>
             </div>
 
-            <div class="line mt-1 mb-2"></div>
+            <div class="line"></div>
         </article>
     </div>
 </section>

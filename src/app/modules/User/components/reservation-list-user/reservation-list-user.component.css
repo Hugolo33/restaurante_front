@@ -2,9 +2,10 @@
     margin-bottom: var(--main-padding);
 }
 
-article {
-    margin: var(--main-padding) 0;
+.line {
+    margin: 15px 0;
 }
+
 
 div span {
     cursor: pointer;
@@ -28,6 +29,16 @@ div span {
 
 * {
     color: var(--main-color)
+}
+
+article {
+
+    transition: 0.3s;
+
+    &:hover {
+
+        scale: 1.02;
+    }
 }
 
 .block {

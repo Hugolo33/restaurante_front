@@ -6,7 +6,8 @@
 
 .stars {
     min-width: 130px;
-
+    position: relative;
+    left: -6px;
 }
 
 

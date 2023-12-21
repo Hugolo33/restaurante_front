@@ -24,6 +24,11 @@ nav {
         cursor: pointer;
         margin: var(--main-padding) 0;
     }
+
+    & .log-out:hover {
+        border-color: var(--red-delete);
+        background-color: var(--red-delete);
+    }
 }
 
 
@@ -46,11 +51,11 @@ nav .users {
         'opsz' 20;
 
     &:hover {
-        color: rgb(3, 106, 85);
-        font-variation-settings: 'FILL' 0,
+        color: var(--main-color);
+        font-variation-settings: 'FILL' 1,
             'wght' 200,
             'GRAD' 0,
-            'opsz' 24;
+            'opsz' 22;
 
     }
 }

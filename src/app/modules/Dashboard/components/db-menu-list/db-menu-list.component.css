@@ -17,7 +17,25 @@ article {
 }
 
 article .review-box {
-    min-height: 280px;
+    min-height: 380px;
+}
+
+.material-symbols-rounded {
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: 0.3s;
+    font-variation-settings: 'FILL' 1,
+        'wght' 100,
+        'GRAD' 0,
+        'opsz' 24;
+
+    &:hover {
+        color: var(--edit-color);
+        font-variation-settings: 'FILL' 0,
+            'wght' 300,
+            'GRAD' 0,
+            'opsz' 24;
+    }
 }
 
 @media (max-width: 68.125rem) {
@@ -27,5 +45,6 @@ article .review-box {
 
     article .review-box {
         min-height: 0;
+        max-width: 100%;
     }
 }

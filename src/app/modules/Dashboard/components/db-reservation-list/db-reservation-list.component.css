@@ -1,3 +1,12 @@
+.scale {
+    transition: 0.3s;
+
+    &:hover {
+
+        scale: 1.02;
+    }
+}
+
 .flex {
     display: flex;
 }
@@ -19,19 +28,15 @@
     cursor: pointer;
 }
 
+.line {
+    margin: 1.1rem 0;
+}
+
 * {
     color: var(--main-color)
 }
 
-article {
 
-    transition: 0.3s;
-
-    &:hover {
-
-        scale: 1.02;
-    }
-}
 
 
 /* TODO ESTAS MEDIAQUERIES DE ABAJO HAY QUE REVISARLAS: */

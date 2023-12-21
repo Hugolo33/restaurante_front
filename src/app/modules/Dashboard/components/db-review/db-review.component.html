@@ -1,62 +1,62 @@
-<h2 class="section-title pb-3">Reseñas de clientes</h2>
+<h2 class="form-box-admin section-title pb-3">Reseñas de clientes</h2>
 
 <section>
 
     <article *ngFor="let review of reviews" class="review-box">
         <div class="stars">
-            <div *ngIf="review.rating === 1"><span class="material-symbols-outlined">
+            <div *ngIf="review.rating === 1"><span class="material-symbols-rounded">
                     star
                 </span></div>
-            <div *ngIf="review.rating === 2"><span class="material-symbols-outlined">
+            <div *ngIf="review.rating === 2"><span class="material-symbols-rounded">
                     star
                 </span>
-                <span class="material-symbols-outlined">
-                    star
-                </span>
-            </div>
-            <div *ngIf="review.rating === 3"><span class="material-symbols-outlined">
-                    star
-                </span>
-                <span class="material-symbols-outlined">
-                    star
-                </span>
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-rounded">
                     star
                 </span>
             </div>
-            <div *ngIf="review.rating === 4"><span class="material-symbols-outlined">
+            <div *ngIf="review.rating === 3"><span class="material-symbols-rounded">
                     star
                 </span>
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-rounded">
                     star
                 </span>
-                <span class="material-symbols-outlined">
-                    star
-                </span>
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-rounded">
                     star
                 </span>
             </div>
-            <div *ngIf="review.rating === 5"><span class="material-symbols-outlined">
+            <div *ngIf="review.rating === 4"><span class="material-symbols-rounded">
                     star
                 </span>
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-rounded">
                     star
                 </span>
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-rounded">
                     star
                 </span>
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-rounded">
                     star
                 </span>
-                <span class="material-symbols-outlined">
+            </div>
+            <div *ngIf="review.rating === 5"><span class="material-symbols-rounded">
+                    star
+                </span>
+                <span class="material-symbols-rounded">
+                    star
+                </span>
+                <span class="material-symbols-rounded">
+                    star
+                </span>
+                <span class="material-symbols-rounded">
+                    star
+                </span>
+                <span class="material-symbols-rounded">
                     star
                 </span>
             </div>
 
 
         </div>
-        <p>"{{review.content}}"</p>
+        <p class="review-text">"{{review.content}}"</p>
         <div>
             <p><strong>Fecha de creación: </strong>{{review.date_added | date: 'dd/MM/yyyy'}}</p>
             <p><strong>Cliente: </strong>{{review.name}} | email: {{review.email}}</p>
