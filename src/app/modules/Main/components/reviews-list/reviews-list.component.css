@@ -5,14 +5,16 @@
     flex: 1;
     min-width: 17.5rem;
     min-height: 300px;
-
 }
 
 small {
     font-size: 0.7rem;
     color: var(--light-grey);
+}
 
-
+.review-text {
+    min-height: 260px;
+    padding: 10px 0px;
 }
 
 .flex {
