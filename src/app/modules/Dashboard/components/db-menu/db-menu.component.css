@@ -15,12 +15,27 @@ article {
 
 article .review-box {
     min-height: 28rem;
+    background-color: var(--main-color);
+    color: var(--bg-color)
 }
 
-.buttonCustom {
 
+.form-button {
+    padding: 0.5rem 1.875rem;
+    margin: var(--main-padding) 0;
+    border-radius: 1.6875rem;
+    border: 1px solid var(--white);
+    transition: 0.4s;
+    background-color: var(--bg-color);
+    color: var(--main-color);
+    cursor: pointer;
     margin-bottom: 0;
 
+
+    &:hover {
+        color: var(--white);
+        background-color: var(--main-color);
+    }
 }
 
 

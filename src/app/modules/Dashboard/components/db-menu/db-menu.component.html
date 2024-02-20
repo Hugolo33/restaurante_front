@@ -48,13 +48,16 @@
         <article *ngFor="let menu of menus">
             <div class="review-box d-flex flex-column justify-content-between">
                 <div>
-                    <p>{{menu.m_date | date}}</p>
-                    <p>Primero: {{menu.first_course}}</p>
-                    <p>Segundo: {{menu.main_course}}</p>
-                    <p>Postre: {{menu.dessert}}</p>
-                    <p>{{menu.price | currency: 'EUR'}}</p>
+                    <p class="pb-3"><strong>{{menu.m_date | date}}</strong></p>
+                    <p class="pb-1"><strong>Primero</strong></p>
+                    <p class="pb-2">{{menu.first_course}}</p>
+                    <p class="pb-1"><strong>Segundo</strong></p>
+                    <p class="pb-2">{{menu.main_course}}</p>
+                    <p class="pb-1"><strong>Postre </strong></p>
+                    <p class="pb-3">{{menu.dessert}}</p>
+                    <p class="pb-1">{{menu.price | currency: 'EUR'}}</p>
                 </div>
-                <button (click)="send(menu)" value="Reutilizar menú" class="buttonCustom">Reutilizar menú</button>
+                <button (click)="send(menu)" value="Reutilizar menú" class="form-button">Reutilizar menú</button>
             </div>
         </article>
 
