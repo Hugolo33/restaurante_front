@@ -21,21 +21,23 @@ export class MenuViewComponent {
   token: string = "";
   jwtService = inject(JwtServicesService)
   isReservation: boolean = false;
-  latestMenu!: Menu
+  mainMenu!: Menu
   arrFirstCourses!: string[]
   arrMainCourses!: string[]
   arrDesserts!: string[]
   date!: string
 
   async ngOnInit() {
-    this.latestMenu = await this.menuService.getLatest()
-    console.log(this.latestMenu);
-    this.latestMenu.m_date = dayjs(this.latestMenu.m_date).format('YYYY-MM-DD')
-    //Comprobado, funciona
-    this.arrFirstCourses = this.latestMenu.first_course.split(",")
-    this.arrMainCourses = this.latestMenu.main_course.split(",")
-    this.arrDesserts = this.latestMenu.dessert.split(",");
-    this.date = this.latestMenu.m_date.slice(0, 5)
+    this.mainMenu = await this.menuService.getMain()
+    if (!this.mainMenu) {
+      this.mainMenu = await this.menuService.getLatest()
+    }
+    console.log(this.mainMenu);
+    this.mainMenu.m_date = dayjs(this.mainMenu.m_date).format('YYYY-MM-DD')
+    this.arrFirstCourses = this.mainMenu.first_course.split(",")
+    this.arrMainCourses = this.mainMenu.main_course.split(",")
+    this.arrDesserts = this.mainMenu.dessert.split(",");
+    this.date = this.mainMenu.m_date.slice(0, 5)
     console.log(this.date);
 
   }

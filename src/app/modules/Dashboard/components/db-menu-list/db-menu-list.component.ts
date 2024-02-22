@@ -27,6 +27,10 @@ export class DbMenuListComponent {
 
       this.menus = response
       this.mainMenu = await this.menuService.getMain()
+      if (!this.mainMenu) {
+        this.mainMenu = await this.menuService.getLatest()
+      }
+
 
     } catch (error) {
       console.log(error);
@@ -81,9 +85,17 @@ export class DbMenuListComponent {
   async changeHomeMenu(menuId: number) {
     try {
       const oldMain = await this.menuService.getMain()
-      const response = await this.menuService.removeMain(oldMain)
+      if (oldMain) {
+        oldMain.m_date = oldMain.m_date.slice(0, 10)
+        const response = await this.menuService.removeMain(oldMain)
+        console.log('response', response);
+      }
       const newMain = await this.menuService.getById(menuId)
+      console.log('newMain', newMain);
+      newMain.m_date = newMain.m_date.slice(0, 10)
       const response2 = await this.menuService.addMain(newMain)
+      console.log('response2', response2);
+
       this.mainMenu = newMain
 
     } catch (error) {
