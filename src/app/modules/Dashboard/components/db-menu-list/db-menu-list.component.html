@@ -3,7 +3,7 @@
 
     <div class="d-flex flex-wrap gap-4">
         <article *ngFor="let menu of menus">
-            <div class="review-box">
+            <div class="review-box" *ngIf="menu && mainMenu">
                 <div class="flex">
                     <p> <strong>{{menu.m_date | date}}</strong></p>
                     <div class="d-flex gap-1">
@@ -21,6 +21,11 @@
                 <p class="pb-1"><strong>Segundo: </strong>{{menu.main_course}}</p>
                 <p class="pb-1"><strong>Postre: </strong>{{menu.dessert}}</p>
                 <p class="pb-1"><strong>Precio: </strong>{{menu.price}} €</p>
+
+                <div class="form-button" *ngIf="menu.id !== mainMenu.id" (click)="changeHomeMenu(menu.id!)">
+                    Seleccionar
+                    como menú principal</div>
+                <div *ngIf="menu.id === mainMenu.id">Seleccionado como menú principal</div>
 
             </div>
         </article>
