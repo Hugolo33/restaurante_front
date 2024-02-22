@@ -39,5 +39,17 @@ export class MenuService {
     return firstValueFrom(this.httpClient.delete<Menu>(`${this.baseUrl}/${menuId}`))
   }
 
+  getMain(): Promise<Menu> {
+    return firstValueFrom(this.httpClient.get<Menu>(`${this.baseUrl}/main`))
+  }
+
+  removeMain(menu: Menu): Promise<Menu> {
+    return firstValueFrom(this.httpClient.put<Menu>(`${this.baseUrl}/removemain/${menu.id}`, menu))
+  }
+
+  addMain(menu: Menu): Promise<Menu> {
+    return firstValueFrom(this.httpClient.put<Menu>(`${this.baseUrl}/addmain/${menu.id}`, menu))
+  }
+
 
 }
