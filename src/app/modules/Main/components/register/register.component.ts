@@ -21,7 +21,8 @@ export class RegisterComponent {
         Validators.required,
         Validators.minLength(2),
         Validators.maxLength(30),
-        Validators.pattern(/^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/)
+        Validators.pattern(/^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/),
+        Validators.pattern("[a]\\s[a]")
       ]),
       email: new FormControl(null, [
         Validators.pattern(/^[\w.-]+@[\w.-]+.[\w.-]+$/)

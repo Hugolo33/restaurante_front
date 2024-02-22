@@ -108,7 +108,7 @@ export class ReservationFormComponent {
       } else {
 
         Swal.fire({
-          title: "La fecha es anterior al dia de hoy y/o falta escoger una hora válida.",
+          title: "La fecha es anterior al día de hoy y/o falta escoger una hora válida.",
           confirmButtonColor: "var(--secondary-color)",
           color: "var(--main-color)",
           background: "var(--bg-color)"
