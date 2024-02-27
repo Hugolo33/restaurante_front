@@ -1,8 +1,14 @@
 <div class="form-box-admin">
     <h2 class="section-title">Mis reservas</h2>
-    <section *ngIf="arrReservationsAfterToday">
+    <div *ngIf="arrReservationsAfterToday.length === 0 && arrReservationsBeforeToday.length === 0">
+        <p class="mb-4">¡Vaya! Parece que aún
+            no has realizado una reserva en Casa Miranda.</p>
+        <button class="buttonCustom">Crea una nueva reserva</button>
+    </div>
+    <section *ngIf="arrReservationsAfterToday.length !== 0">
 
         <h4 class="pb-3">Próximas</h4>
+        <p *ngIf="arrReservationsAfterToday.length ===0">No tienes próximas reservas</p>
         <article *ngFor="let r of arrReservationsAfterToday">
             <div class="flex">
                 <div class="block">
@@ -20,7 +26,7 @@
         </article>
     </section>
 
-    <section *ngIf="arrReservationsBeforeToday">
+    <section *ngIf="arrReservationsBeforeToday.length !== 0">
 
         <h4 class="pt-3">Pasadas</h4>
         <article *ngFor="let r of arrReservationsBeforeToday">
