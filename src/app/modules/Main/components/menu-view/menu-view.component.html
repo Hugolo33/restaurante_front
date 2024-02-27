@@ -5,12 +5,10 @@
     <div class="menu-left">
         <div>
             <h3 class="menu-title">Menú</h3>
-            <p class="pb-2">{{latestMenu?.m_date | date: 'dd/MM/yyyy'}}</p>
+            <p class="pb-2">{{mainMenu?.m_date | date: 'dd/MM/yyyy'}}</p>
         </div>
-        <div class="buttonCustom" [routerLink]="['/menu', latestMenu?.m_date]">
-            Ver
-            menús de otras fechas
-        </div>
+
+
     </div>
     <section class="menu-right">
 
@@ -27,8 +25,18 @@
             <h3 *ngFor="let item of arrDesserts">{{item}}</h3>
         </div>
         <div>
-            <h3>{{latestMenu?.price}}€ p.p</h3>
+            <h3>{{mainMenu?.price}}€ p.p</h3>
         </div>
+
+        <div class="buttonCustom" (click)="onClickReservation()" [ngClass]="{'active': isReservation}">
+            Reservas
+        </div>
+
+        <div class="buttonCustom" [routerLink]="['/menu', mainMenu?.m_date]">
+            Ver
+            menús de otras fechas
+        </div>
+
     </section>
 
 </div>
