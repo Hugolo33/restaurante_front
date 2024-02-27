@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Menu } from 'src/app/core/interfaces/menu.interface';
 import { MenuService } from 'src/app/core/services/menu.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -43,6 +44,14 @@ export class DbMenuComponent {
       const response2 = await this.menuService.getAll()
       this.menus = response2
 
+      Swal.fire({
+        title: "Menú creado con éxito",
+        icon: "success",
+        confirmButtonColor: "var(--secondary-color)",
+        color: "var(--main-color)",
+        background: "var(--bg-color)"
+      });
+
     } catch (error) {
       console.log(error);
 
@@ -66,6 +75,9 @@ export class DbMenuComponent {
   send(menu: any) {
     console.log(menu);
     const id = menu.id.toString()
+
+
+
     this.router.navigate(["/dashboard/menureload", id])
   }
 
