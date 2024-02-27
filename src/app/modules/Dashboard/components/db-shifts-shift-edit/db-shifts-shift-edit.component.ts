@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Shift } from 'src/app/core/interfaces/shift.interface';
 import { ShiftsService } from 'src/app/core/services/shifts.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-db-shifts-shift-edit',
@@ -45,6 +46,15 @@ export class DbShiftsShiftEditComponent {
     try {
       const response = await this.shiftsService.update(this.updatedShift.value)
       console.log(response);
+
+      Swal.fire({
+        title: "Turno editado con éxito",
+        icon: "success",
+        confirmButtonColor: "var(--secondary-color)",
+        color: "var(--main-color)",
+        background: "var(--bg-color)"
+      });
+
       this.router.navigate(["dashboard", "shifts"])
 
     } catch (error) {
