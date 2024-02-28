@@ -3,6 +3,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Menu } from 'src/app/core/interfaces/menu.interface';
 import { MenuService } from 'src/app/core/services/menu.service';
+import { HttpClient } from '@angular/common/http';
+
 
 
 @Component({
@@ -15,7 +17,7 @@ export class DbMenuComponent {
   formulario: FormGroup;
 
   menuService = inject(MenuService)
-
+  httpClient = inject(HttpClient)
   menus: Menu[] = []
 
   router = inject(Router)
@@ -33,22 +35,25 @@ export class DbMenuComponent {
     })
   }
 
+
   async onSubmit() {
-    console.log(this.formulario.value);
+    this.formulario.value.first_course = this.formulario.value.first_course.join('-$-')
+    console.log(this.formulario.value.first_course);
 
-    try {
-      const response = await this.menuService.create(this.formulario.value)
-      console.log(response);
 
-      const response2 = await this.menuService.getAll()
-      this.menus = response2
+    // try {
+    //   const response = await this.menuService.create(this.formulario.value)
+    //   console.log(response);
 
-    } catch (error) {
-      console.log(error);
+    //   const response2 = await this.menuService.getAll()
+    //   this.menus = response2
 
-    }
+    // } catch (error) {
+    //   console.log(error);
 
-    this.formulario.reset()
+    // }
+
+    // this.formulario.reset()
 
   }
 

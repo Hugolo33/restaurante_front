@@ -2,12 +2,23 @@
     <h3>Reutilizar menú en nueva fecha</h3>
 
 
+    <div class="review-box">
+        <p class="pb-3"><strong>{{newMenu.m_date | date}}</strong></p>
+        <h6>Primero:</h6>
+        <div class="pb-3">
+            <p *ngFor="let f of newMenu.first_course.split('-$-')">{{f}}</p>
+        </div>
+        <h6>Segundo:</h6>
+        <div class="pb-3">
+            <p *ngFor="let m of newMenu.main_course.split('-$-')">{{m}}</p>
+        </div>
+        <h6>Postre:</h6>
+        <div class="pb-3">
+            <p *ngFor="let d of newMenu.dessert.split('-$-')">{{d}}</p>
+        </div>
+        <p class="pb-1"><strong>Precio: </strong>{{newMenu.price}} €</p>
+    </div>
 
-    <h5 class="pt-3">{{newMenu.m_date | date: 'dd/MM/yyyy'}}</h5>
-    <p><strong>Primero: </strong>{{newMenu.first_course}}</p>
-    <p><strong>Segundo: </strong>{{newMenu.main_course}}</p>
-    <p><strong>Postre: </strong> {{newMenu.dessert}}</p>
-    <p class="pb-2"><strong>Precio: </strong>{{newMenu.price | currency: 'EUR'}}</p>
 
 
     <div class="mb-3 form-floating">

@@ -38,6 +38,11 @@ article .review-box {
     }
 }
 
+.textarea {
+    height: 9.375rem;
+    border-radius: 1.875rem;
+}
+
 
 @media (max-width: 70rem) {
 
@@ -50,4 +55,5 @@ article .review-box {
         min-height: 0px;
         max-width: 100%;
     }
+
 }

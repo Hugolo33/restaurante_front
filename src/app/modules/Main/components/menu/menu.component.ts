@@ -38,12 +38,12 @@ export class MenuComponent {
 
         this.currentMenu = await this.menuService.getByDate(this.menuDate)
 
-        if(this.currentMenu) {
-          this.arrFirstCourses =  this.currentMenu.first_course.split(",")
-          this.arrMainCourses =  this.currentMenu.main_course.split(",")
-          this.arrDesserts =  this.currentMenu.dessert.split(",");
+        if (this.currentMenu) {
+          this.arrFirstCourses = this.currentMenu.first_course.split("-$-")
+          this.arrMainCourses = this.currentMenu.main_course.split("-$-")
+          this.arrDesserts = this.currentMenu.dessert.split("-$-");
         }
-        
+
       } catch (error) {
         console.log(error);
       }
