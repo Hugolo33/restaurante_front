@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { Menu } from 'src/app/core/interfaces/menu.interface';
 import { MenuService } from 'src/app/core/services/menu.service';
 import Swal from 'sweetalert2';
+import { HttpClient } from '@angular/common/http';
+
 
 
 @Component({
@@ -16,7 +18,7 @@ export class DbMenuComponent {
   formulario: FormGroup;
 
   menuService = inject(MenuService)
-
+  httpClient = inject(HttpClient)
   menus: Menu[] = []
 
   router = inject(Router)
@@ -34,8 +36,15 @@ export class DbMenuComponent {
     })
   }
 
+
   async onSubmit() {
-    console.log(this.formulario.value);
+    this.formulario.value.first_course = this.formulario.value.first_course.join('-$-')
+    this.formulario.value.main_course = this.formulario.value.main_course.join('-$-')
+    this.formulario.value.first_dessert = this.formulario.value.dessert.join('-$-')
+
+
+    console.log(this.formulario.value.first_course);
+
 
     try {
       const response = await this.menuService.create(this.formulario.value)

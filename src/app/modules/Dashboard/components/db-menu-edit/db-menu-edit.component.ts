@@ -48,9 +48,9 @@ export class DbMenuEditComponent {
 
     this.formulario = new FormGroup({
       m_date: new FormControl("", [Validators.required]),
-      first_course: new FormControl(this.previousMenu.first_course, [Validators.required]),
-      main_course: new FormControl(this.previousMenu.main_course, [Validators.required]),
-      dessert: new FormControl(this.previousMenu.dessert, [Validators.required]),
+      first_course: new FormControl(this.previousMenu.first_course.split('-$-'), [Validators.required]),
+      main_course: new FormControl(this.previousMenu.main_course.split('-$-'), [Validators.required]),
+      dessert: new FormControl(this.previousMenu.dessert.split('-$-'), [Validators.required]),
       price: new FormControl(this.previousMenu.price, [Validators.required])
     })
 

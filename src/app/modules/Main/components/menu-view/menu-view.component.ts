@@ -34,9 +34,9 @@ export class MenuViewComponent {
     }
     console.log(this.mainMenu);
     this.mainMenu.m_date = dayjs(this.mainMenu.m_date).format('YYYY-MM-DD')
-    this.arrFirstCourses = this.mainMenu.first_course.split(",")
-    this.arrMainCourses = this.mainMenu.main_course.split(",")
-    this.arrDesserts = this.mainMenu.dessert.split(",");
+    this.arrFirstCourses = this.mainMenu.first_course.split("-$-")
+    this.arrMainCourses = this.mainMenu.main_course.split("-$-")
+    this.arrDesserts = this.mainMenu.dessert.split("-$-");
     this.date = this.mainMenu.m_date.slice(0, 5)
     console.log(this.date);
 

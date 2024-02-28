@@ -16,10 +16,18 @@
                         </div>
                     </div>
                 </div>
-
-                <p class="pb-1"> <strong>Primero: </strong>{{menu.first_course}}</p>
-                <p class="pb-1"><strong>Segundo: </strong>{{menu.main_course}}</p>
-                <p class="pb-1"><strong>Postre: </strong>{{menu.dessert}}</p>
+                <h6>Primero:</h6>
+                <div class="pb-3">
+                    <p *ngFor="let f of menu.first_course.split('-$-')">{{f}}</p>
+                </div>
+                <h6>Segundo:</h6>
+                <div class="pb-3">
+                    <p *ngFor="let m of menu.main_course.split('-$-')">{{m}}</p>
+                </div>
+                <h6>Postre:</h6>
+                <div class="pb-3">
+                    <p *ngFor="let d of menu.dessert.split('-$-')">{{d}}</p>
+                </div>
                 <p class="pb-1"><strong>Precio: </strong>{{menu.price}} €</p>
 
                 <div class="form-button" *ngIf="menu.id !== mainMenu.id" (click)="changeHomeMenu(menu.id!)">
