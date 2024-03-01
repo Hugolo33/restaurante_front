@@ -1,9 +1,16 @@
-.aside-nav li {
+li {
+    transition: 0.3s;
     cursor: pointer;
+
+    &:hover {
+        text-decoration-line: underline;
+    }
+
+
 }
 
 .active {
-    font-weight: bold;
+    font-weight: 600;
 }
 
 @media (max-width: 43.75rem) {

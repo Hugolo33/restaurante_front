@@ -1,12 +1,14 @@
 li {
-    transition: 1s;
+    transition: 0.3s;
     cursor: pointer;
 
     &:hover {
         text-decoration-line: underline;
     }
 
-    &.active {
-        font-weight: bold;
-    }
+
+}
+
+.active {
+    font-weight: 600;
 }

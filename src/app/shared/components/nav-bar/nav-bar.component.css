@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,0");
 
-.navbar-brand:hover {
-    color: var(--main-color);
-}
+
 
 nav {
     background-color: var(--bg-color);
@@ -22,7 +20,7 @@ nav {
     & li,
     p {
         cursor: pointer;
-        margin: var(--main-padding) 0;
+
     }
 
     & .log-out:hover {
@@ -30,6 +28,8 @@ nav {
         background-color: var(--red-delete);
     }
 }
+
+
 
 
 nav .users {

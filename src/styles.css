@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Inter:wght@200;300;400;500&family=Syne:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Inter:wght@200;300;400;500;600;700&family=Syne:wght@400;500;600;700&display=swap');
+
 
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 
@@ -54,16 +55,16 @@ font-family: 'Syne', sans-serif;
     /* Colors */
     --main-color: #014f79;
     --secondary-color: #113b47;
-    --third-color: #458aa1;
+    --third-color: #539d88;
 
-    --bg-color: #edf2f4;
+    --bg-color: #f3f4f2;
 
     --light-blue: #0a73ad;
     --dark-blue: #064365;
 
     --granade: #592020;
 
-    --red-delete: #bd0c0c;
+    --red-delete: #ae1313;
     --edit-color: #ffc800;
 
     --white: #ffffff;
@@ -165,6 +166,13 @@ h5 {
     line-height: normal;
     letter-spacing: -0.0525rem;
     transform: translateY(-3px);
+    transition: 0.3s;
+}
+
+
+
+.navbar-logo:hover {
+    color: var(--third-color);
 }
 
 .hero-text {
@@ -318,6 +326,11 @@ h5 {
 }
 
 
+
+
+
+/* FOOTERS */
+
 .footer-title {
     color: var(--main-color);
     font-family: var(--main-font);
@@ -327,8 +340,11 @@ h5 {
     padding-right: 2rem;
 }
 
-
-/* FOOTERS */
+.footer-nav {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-weight: 300;
+}
 
 .form-footer {
     display: flex;
@@ -339,12 +355,20 @@ h5 {
     cursor: pointer;
 }
 
-.footer-nav {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    font-weight: 300;
+
+.footer-logo {
+    color: var(--main-color);
+    font-family: var(--secondary-font);
+    font-size: 1.5rem;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.0525rem;
+    transform: translateY(-3px);
 }
 
+.footer-info {
+    padding-top: 6rem;
+}
 
 
 /* MENÚ HERO */

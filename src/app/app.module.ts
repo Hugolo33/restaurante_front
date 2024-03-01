@@ -9,6 +9,7 @@ import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { AuthTokenInterceptor } from './core/interceptors/auth-token.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TermsConditionsComponent } from './modules/Main/terms-conditions/terms-conditions.component';
 
 
 
@@ -17,7 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     NavBarComponent,
-    FooterComponent
+    FooterComponent,
+    TermsConditionsComponent
   ],
   imports: [
     BrowserModule,
