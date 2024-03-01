@@ -12,6 +12,8 @@ import { SpotsService } from 'src/app/core/services/spots.service';
 import { UsersService } from 'src/app/core/services/users.service';
 import Swal from 'sweetalert2';
 import * as dayjs from 'dayjs';
+
+
 @Component({
   selector: 'reservation-form',
   templateUrl: './reservation-form.component.html',
@@ -25,6 +27,8 @@ export class ReservationFormComponent {
   notes: string = "";
   showReservation: boolean = true;
   chosenSpot: string = '';
+
+
 
 
 

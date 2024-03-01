@@ -10,6 +10,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { AuthTokenInterceptor } from './core/interceptors/auth-token.interceptor';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
