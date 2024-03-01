@@ -11,17 +11,24 @@
 
 
         <div class="mb-3 form-floating">
-            <input type="text" formControlName="first_course" class="form-control editLine" placeholder="Primer plato">
+            <tag-input class="form-control editLine textarea" placeholder="Primer plato" formControlName="first_course"
+                [modelAsStrings]="true">
+            </tag-input>
+
             <label for="floatingInputValue">Primer plato</label>
         </div>
 
         <div class="mb-3 form-floating">
-            <input type="text" formControlName="main_course" class="form-control editLine" placeholder="Segundo plato">
+            <tag-input class="form-control editLine textarea" placeholder="Segundo plato" formControlName="main_course"
+                [modelAsStrings]="true">
+            </tag-input>
             <label for="floatingInputValue">Segundo plato</label>
         </div>
 
         <div class="mb-3 form-floating">
-            <input type="text" formControlName="dessert" class="form-control editLine" placeholder="Postre">
+            <tag-input class="form-control editLine textarea" placeholder="Postre" formControlName="main_course"
+                [modelAsStrings]="true">
+            </tag-input>
             <label for="floatingInputValue">Postre</label>
         </div>
 
@@ -49,13 +56,19 @@
             <div class="review-box d-flex flex-column justify-content-between">
                 <div>
                     <p class="pb-3"><strong>{{menu.m_date | date}}</strong></p>
-                    <p class="pb-1"><strong>Primero</strong></p>
-                    <p class="pb-2">{{menu.first_course}}</p>
-                    <p class="pb-1"><strong>Segundo</strong></p>
-                    <p class="pb-2">{{menu.main_course}}</p>
-                    <p class="pb-1"><strong>Postre </strong></p>
-                    <p class="pb-3">{{menu.dessert}}</p>
-                    <p class="pb-1">{{menu.price | currency: 'EUR'}}</p>
+                    <h6>Primero:</h6>
+                    <div class="pb-3">
+                        <p *ngFor="let f of menu.first_course.split('-$-')">{{f}}</p>
+                    </div>
+                    <h6>Segundo:</h6>
+                    <div class="pb-3">
+                        <p *ngFor="let m of menu.main_course.split('-$-')">{{m}}</p>
+                    </div>
+                    <h6>Postre:</h6>
+                    <div class="pb-3">
+                        <p *ngFor="let d of menu.dessert.split('-$-')">{{d}}</p>
+                    </div>
+                    <p class="pb-1"><strong>Precio: </strong>{{menu.price}} €</p>
                 </div>
                 <button (click)="send(menu)" value="Reutilizar menú" class="form-button">Reutilizar menú</button>
             </div>

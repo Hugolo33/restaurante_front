@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { SpotsService } from 'src/app/core/services/spots.service';
 import { Router } from '@angular/router';
 import { Spot } from 'src/app/core/interfaces/spot.interface';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-db-spots-new-spot',
@@ -31,6 +32,14 @@ export class DbSpotsNewSpotComponent {
     console.log(this.spot.value)
     this.onNewSpot.emit(this.spot.value)
     this.spot.reset()
+
+    Swal.fire({
+      title: "Mesa creada con éxito",
+      icon: "success",
+      confirmButtonColor: "var(--secondary-color)",
+      color: "var(--main-color)",
+      background: "var(--bg-color)"
+    })
 
   }
 

@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { TagInputModule } from 'ngx-chips';
 
 import { DashboardRoutes } from "./dashboard.routes";
 import { DbMenuComponent } from "./components/db-menu/db-menu.component";
@@ -49,7 +50,8 @@ import { DbMenuEditComponent } from './components/db-menu-edit/db-menu-edit.comp
                 CommonModule,
                 DashboardRoutes,
                 ReactiveFormsModule,
-                FormsModule
+                FormsModule,
+                TagInputModule
         ]
 })
 

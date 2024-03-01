@@ -3,6 +3,9 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Menu } from 'src/app/core/interfaces/menu.interface';
 import { MenuService } from 'src/app/core/services/menu.service';
+import Swal from 'sweetalert2';
+import { HttpClient } from '@angular/common/http';
+
 
 
 @Component({
@@ -15,7 +18,7 @@ export class DbMenuComponent {
   formulario: FormGroup;
 
   menuService = inject(MenuService)
-
+  httpClient = inject(HttpClient)
   menus: Menu[] = []
 
   router = inject(Router)
@@ -33,8 +36,15 @@ export class DbMenuComponent {
     })
   }
 
+
   async onSubmit() {
-    console.log(this.formulario.value);
+    this.formulario.value.first_course = this.formulario.value.first_course.join('-$-')
+    this.formulario.value.main_course = this.formulario.value.main_course.join('-$-')
+    this.formulario.value.first_dessert = this.formulario.value.dessert.join('-$-')
+
+
+    console.log(this.formulario.value.first_course);
+
 
     try {
       const response = await this.menuService.create(this.formulario.value)
@@ -42,6 +52,14 @@ export class DbMenuComponent {
 
       const response2 = await this.menuService.getAll()
       this.menus = response2
+
+      Swal.fire({
+        title: "Menú creado con éxito",
+        icon: "success",
+        confirmButtonColor: "var(--secondary-color)",
+        color: "var(--main-color)",
+        background: "var(--bg-color)"
+      });
 
     } catch (error) {
       console.log(error);
@@ -66,6 +84,9 @@ export class DbMenuComponent {
   send(menu: any) {
     console.log(menu);
     const id = menu.id.toString()
+
+
+
     this.router.navigate(["/dashboard/menureload", id])
   }
 
