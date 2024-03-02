@@ -265,13 +265,13 @@ h5 {
 
 .buttonCustom {
     color: var(--main-color);
-    padding: 0.5rem 1.875rem;
+    background-color: #ffffff00;
     margin: var(--main-padding) 0;
-    border-radius: 1.6875rem;
+    padding: 0.5rem 1.875rem;
     border: 1px solid var(--main-color);
+    border-radius: 1.6875rem;
     transition: 0.4s;
     cursor: pointer;
-    background-color: #ffffff00;
 
     &:hover {
         background-color: var(--main-color);
@@ -280,19 +280,29 @@ h5 {
 }
 
 .form-button {
-    padding: 0.5rem 1.875rem;
-    margin: var(--main-padding) 0;
-    border-radius: 1.6875rem;
-    border: 1px solid var(--white);
-    transition: 0.4s;
-    background-color: var(--secondary-color);
     color: var(--white);
+    background-color: var(--secondary-color);
+    margin: var(--main-padding) 0;
+    padding: 0.5rem 1.875rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 1.6875rem;
+    transition: 0.4s;
     cursor: pointer;
 
+    &:hover {
+        background-color: var(--bg-color);
+        color: var(--secondary-color);
+    }
+}
+
+.text-button {
+    color: var(--main-color);
+    margin: 0.8rem 0;
+    transition: 0.4s;
+    cursor: pointer;
 
     &:hover {
-        background-color: var(--white);
-        color: var(--secondary-color);
+        text-decoration: underline;
     }
 }
 

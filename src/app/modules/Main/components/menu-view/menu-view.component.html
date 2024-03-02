@@ -2,16 +2,13 @@
 
 <div class="menu-box">
 
-    <div class="menu-left">
-        <div>
-            <h3 class="menu-title">Menú</h3>
-            <div class="line"></div>
-            <p class="pb-2">{{mainMenu?.m_date | date: 'dd/MM/yyyy'}}</p>
-        </div>
-
-
+    <div class="menu-head">
+        <h3 class="menu-title">Menú</h3>
+        <div class="line"></div>
+        <p class="pb-2">{{mainMenu?.m_date | date: 'dd/MM/yyyy'}}</p>
     </div>
-    <section class="menu-right">
+
+    <section class="menu-body">
 
         <div>
             <h5>Primer plato</h5>
@@ -29,17 +26,18 @@
             <h3>{{mainMenu?.price}}€ p.p</h3>
         </div>
 
-
-
     </section>
-    <div class="buttonCustom d-block" (click)="onClickReservation()" [ngClass]="{'active': isReservation}">
-        Reservar
-    </div>
 
+    <div class="menu-buttons">
 
-    <div class="buttonCustom d-block" [routerLink]="['/menu', mainMenu?.m_date]">
-        Ver
-        menús de otras fechas
+        <div class="form-button" (click)="onClickReservation()" [ngClass]="{'active': isReservation}">
+            Reservar
+        </div>
+
+        <div class="text-button" [routerLink]="['/menu', mainMenu?.m_date]">
+            Ver menús de otras fechas <span class="button-icon-rotate">&#10141;</span>
+        </div>
+
     </div>
 
 </div>
