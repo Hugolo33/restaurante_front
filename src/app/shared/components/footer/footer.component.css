@@ -15,23 +15,33 @@ ul {
         font-weight: 600;
         margin-bottom: 1.4rem;
     }
+
 }
 
 .info-space {
-    & li {
+    & a {
+        display: flex;
+        flex-direction: column;
         padding-right: 5rem;
         transition: 0.3s;
         cursor: pointer;
+        text-decoration: none;
+        color: var(--main-color);
     }
 
-    & li:hover {
-        text-decoration-line: underline;
+    & li {
+        padding-right: 5rem;
+        transition: 0.3s;
+
     }
 }
 
 
 .legal-information {
-    & p {
+
+    & li:hover,
+    a:hover {
+        text-decoration-line: underline;
         cursor: pointer;
     }
 }

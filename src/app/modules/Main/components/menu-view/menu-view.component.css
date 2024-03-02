@@ -3,6 +3,11 @@ p {
     font-size: 0.75rem;
 }
 
+.line {
+    width: 1rem;
+    margin-bottom: 10px;
+}
+
 .menu-left p {
     color: var(--main-color);
     padding-right: 2rem;
@@ -34,6 +39,7 @@ div.buttonCustom {
 
 .menu-title {
     padding: 0;
+    margin-bottom: 0;
 }
 
 .menu-right {

@@ -9,7 +9,9 @@ import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { AuthTokenInterceptor } from './core/interceptors/auth-token.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TermsConditionsComponent } from './modules/Main/terms-conditions/terms-conditions.component';
+import { TermsConditionsComponent } from './modules/Main/components/terms-conditions/terms-conditions.component';
+import { CookiesComponent } from './modules/Main/components/cookies/cookies.component';
+import { PrivacyPolicyComponent } from './modules/Main/components/privacy-policy/privacy-policy.component';
 
 
 
@@ -19,7 +21,9 @@ import { TermsConditionsComponent } from './modules/Main/terms-conditions/terms-
     AppComponent,
     NavBarComponent,
     FooterComponent,
-    TermsConditionsComponent
+    TermsConditionsComponent,
+    CookiesComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     BrowserModule,

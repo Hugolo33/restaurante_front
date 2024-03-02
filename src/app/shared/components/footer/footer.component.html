@@ -11,21 +11,21 @@
             <div class="d-flex footer-info">
                 <ul class="info-space">
                     <h4>Info</h4>
-                    <li> 91 345 23 67</li>
+                    <li>91 345 23 67</li>
                     <li>Calle del Acuerdo, nº 1 Madrid</li>
                     <li>casamiranda@gmail.com</li>
                 </ul>
-                <ul class="info-space">
+                <ul class="info-space legal-information">
                     <h4>Social</h4>
-                    <li href="url">Instagram</li>
-                    <li href="url">Facebook</li>
-                    <li href="url">Tik Tok</li>
+                    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+                    <a href="https://www.facebook.com/?locale=es_ES" target="_blank">Facebook</a>
+                    <a href="https://www.tiktok.com/es/" target="_blank">Tik Tok</a>
                 </ul>
 
-                <ul class="legal-information info-space">
+                <ul class="info-space legal-information">
                     <h4>Legal</h4>
-                    <li>Política de cookies</li>
-                    <li>Política de privacidad</li>
+                    <li [routerLink]="['/cookies']">Política de cookies</li>
+                    <li [routerLink]="['/privacy-policy']">Política de privacidad</li>
                     <li [routerLink]="['/legal']">Aviso Legal</li>
                 </ul>
             </div>

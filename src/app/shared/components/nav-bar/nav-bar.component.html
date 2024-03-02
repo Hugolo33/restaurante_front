@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navigate navbar-nav me-auto mb-2 mb-lg-0">
                 <ul class=" navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item" [routerLink]="['/']" fragment="home"
+                    <li class="nav-item" [routerLink]="['/']" fragment=""
                         [ngClass]="{'active': (active_fragment | async) === 'home'}">
                         Home</li>
                     <li class="nav-item" [routerLink]="['/']" fragment="menu"
@@ -24,7 +24,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="logo navbar-logo d-none d-lg-block">
+            <div class="logo navbar-logo navbar-brand d-none d-lg-block">
                 <p [routerLink]="['/']">casa Miranda</p>
             </div>
             <div class="navigate navbar-nav mb-2 mb-lg-0 ms-auto">
