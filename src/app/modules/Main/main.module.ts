@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MainRoutes } from './main.routes';
@@ -31,6 +31,7 @@ import { MenuComponent } from './components/menu/menu.component';
         CommonModule,
         MainRoutes,
         ReactiveFormsModule
-    ]
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class MainModule { }

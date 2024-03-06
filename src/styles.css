@@ -58,6 +58,7 @@ font-family: 'Syne', sans-serif;
     --third-color: #539d88;
 
     --bg-color: #f3f4f2;
+    --card-color: #d9e3e6;
 
     --light-blue: #0a73ad;
     --dark-blue: #064365;
@@ -218,8 +219,7 @@ h5 {
 }
 
 .review-text {
-    margin-top: 0.3rem;
-    margin-bottom: 1rem;
+    margin-bottom: var(--main-padding);
 }
 
 .error {
@@ -238,7 +238,6 @@ h5 {
 .review-box {
     color: var(--main-color);
     font-size: 0.9rem;
-    max-width: 500px;
     padding: 1.8rem;
     border-radius: var(--main-B-Radius);
     border: 1px solid var(--main-color);
@@ -252,6 +251,7 @@ h5 {
     padding: 2rem 4rem;
     border-radius: var(--main-B-Radius);
     background-color: var(--secondary-color);
+
 }
 
 .form-box-admin {
@@ -369,8 +369,8 @@ h5 {
 }
 
 .footer-nav {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
     font-weight: 300;
 }
 
