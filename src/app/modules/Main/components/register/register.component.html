@@ -11,6 +11,13 @@
         </div>
         <div class="mb-3">
             <label class="form-label"></label>
+            <input type="text" class="form-control" placeholder="Apellidos" formControlName="lastname">
+            <p class="error" *ngIf="checkError('lastname', 'required')">
+                Este campo es obligatorio
+            </p>
+        </div>
+        <div class="mb-3">
+            <label class="form-label"></label>
             <input type="text" class="form-control" placeholder="Email" formControlName="email">
             <p class="error" *ngIf="checkError('email', 'pattern')">
                 Email incorrecto

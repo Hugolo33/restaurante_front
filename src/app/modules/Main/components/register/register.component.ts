@@ -24,6 +24,11 @@ export class RegisterComponent {
         Validators.pattern(/^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/),
 
       ]),
+      lastname: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(30)
+      ]),
       email: new FormControl(null, [
         Validators.pattern(/^[\w.-]+@[\w.-]+.[\w.-]+$/)
       ]),
