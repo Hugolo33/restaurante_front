@@ -54,7 +54,7 @@ font-family: 'Syne', sans-serif;
 
     /* Colors */
     --main-color: #014f79;
-    --secondary-color: #113b47;
+    --secondary-color: #014f79;
     --third-color: #539d88;
 
     --bg-color: #f3f4f2;
@@ -121,6 +121,7 @@ h3 {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+
 }
 
 h4 {
@@ -167,6 +168,15 @@ h5 {
     margin: 11rem auto;
 }
 
+.register-container {
+    display: flex;
+    width: calc(100vw - var(--double-padding));
+    height: calc(100vh - 160px);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 
 .aside-nav {
     position: fixed;
@@ -190,20 +200,24 @@ h5 {
 
 
 
+.navbar-brand {
+    margin-right: 0rem;
+}
+
 .navbar-logo:hover {
     color: var(--third-color);
 }
 
 .hero-text {
-    color: var(--third-color);
+    color: var(--main-color);
     font-family: var(--hero-font);
-    font-size: 4.3rem;
+    line-height: 103%;
+    /* font-size: 6rem; */
+    font-size: 6.7vw;
     text-rendering: geometricPrecision;
-
-    line-height: 108%;
-    /* 4.455rem */
-    max-width: 80%;
-    margin: 9rem 0;
+    max-width: 88%;
+    margin-top: 1.7em;
+    margin-bottom: 6rem;
 }
 
 .line {
@@ -238,7 +252,7 @@ h5 {
 .review-box {
     color: var(--main-color);
     font-size: 0.9rem;
-    padding: 1.8rem;
+    padding: 1.5rem;
     border-radius: var(--main-B-Radius);
     border: 1px solid var(--main-color);
 
@@ -247,7 +261,6 @@ h5 {
 .form-box-users {
     width: 40vw;
     max-width: 500px;
-    margin: 0 auto;
     padding: 2rem 4rem;
     border-radius: var(--main-B-Radius);
     background-color: var(--secondary-color);
@@ -334,7 +347,7 @@ h5 {
     font-size: 2.25rem;
     font-style: normal;
     font-weight: 200;
-    margin-bottom: 1rem;
+    margin-bottom: 1.8rem;
 }
 
 .menu-title {
@@ -347,7 +360,7 @@ h5 {
 
 .user-title {
     color: var(--main-color);
-    font-family: var(--secondary-font);
+    font-family: var(--hero-font);
     font-size: 2.5rem;
     font-weight: 300;
     padding-right: 2rem;
@@ -554,13 +567,34 @@ label {
 
 
 
+
 /* MEDIA QUERYS */
 
-@media (max-width: 70rem) {
+@media (max-width: 75rem) {}
 
+@media (max-width: 64rem) {
+    .form-box-users {
+        width: 50vw;
+    }
+}
 
+@media (max-width: 48rem) {
 
-    .form-box-admin {
-        padding-top: 1.7rem;
+    .form-button {
+        transform: scale(0.9);
+    }
+
+    .buttonCustom {
+        transform: scale(0.9);
+    }
+
+    .form-box-users {
+        width: 75vw;
+    }
+}
+
+@media (max-width: 30rem) {
+    .form-box-users {
+        width: 90vw;
     }
 }

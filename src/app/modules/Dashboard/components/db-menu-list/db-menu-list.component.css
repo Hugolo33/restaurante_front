@@ -18,8 +18,8 @@ article {
 
 article .review-box {
     min-height: 380px;
-    background-color: var(--main-color);
-    color: var(--bg-color)
+    background-color: transparent;
+    color: var(--main-color)
 }
 
 .material-symbols-rounded {

@@ -4,35 +4,34 @@ h3 {
 }
 
 
-@media (max-width: 70rem) {
+.container-reduction-dashboard {
+    width: 60%;
+    max-width: 880px;
+    margin: 0 auto;
+}
 
-    .container-reduction {
-        width: 60vw;
-        margin: 0;
-        margin-left: 15rem
-    }
+@media (max-width: 74rem) {
 
-    .user-title {
-        font-size: 2rem;
-
+    .container-reduction-dashboard {
+        width: 78%;
+        margin-left: 22%;
     }
 
 }
 
-
-@media (max-width: 43.75rem) {
+@media (max-width: 64rem) {
 
     .aside-nav {
         position: static;
     }
 
-    .container-reduction {
+    .container-reduction-dashboard {
         width: 100%;
         max-width: 100%;
         margin: 0 auto;
     }
 
-
-
-
 }
+
+
+@media (max-width: 43.75rem) {}

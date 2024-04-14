@@ -1,8 +1,6 @@
 .heroImages {
     display: flex;
-
     gap: var(--main-padding);
-
 
     & figure {
         width: calc(100vw - var(--double-padding));
@@ -23,10 +21,6 @@
 img {
     border-radius: var(--main-B-Radius);
 
-}
-
-h2 {
-    margin-top: 3.3em;
 }
 
 h3 {

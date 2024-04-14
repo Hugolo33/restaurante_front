@@ -7,6 +7,10 @@
     }
 }
 
+.reservation-next {
+    margin-bottom: 4rem;
+}
+
 .flex {
     display: flex;
 }

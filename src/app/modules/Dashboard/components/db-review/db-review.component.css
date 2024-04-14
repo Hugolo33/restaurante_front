@@ -1,3 +1,7 @@
+* {
+    color: var(--main-color)
+}
+
 section {
     display: flex;
     flex-wrap: wrap;
@@ -9,15 +13,12 @@ h2 {
 }
 
 .review-box {
-    width: calc(50% - var(--double-padding));
+    width: calc(51% - var(--main-padding));
     padding: var(--main-padding);
-    background-color: var(--secondary-color);
+    background-color: var(--card-color);
     border: 0
 }
 
-* {
-    color: var(--bg-color)
-}
 
 div>p {
     font-size: 0.75rem;

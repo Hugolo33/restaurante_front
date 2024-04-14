@@ -1,31 +1,29 @@
-<div class="form-box-admin">
-    <section>
-        <h3 class="section-title">Nuevo turno</h3>
+<section>
+    <h3 class="section-title">Nuevo turno</h3>
 
-        <form [formGroup]="shift" (ngSubmit)="onSubmit()">
+    <form [formGroup]="shift" (ngSubmit)="onSubmit()">
 
-            <div class="mb-3 form-floating">
+        <div class="mb-3 form-floating">
 
-                <input class="form-control editLine" type="time" placeholder="Hora" formControlName="time">
-                <label for="floatingInputValue">Introduce la hora</label>
-            </div>
+            <input class="form-control editLine" type="time" placeholder="Hora" formControlName="time">
+            <label for="floatingInputValue">Introduce la hora</label>
+        </div>
 
-            <div class="mb-3 form-floating">
+        <div class="mb-3 form-floating">
 
 
-                <select formControlName="daytime" class="form-control editLine" placeholder="Comida o cena">
-                    <option value="lunch">Comida</option>
-                    <option value="dinner">Cena</option>
+            <select formControlName="daytime" class="form-control editLine" placeholder="Comida o cena">
+                <option value="lunch">Comida</option>
+                <option value="dinner">Cena</option>
 
-                </select>
-                <!-- <input class="form-control editLine" type="select" placeholder="Introduce el nombre (Day time)"
+            </select>
+            <!-- <input class="form-control editLine" type="select" placeholder="Introduce el nombre (Day time)"
                     formControlName="daytime"> -->
-                <label for="floatingInputValue">Comida o cena</label>
-            </div>
+            <label for="floatingInputValue">Comida o cena</label>
+        </div>
 
 
-            <input class="buttonCustom" type="submit" value="Crear turno">
+        <input class="buttonCustom" type="submit" value="Crear turno">
 
-        </form>
-    </section>
-</div>
+    </form>
+</section>

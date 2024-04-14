@@ -33,7 +33,7 @@ export class ReviewsListComponent {
       /* pagination: true, */
       loop: true,
       autoplay: {
-        delay: 4000,
+        delay: 3500,
       },
       navigation: {
         enabled: true,

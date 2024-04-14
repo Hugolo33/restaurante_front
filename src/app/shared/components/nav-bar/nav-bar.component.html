@@ -1,32 +1,37 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
+
         <div class="logo navbar-brand d-block d-lg-none">
             <p [routerLink]="['/']">casa Miranda</p>
         </div>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <span class="material-symbols-rounded">
+                menu
+            </span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navigate navbar-nav me-auto mb-2 mb-lg-0">
                 <ul class=" navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item" [routerLink]="['/']" fragment=""
+                    <li class="nav-item nav-link-hover" [routerLink]="['/']" fragment=""
                         [ngClass]="{'active': (active_fragment | async) === 'home'}">
                         Home</li>
-                    <li class="nav-item" [routerLink]="['/']" fragment="menu"
+                    <li class="nav-item nav-link-hover" [routerLink]="['/']" fragment="menu"
                         [ngClass]="{'active': (active_fragment | async) === 'menu'}">
                         Menú
                     </li>
-                    <li class="nav-item" (click)="onClickReservation()" [ngClass]="{'active': isReservation}">Reservar
+                    <li class="nav-item nav-link-hover" (click)="onClickReservation()"
+                        [ngClass]="{'active': isReservation}">Reservar
                     </li>
-                    <li class="nav-item" [routerLink]="['/']" fragment="footer"
+                    <li class="nav-item nav-link-hover" [routerLink]="['/']" fragment="footer"
                         [ngClass]="{'active': (active_fragment | async) === 'footer'}">Contacto
                     </li>
                 </ul>
             </div>
-            <div class="logo navbar-logo navbar-brand d-none d-lg-block">
-                <p [routerLink]="['/']">casa Miranda</p>
-            </div>
+
             <div class="navigate navbar-nav mb-2 mb-lg-0 ms-auto">
                 <ul class="users navbar-nav mb-2 mb-lg-0">
                     <li class="buttonCustom nav-item" [routerLink]="['/register']" *ngIf="!usersService.isLogged()">
@@ -45,6 +50,14 @@
                 </ul>
             </div>
         </div>
-        <div class="line"></div>
+
+        <!--   <div class="line"></div> -->
+
+        <div class="logo-navConteiner">
+            <div class="logo navbar-logo navbar-brand d-none d-lg-block">
+                <p [routerLink]="['/']">casa Miranda</p>
+            </div>
+        </div>
+
     </div>
 </nav>
