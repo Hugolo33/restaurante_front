@@ -9,7 +9,7 @@ import { Review } from '../interfaces/review.interface';
 export class ReviewsService {
 
   httpClient = inject(HttpClient);
-  baseUrl = 'http://localhost:3000/api/reviews'
+  baseUrl = 'http://back.mirandabistro.es/api/reviews'
 
   getAll(): Promise<Review[]> {
     return firstValueFrom(this.httpClient.get<Review[]>(this.baseUrl))

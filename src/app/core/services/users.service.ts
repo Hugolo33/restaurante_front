@@ -12,7 +12,7 @@ type LoginResponse = { success: string, token: string, error: string };
 export class UsersService {
 
   httpClient = inject(HttpClient);
-  baseUrl = 'http://localhost:3000/api/users'
+  baseUrl = 'http://back.mirandabistro.es/api/users'
 
   getAll(): Promise<User[]> {
     return firstValueFrom(this.httpClient.get<User[]>(this.baseUrl))

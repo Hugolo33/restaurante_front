@@ -9,7 +9,7 @@ import { firstValueFrom } from 'rxjs';
 export class ReservationsService {
 
   httpClient = inject(HttpClient);
-  baseUrl = 'http://localhost:3000/api/reservations'
+  baseUrl = 'http://back.mirandabistro.es/api/reservations'
 
   getAll(): Promise<Reservation[]> {
     return firstValueFrom(this.httpClient.get<Reservation[]>(this.baseUrl))

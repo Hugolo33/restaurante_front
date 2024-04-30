@@ -10,7 +10,7 @@ import { Shift } from '../interfaces/shift.interface';
 export class SpotsService {
 
   httpClient = inject(HttpClient)
-  baseUrl = "http://localhost:3000/api/spots"
+  baseUrl = "http://back.mirandabistro.es/api/spots"
 
   getAll(): Promise<Spot[]> {
     return firstValueFrom(this.httpClient.get<Spot[]>(this.baseUrl))
