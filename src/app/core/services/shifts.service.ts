@@ -9,7 +9,7 @@ import { Shift } from '../interfaces/shift.interface';
 export class ShiftsService {
 
   httpClient = inject(HttpClient);
-  baseUrl = 'http://back.mirandabistro.es/api/shifts'
+  baseUrl = 'https://back.mirandabistro.es/api/shifts'
 
   getAll(): Promise<Shift[]> {
     return firstValueFrom(this.httpClient.get<Shift[]>(this.baseUrl))

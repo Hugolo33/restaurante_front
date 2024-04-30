@@ -9,7 +9,7 @@ import { firstValueFrom } from 'rxjs';
 export class MenuService {
 
   httpClient = inject(HttpClient);
-  baseUrl = 'http://back.mirandabistro.es/api/menu'
+  baseUrl = 'https://back.mirandabistro.es/api/menu'
 
   getAll(): Promise<Menu[]> {
     return firstValueFrom(this.httpClient.get<Menu[]>(this.baseUrl))
