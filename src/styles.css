@@ -574,7 +574,7 @@ label {
 
 @media (max-width: 64rem) {
     .form-box-users {
-        width: 50vw;
+        width: 60vw;
     }
 }
 
@@ -590,11 +590,13 @@ label {
 
     .form-box-users {
         width: 75vw;
+        padding: 2.2rem 3rem;
     }
 }
 
 @media (max-width: 30rem) {
     .form-box-users {
         width: 90vw;
+
     }
 }

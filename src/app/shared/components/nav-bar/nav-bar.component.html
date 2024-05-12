@@ -35,9 +35,9 @@
             <div class="navigate navbar-nav mb-2 mb-lg-0 ms-auto">
                 <ul class="users navbar-nav mb-2 mb-lg-0">
                     <li class="buttonCustom nav-item" [routerLink]="['/register']" *ngIf="!usersService.isLogged()">
-                        Registro
+                        ¡Regístrate!
                     </li>
-                    <li class="buttonCustom nav-item" [routerLink]="['/login']" *ngIf="!usersService.isLogged()">Iniciar
+                    <li class="buttonCustom nav-item" [routerLink]="['/login']" *ngIf="!usersService.isLogged()">Inicia
                         sesión</li>
                     <li class="icon-user nav-item" (click)="onClickNavRole()" *ngIf="usersService.isLogged()">
                         <span class="material-symbols-outlined">
