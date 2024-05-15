@@ -39,7 +39,7 @@ export class LoginComponent {
         localStorage.setItem('token', response.token);
       }
       const loggedUser = this.jwtService.DecodeToken(response.token)
-      if (loggedUser.user_role === 'admin') {
+      if (loggedUser.user_role === 'admin' || loggedUser.user_role === 'falseAdmin') {
         this.router.navigate(['/dashboard/reservationlist'])
       } else if (loggedUser.user_role === 'client') {
         this.router.navigate(['/user/new-reservation'])
@@ -60,5 +60,33 @@ export class LoginComponent {
   checkError(controlName: string, erroName: string) {
     return this.formulario.get(controlName)?.hasError(erroName) &&
       this.formulario.get(controlName)?.touched
+  }
+
+  async onVisualAdmin() {
+    try {
+      const response = await this.users.postLogin({ email: "falsoadmin@gmail.com", password: "falso1" })
+      if (!response.error) {
+        localStorage.setItem('token', response.token);
+      }
+      const loggedUser = this.jwtService.DecodeToken(response.token)
+      if (loggedUser.user_role === 'admin' || loggedUser.user_role === 'falseAdmin') {
+        this.router.navigate(['/dashboard/reservationlist'])
+      } else if (loggedUser.user_role === 'client') {
+        this.router.navigate(['/user/new-reservation'])
+      }
+
+
+
+
+    } catch (error) {
+      console.log(error)
+      Swal.fire({
+        title: "Email y/o contraseña incorrectos",
+        confirmButtonColor: "var(--secondary-color)",
+        color: "var(--main-color)",
+        background: "var(--bg-color)"
+      })
+
+    }
   }
 }

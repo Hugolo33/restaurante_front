@@ -17,7 +17,7 @@ export const authGuardAdmin: CanActivateChildFn = (childRoute, state) => {
         const user: DecodedToken = jwtservices.DecodeToken(token);
 
 
-        if (user.user_role === 'admin') {
+        if (user.user_role === 'admin' || user.user_role === 'falseAdmin') {
 
             return true
         }

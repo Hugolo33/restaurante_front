@@ -33,7 +33,7 @@ export class NavBarComponent {
     if (this.usersService.isLogged()) {
       this.token = localStorage.getItem('token')!;
       const loggedUser = this.jwtService.DecodeToken(this.token)
-      if (loggedUser.user_role === 'admin') {
+      if (loggedUser.user_role === 'admin' || loggedUser.user_role === 'falseAdmin') {
         this.router.navigate(['/dashboard/reservationlist'])
       } else if (loggedUser.user_role === 'client') {
         this.router.navigate(['/user/my-reservations'])
@@ -79,7 +79,7 @@ export class NavBarComponent {
   onClickNavRole() {
     this.token = localStorage.getItem('token')!;
     const loggedUser = this.jwtService.DecodeToken(this.token)
-    if (loggedUser.user_role === 'admin') {
+    if (loggedUser.user_role === 'admin' || loggedUser.user_role === 'falseAdmin') {
       this.router.navigate(['/dashboard/reservationlist'])
     } else if (loggedUser.user_role === 'client') {
       this.router.navigate(['/user/my-reservations'])
